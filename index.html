@@ -1,61 +1,30 @@
 <title>Katie Farrell — Business Brain OS</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=JetBrains+Mono:wght@400;500&display=swap">
 
 <style>
   :root {
-    --bg:        #F8F6F2;
-    --surface:   #FFFFFF;
-    --border:    #E4DDD6;
-    --text:      #1E1B18;
-    --text-mid:  #6B6560;
-    --text-soft: #9E9890;
-    --accent:    #2C6E6E;
-    --accent-lt: #3D8F8F;
-    --accent-bg: #EAF3F3;
-    --phase-done:#2C6E6E;
-    --phase-now: #2C6E6E;
-    --phase-todo:#C8C0B8;
-    --radius:    8px;
-    --nav-h:     60px;
-    --phase-h:   48px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg:        #1A1816;
-      --surface:   #242018;
-      --border:    #36302A;
-      --text:      #E8E4DF;
-      --text-mid:  #9E9890;
-      --text-soft: #6B6560;
-      --accent:    #4A9494;
-      --accent-lt: #5AABAB;
-      --accent-bg: #1E2E2E;
-      --phase-todo:#4A4540;
-    }
-  }
-
-  :root[data-theme="dark"] {
-    --bg:        #1A1816;
-    --surface:   #242018;
-    --border:    #36302A;
-    --text:      #E8E4DF;
-    --text-mid:  #9E9890;
-    --text-soft: #6B6560;
-    --accent:    #4A9494;
-    --accent-lt: #5AABAB;
-    --accent-bg: #1E2E2E;
-    --phase-todo:#4A4540;
+    --teal:        #1D9ABC;
+    --teal-dark:   #157d8a;
+    --amber:       #ffbd4a;
+    --amber-dark:  #d9a030;
+    --charcoal:    #2d2d2d;
+    --body-text:   #444444;
+    --light-grey:  #f4f4f2;
+    --mid-grey:    #e8e8e4;
+    --white:       #ffffff;
+    --teal-bg:     rgba(29,154,188,0.08);
+    --nav-h:       64px;
+    --phase-h:     50px;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    font-size: 15px;
+    font-family: 'Lato', system-ui, sans-serif;
+    background: var(--white);
+    color: var(--body-text);
+    line-height: 1.7;
+    font-size: 16px;
     min-height: 100vh;
   }
 
@@ -64,8 +33,7 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     height: var(--nav-h);
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
+    background: var(--teal);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -76,68 +44,74 @@
   .nav-brand {
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 2px;
   }
 
-  .nav-brand-eyebrow {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
+  .nav-brand-top {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: rgba(255,255,255,0.7);
   }
 
   .nav-brand-name {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text);
-    line-height: 1.2;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1;
   }
 
   .nav-tabs {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 2px;
   }
 
   .nav-tab {
-    padding: 8px 20px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-mid);
+    padding: 8px 22px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
     cursor: pointer;
     border: none;
     background: none;
-    font-family: 'Inter', sans-serif;
     transition: all 0.15s;
+    border-bottom: 2px solid transparent;
   }
 
-  .nav-tab:hover { color: var(--text); background: var(--bg); }
+  .nav-tab:hover { color: var(--white); }
 
   .nav-tab.active {
-    background: var(--accent-bg);
-    color: var(--accent);
+    color: var(--white);
+    border-bottom-color: var(--amber);
   }
 
   .nav-feedback {
     display: inline-flex;
     align-items: center;
-    padding: 8px 18px;
-    background: var(--accent);
-    color: white;
-    border-radius: var(--radius);
-    font-size: 13px;
-    font-weight: 500;
+    padding: 10px 22px;
+    background: var(--amber);
+    color: var(--charcoal);
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    cursor: pointer;
     border: none;
+    cursor: pointer;
     transition: background 0.15s;
   }
 
-  .nav-feedback:hover { background: var(--accent-lt); }
+  .nav-feedback:hover { background: var(--amber-dark); color: var(--white); }
 
   /* ── Phase bar ── */
   .phasebar {
@@ -145,416 +119,465 @@
     top: var(--nav-h);
     left: 0; right: 0;
     height: var(--phase-h);
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
+    background: var(--white);
+    border-bottom: 2px solid var(--mid-grey);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0;
     z-index: 190;
     overflow-x: auto;
+  }
+
+  .phasebar-inner {
+    display: flex;
+    align-items: center;
   }
 
   .phasebar-step {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 0 20px;
+    padding: 0 16px;
     white-space: nowrap;
   }
 
   .phasebar-dot {
-    width: 16px;
-    height: 16px;
+    width: 18px; height: 18px;
     border-radius: 50%;
-    border: 2px solid var(--phase-todo);
-    background: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: 2px solid var(--mid-grey);
+    background: var(--white);
+    display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
   }
 
-  .phasebar-step.done .phasebar-dot {
-    background: var(--phase-done);
-    border-color: var(--phase-done);
-  }
-
-  .phasebar-step.current .phasebar-dot {
-    border-color: var(--accent);
-    background: var(--surface);
-    box-shadow: 0 0 0 3px var(--accent-bg);
-  }
+  .phasebar-step.done .phasebar-dot { background: var(--teal); border-color: var(--teal); }
+  .phasebar-step.current .phasebar-dot { border-color: var(--teal); background: var(--white); box-shadow: 0 0 0 3px var(--teal-bg); }
 
   .phasebar-check { display: none; color: white; font-size: 9px; font-weight: 700; }
   .phasebar-step.done .phasebar-check { display: block; }
-
-  .phasebar-inner { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0; }
-  .phasebar-step.current .phasebar-inner { opacity: 1; }
-  .phasebar-step.done .phasebar-inner { display: none; }
+  .phasebar-pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+  .phasebar-step:not(.current) .phasebar-pulse { display: none; }
+  .phasebar-step.done .phasebar-pulse { display: none; }
 
   .phasebar-label {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text-soft);
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #aaa;
   }
 
-  .phasebar-step.done .phasebar-label { color: var(--phase-done); }
-  .phasebar-step.current .phasebar-label { color: var(--accent); font-weight: 600; }
+  .phasebar-step.done .phasebar-label { color: var(--teal); font-weight: 700; }
+  .phasebar-step.current .phasebar-label { color: var(--teal); font-weight: 700; }
 
   .phasebar-connector {
-    width: 40px;
-    height: 2px;
-    background: var(--phase-todo);
+    width: 36px; height: 2px;
+    background: var(--mid-grey);
     flex-shrink: 0;
   }
 
-  .phasebar-connector.done { background: var(--phase-done); }
-  .phasebar-connector.half { background: linear-gradient(to right, var(--phase-done) 50%, var(--phase-todo) 50%); }
+  .phasebar-connector.done { background: var(--teal); }
+  .phasebar-connector.half { background: linear-gradient(to right, var(--teal) 50%, var(--mid-grey) 50%); }
 
   /* ── Page body ── */
   .page-body {
-    padding-top: calc(var(--nav-h) + var(--phase-h) + 48px);
-    padding-bottom: 80px;
-    max-width: 820px;
+    padding-top: calc(var(--nav-h) + var(--phase-h) + 56px);
+    padding-bottom: 100px;
+    max-width: 860px;
     margin: 0 auto;
     padding-left: 40px;
     padding-right: 40px;
   }
 
-  /* ── Tab panels ── */
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
 
+  /* ── Section label ── */
+  .section-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    display: inline-block;
+    background: linear-gradient(transparent 40%, rgba(255,189,74,0.6) 40%);
+    padding: 0 4px 4px 4px;
+    margin-bottom: 20px;
+  }
+
   /* ── Welcome banner ── */
   .welcome-banner {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 36px 40px;
-    margin-bottom: 40px;
+    background: var(--teal);
+    padding: 48px 52px;
+    margin-bottom: 52px;
     position: relative;
     overflow: hidden;
   }
 
-  .welcome-banner::before {
+  .welcome-banner::after {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: var(--accent);
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    border: 40px solid rgba(255,255,255,0.06);
+    pointer-events: none;
   }
 
   .welcome-eyebrow {
-    font-size: 11px; font-weight: 600;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px; font-weight: 400;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 12px;
   }
 
   .welcome-headline {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 28px; font-weight: 600;
-    color: var(--text); line-height: 1.25;
-    text-wrap: balance; margin-bottom: 14px;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.2;
+    text-wrap: balance;
+    margin-bottom: 16px;
   }
 
   .welcome-body {
-    font-size: 15px; color: var(--text-mid);
-    line-height: 1.7; max-width: 560px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px; font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    max-width: 540px;
   }
 
-  .welcome-body strong { color: var(--text); font-weight: 500; }
+  .welcome-body strong { color: var(--white); font-weight: 400; }
 
   .welcome-meta {
-    display: flex; gap: 24px; margin-top: 24px;
-    padding-top: 20px; border-top: 1px solid var(--border);
+    display: flex; gap: 32px;
+    margin-top: 32px; padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.2);
     flex-wrap: wrap;
   }
 
-  .meta-item { display: flex; flex-direction: column; gap: 2px; }
+  .meta-item { display: flex; flex-direction: column; gap: 3px; }
+  .meta-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+  .meta-value { font-size: 14px; font-weight: 400; color: var(--white); }
 
-  .meta-label {
-    font-size: 10px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-soft);
-  }
-
-  .meta-value { font-size: 13px; font-weight: 500; color: var(--text); }
-
-  /* ── Sections ── */
-  .section { margin-bottom: 48px; }
+  /* ── Section ── */
+  .section { margin-bottom: 56px; }
 
   .section-header {
     display: flex; align-items: baseline; gap: 12px;
-    margin-bottom: 20px; padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px; padding-bottom: 14px;
+    border-bottom: 2px solid var(--mid-grey);
   }
 
-  .section-title { font-size: 17px; font-weight: 600; color: var(--text); }
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem; font-weight: 400;
+    color: var(--charcoal);
+  }
 
   .section-badge {
-    font-size: 11px; font-weight: 500;
-    color: var(--accent); background: var(--accent-bg);
-    padding: 2px 8px; border-radius: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--teal);
+    background: var(--teal-bg);
+    padding: 2px 10px;
   }
 
-  /* ── Status chips / open threads ── */
+  /* ── Thread items ── */
   .status-chip {
     display: inline-flex; align-items: center;
-    padding: 3px 10px; border-radius: 20px;
-    font-size: 11px; font-weight: 600;
+    padding: 3px 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
     white-space: nowrap; flex-shrink: 0;
   }
 
   .status-chip.open { background: #FEF3C7; color: #92400E; }
   .status-chip.blocked { background: #FEE2E2; color: #991B1B; }
+  .status-chip.review { background: #EDE9FE; color: #5B21B6; }
 
-  .open-threads { display: flex; flex-direction: column; gap: 10px; }
+  .open-threads { display: flex; flex-direction: column; gap: 12px; }
 
   .thread-item {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 14px 18px;
-    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    border-left: 3px solid var(--mid-grey);
+    padding: 16px 20px;
+    display: flex; align-items: flex-start; gap: 16px;
   }
 
-  .thread-item.blocked { border-left: 3px solid #EF4444; }
-  .thread-item.open { border-left: 3px solid #F59E0B; }
+  .thread-item.blocked { border-left-color: #EF4444; }
+  .thread-item.open { border-left-color: #F59E0B; }
+  .thread-item.review { border-left-color: #8B5CF6; }
 
-  .thread-text { font-size: 13px; color: var(--text); line-height: 1.5; flex: 1; }
-  .thread-note { font-size: 12px; color: var(--text-mid); margin-top: 4px; }
+  .thread-text { font-size: 14px; color: var(--charcoal); line-height: 1.5; flex: 1; }
+  .thread-note { font-size: 12px; color: var(--body-text); margin-top: 5px; line-height: 1.5; }
 
   /* ── Callout ── */
   .callout {
-    background: var(--accent-bg); border-left: 3px solid var(--accent);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    padding: 14px 18px; font-size: 13.5px; color: var(--text);
+    background: var(--teal-bg);
+    border-left: 3px solid var(--teal);
+    padding: 14px 18px;
+    font-size: 14px; color: var(--charcoal);
     line-height: 1.6; margin-bottom: 16px;
   }
 
-  .callout strong { color: var(--accent); }
+  .callout strong { color: var(--teal); font-weight: 700; }
 
   /* ── Folder map ── */
   .folder-map {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px 24px;
+    background: var(--light-grey);
+    border: 1px solid var(--mid-grey);
+    padding: 20px 24px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12.5px; line-height: 1.8; overflow-x: auto;
+    font-size: 12.5px; line-height: 1.9; overflow-x: auto;
   }
 
-  .folder-line { color: var(--text-mid); }
-  .folder-name { color: var(--accent); font-weight: 500; }
-  .folder-desc { color: var(--text-soft); font-family: 'Inter', sans-serif; font-size: 11.5px; font-style: italic; }
+  .folder-line { color: var(--body-text); }
+  .folder-name { color: var(--teal); font-weight: 500; }
+  .folder-desc { color: #999; font-family: 'Lato', sans-serif; font-size: 11.5px; font-style: italic; }
 
   /* ── Skill cards ── */
-  .skill-list { display: flex; flex-direction: column; gap: 12px; }
+  .skill-list { display: flex; flex-direction: column; gap: 1px; }
 
   .skill-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px 24px;
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    padding: 22px 26px;
     transition: border-color 0.15s;
   }
 
-  .skill-card:hover { border-color: var(--accent); }
+  .skill-card:hover { border-color: var(--teal); }
 
   .skill-header {
     display: flex; align-items: flex-start;
     justify-content: space-between; gap: 12px; margin-bottom: 8px;
   }
 
-  .skill-name { font-size: 15px; font-weight: 600; color: var(--text); }
-
-  .skill-tag {
-    font-size: 10px; font-weight: 600;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--text-soft); background: var(--bg);
-    border: 1px solid var(--border); padding: 2px 8px;
-    border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+  .skill-name {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px; font-weight: 600;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--charcoal);
   }
 
-  .skill-desc { font-size: 13px; color: var(--text-mid); line-height: 1.6; margin-bottom: 12px; }
+  .skill-tag {
+    font-family: 'Lato', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--teal);
+    border: 1px solid var(--teal);
+    padding: 2px 10px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+
+  .skill-desc { font-size: 14px; color: var(--body-text); line-height: 1.6; margin-bottom: 14px; }
 
   .skill-command {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px; background: var(--bg);
-    border: 1px solid var(--border); border-radius: 5px;
-    padding: 8px 12px; color: var(--accent);
-    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; background: var(--light-grey);
+    border: 1px solid var(--mid-grey);
+    padding: 9px 14px; color: var(--teal);
+    display: flex; align-items: center; gap: 10px;
   }
 
-  .command-prefix { color: var(--text-soft); user-select: none; }
+  .command-prefix { color: #aaa; user-select: none; }
 
   .skill-example {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px; background: var(--bg);
-    border: 1px solid var(--border); border-radius: 5px;
-    padding: 8px 12px; color: var(--text-mid);
-    margin-top: 8px; line-height: 1.5;
+    font-size: 11.5px; background: var(--light-grey);
+    border: 1px solid var(--mid-grey);
+    padding: 9px 14px; color: var(--body-text);
+    margin-top: 8px; line-height: 1.6;
   }
 
   .skill-example-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px; font-weight: 600;
-    letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--text-soft); display: block; margin-bottom: 4px;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: #aaa; display: block; margin-bottom: 5px;
   }
 
-  /* ── Training: filter chips ── */
-  .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+  /* ── Training / filter chips ── */
+  .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
 
   .filter-chip {
-    padding: 6px 16px; border-radius: 20px;
-    font-size: 12px; font-weight: 500;
-    border: 1px solid var(--border);
-    background: var(--surface); color: var(--text-mid);
+    padding: 7px 18px;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border: 1px solid var(--mid-grey);
+    background: var(--white); color: var(--body-text);
     cursor: pointer; transition: all 0.15s;
-    font-family: 'Inter', sans-serif;
   }
 
-  .filter-chip:hover { border-color: var(--accent); color: var(--accent); }
-  .filter-chip.active { background: var(--accent); border-color: var(--accent); color: white; }
+  .filter-chip:hover { border-color: var(--teal); color: var(--teal); }
+  .filter-chip.active { background: var(--teal); border-color: var(--teal); color: white; }
 
-  /* ── Training: video grid ── */
+  /* ── Training grid ── */
   .training-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
+    gap: 1px;
+    background: var(--mid-grey);
+    border: 1px solid var(--mid-grey);
   }
 
   .training-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); overflow: hidden;
-    transition: border-color 0.15s; text-decoration: none;
+    background: var(--white);
+    transition: background 0.15s;
+    text-decoration: none;
     display: block;
   }
 
-  .training-card:hover { border-color: var(--accent); }
+  .training-card:hover { background: var(--light-grey); }
   .training-card.hidden { display: none; }
 
-  .training-card.is-video .card-thumb {
+  .card-thumb {
     aspect-ratio: 16/9;
-    background: linear-gradient(135deg, var(--accent-bg) 0%, var(--border) 100%);
     display: flex; align-items: center; justify-content: center;
   }
+
+  .training-card.is-video .card-thumb { background: var(--teal); }
+  .training-card.is-written .card-thumb { background: var(--light-grey); }
 
   .play-btn {
-    width: 44px; height: 44px; border-radius: 50%;
-    background: var(--accent);
+    width: 44px; height: 44px;
+    background: rgba(255,255,255,0.2);
     display: flex; align-items: center; justify-content: center;
-    opacity: 0.9;
+    transition: background 0.15s;
   }
 
+  .training-card:hover .play-btn { background: rgba(255,255,255,0.3); }
   .play-btn svg { margin-left: 3px; }
 
-  .training-card.is-written .card-thumb {
-    aspect-ratio: 16/9;
-    background: var(--accent-bg);
-    display: flex; align-items: center; justify-content: center;
-  }
+  .doc-icon { width: 36px; height: 36px; opacity: 0.35; }
 
-  .doc-icon {
-    width: 36px; height: 36px; opacity: 0.5;
-  }
+  .card-info { padding: 16px 18px; }
 
-  .card-info { padding: 14px 16px; }
-
-  .card-type-row {
-    display: flex; align-items: center; gap: 8px; margin-bottom: 4px;
-  }
+  .card-type-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
 
   .card-type-badge {
-    font-size: 10px; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--accent);
+    font-family: 'Lato', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--teal);
   }
 
   .card-format {
-    font-size: 10px; color: var(--text-soft);
-    background: var(--bg); border: 1px solid var(--border);
-    padding: 1px 7px; border-radius: 10px; font-weight: 500;
+    font-family: 'Lato', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: #bbb;
   }
 
-  .card-title { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.4; }
-  .card-meta { font-size: 11px; color: var(--text-soft); margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .card-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: var(--charcoal); line-height: 1.4;
+  }
 
-  /* ── Feedback card ── */
+  .card-meta {
+    font-size: 11px; color: #bbb; margin-top: 4px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ── Feedback ── */
   .feedback-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 28px 32px;
-    display: flex; align-items: flex-start; gap: 24px;
+    background: var(--light-grey);
+    border: 1px solid var(--mid-grey);
+    padding: 32px 36px;
+    display: flex; align-items: flex-start; gap: 28px;
   }
 
   .feedback-icon {
-    width: 44px; height: 44px; border-radius: 10px;
-    background: var(--accent-bg);
+    width: 48px; height: 48px;
+    background: var(--teal);
     display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; color: var(--accent); font-size: 20px;
+    flex-shrink: 0; color: white; font-size: 22px;
   }
 
-  .feedback-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-  .feedback-desc { font-size: 13px; color: var(--text-mid); line-height: 1.6; margin-bottom: 16px; }
+  .feedback-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px; font-weight: 600;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--charcoal); margin-bottom: 8px;
+  }
+
+  .feedback-desc { font-size: 14px; color: var(--body-text); line-height: 1.6; margin-bottom: 18px; }
 
   .feedback-btn {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 9px 18px; background: var(--accent);
-    color: white; border-radius: var(--radius);
-    font-size: 13px; font-weight: 500;
-    text-decoration: none; transition: background 0.15s;
-    font-family: 'Inter', sans-serif; border: none; cursor: pointer;
+    display: inline-flex; align-items: center;
+    padding: 12px 24px;
+    background: var(--amber); color: var(--charcoal);
+    font-family: 'Lato', sans-serif;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; border: none; cursor: pointer;
+    transition: background 0.15s;
   }
 
-  .feedback-btn:hover { background: var(--accent-lt); }
+  .feedback-btn:hover { background: var(--amber-dark); color: var(--white); }
 
   @media (max-width: 640px) {
     .topnav { padding: 0 20px; }
     .page-body { padding-left: 20px; padding-right: 20px; }
-    .phasebar-step { padding: 0 10px; }
+    .phasebar-step { padding: 0 8px; }
     .phasebar-connector { width: 20px; }
-    .phasebar-label { font-size: 11px; }
-    .welcome-banner { padding: 24px 24px; }
-    .welcome-headline { font-size: 22px; }
-    .nav-tab { padding: 6px 12px; font-size: 13px; }
+    .welcome-banner { padding: 32px 28px; }
+    .nav-tab { padding: 8px 14px; }
   }
 </style>
 
 <!-- Top nav -->
 <nav class="topnav">
   <div class="nav-brand">
-    <div class="nav-brand-eyebrow">Business Brain OS</div>
-    <div class="nav-brand-name">Katie's Portal</div>
+    <div class="nav-brand-top">Your Web Toolkit</div>
+    <div class="nav-brand-name">Business Brain OS</div>
   </div>
   <div class="nav-tabs">
     <button class="nav-tab active" data-tab="home">Home</button>
     <button class="nav-tab" data-tab="skills">Skills</button>
     <button class="nav-tab" data-tab="training">Training</button>
   </div>
-  <a href="[FEEDBACK FORM URL]" class="nav-feedback">Leave feedback →</a>
+  <a href="[FEEDBACK FORM URL]" class="nav-feedback">Leave feedback</a>
 </nav>
 
-<!-- Phase progress bar -->
+<!-- Phase bar -->
 <div class="phasebar">
-  <div class="phasebar-step done">
-    <div class="phasebar-dot"><span class="phasebar-check">✓</span><div class="phasebar-inner"></div></div>
-    <span class="phasebar-label">Phase 1 — Onboarding</span>
-  </div>
-  <div class="phasebar-connector done"></div>
-  <div class="phasebar-step done">
-    <div class="phasebar-dot"><span class="phasebar-check">✓</span><div class="phasebar-inner"></div></div>
-    <span class="phasebar-label">Phase 2 — Build</span>
-  </div>
-  <div class="phasebar-connector half"></div>
-  <div class="phasebar-step current">
-    <div class="phasebar-dot"><span class="phasebar-check">✓</span><div class="phasebar-inner"></div></div>
-    <span class="phasebar-label">Phase 3 — Handover</span>
-  </div>
-  <div class="phasebar-connector"></div>
-  <div class="phasebar-step">
-    <div class="phasebar-dot"><span class="phasebar-check">✓</span><div class="phasebar-inner"></div></div>
-    <span class="phasebar-label">Phase 4 — Bedding in</span>
+  <div class="phasebar-inner">
+    <div class="phasebar-step done">
+      <div class="phasebar-dot"><span class="phasebar-check">✓</span><div class="phasebar-pulse"></div></div>
+      <span class="phasebar-label">1 — Onboarding</span>
+    </div>
+    <div class="phasebar-connector done"></div>
+    <div class="phasebar-step done">
+      <div class="phasebar-dot"><span class="phasebar-check">✓</span><div class="phasebar-pulse"></div></div>
+      <span class="phasebar-label">2 — Build</span>
+    </div>
+    <div class="phasebar-connector half"></div>
+    <div class="phasebar-step current">
+      <div class="phasebar-dot"><span class="phasebar-check">✓</span><div class="phasebar-pulse"></div></div>
+      <span class="phasebar-label">3 — Handover</span>
+    </div>
+    <div class="phasebar-connector"></div>
+    <div class="phasebar-step">
+      <div class="phasebar-dot"><span class="phasebar-check">✓</span><div class="phasebar-pulse"></div></div>
+      <span class="phasebar-label">4 — Bedding in</span>
+    </div>
   </div>
 </div>
 
 <!-- Page body -->
 <div class="page-body">
 
-  <!-- HOME tab -->
+  <!-- HOME -->
   <div class="tab-panel active" id="panel-home">
 
     <div class="welcome-banner">
@@ -581,26 +604,24 @@
       </div>
     </div>
 
-    <!-- Open threads -->
     <div class="section">
       <div class="section-header">
         <h2 class="section-title">Open threads</h2>
         <span class="section-badge">3 items</span>
       </div>
-      <p style="font-size: 13px; color: var(--text-mid); margin-bottom: 16px; line-height: 1.6;">Things in progress that need your input or a decision before we can move forward.</p>
+      <p style="font-size: 14px; color: var(--body-text); margin-bottom: 20px; line-height: 1.6;">Things in progress that need your input or a decision before we can move forward.</p>
 
       <div class="open-threads">
-
         <div class="thread-item blocked">
-          <div style="flex-shrink:0; margin-top: 1px;"><span class="status-chip blocked">Blocked</span></div>
+          <div style="flex-shrink:0; margin-top:1px;"><span class="status-chip blocked">Blocked</span></div>
           <div>
             <div class="thread-text">Instagram carousel for "Energetic Empath" — 8 slides written and approved. Ready to render as images.</div>
-            <div class="thread-note">Waiting on: Katie's brand assets (colours, fonts, photos) so the visual creator can be configured. File at <code style="font-family: JetBrains Mono, monospace; font-size: 11px;">projects/social-posts/2026-08-10_energetic-empath/instagram-carousel.md</code></div>
+            <div class="thread-note">Waiting on: brand assets (colours, fonts, photos) so the visual creator can be configured. File at <code style="font-family: JetBrains Mono, monospace; font-size: 11px;">projects/social-posts/2026-08-10_energetic-empath/instagram-carousel.md</code></div>
           </div>
         </div>
 
         <div class="thread-item open">
-          <div style="flex-shrink:0; margin-top: 1px;"><span class="status-chip open">Decision needed</span></div>
+          <div style="flex-shrink:0; margin-top:1px;"><span class="status-chip open">Decision needed</span></div>
           <div>
             <div class="thread-text">"Energetic Triggers" batch — Katie wasn't happy with the Angle B rework. Need to know what specifically isn't working before picking a new direction.</div>
             <div class="thread-note">Four angles explored (A, B, D, E). Drafts at <code style="font-family: JetBrains Mono, monospace; font-size: 11px;">projects/social-posts/2026-07-22_energetic-triggers-v2/</code></div>
@@ -608,17 +629,15 @@
         </div>
 
         <div class="thread-item open">
-          <div style="flex-shrink:0; margin-top: 1px;"><span class="status-chip open">Optional</span></div>
+          <div style="flex-shrink:0; margin-top:1px;"><span class="status-chip open">Optional</span></div>
           <div>
             <div class="thread-text">"Energetic Empath" social posts — 7 records in Airtable with empty Source fields. Decide whether to create a Source record so they link back cleanly.</div>
             <div class="thread-note">Table: <code style="font-family: JetBrains Mono, monospace; font-size: 11px;">tbliLgvyXEscJSbxE</code></div>
           </div>
         </div>
-
       </div>
     </div>
 
-    <!-- Your system -->
     <div class="section">
       <div class="section-header">
         <h2 class="section-title">Your system</h2>
@@ -634,7 +653,7 @@
         <div class="folder-line">│   ├── <span class="folder-name">voice-profile.md</span> &nbsp;<span class="folder-desc">Warm authority, story-first, British dry humour — how Claude sounds like you</span></div>
         <div class="folder-line">│   ├── <span class="folder-name">icp.md</span> &nbsp;<span class="folder-desc">Your ideal client — high-achieving women in midlife who've tried everything</span></div>
         <div class="folder-line">│   ├── <span class="folder-name">positioning.md</span> &nbsp;<span class="folder-desc">The Root Cause Guide positioning angle</span></div>
-        <div class="folder-line">│   ├── <span class="folder-name">story-bank.md</span> &nbsp;<span class="folder-desc">Your stories and client results — used in copy and social content</span></div>
+        <div class="folder-line">│   ├── <span class="folder-name">story-bank.md</span> &nbsp;<span class="folder-desc">Your stories and client results</span></div>
         <div class="folder-line">│   └── <span class="folder-name">Offers/</span> &nbsp;<span class="folder-desc">7 offer files — Aligned & Empowered, Soul Aligned Sessions, Retreats, Human Design, and more</span></div>
         <div class="folder-line">├── <span class="folder-name">context/</span></div>
         <div class="folder-line">│   ├── <span class="folder-name">USER.md</span> &nbsp;<span class="folder-desc">Your profile — Claude reads this every session</span></div>
@@ -644,14 +663,13 @@
         <div class="folder-line">└── <span class="folder-name">memory/</span> &nbsp;<span class="folder-desc">Builds automatically — don't edit this folder</span></div>
       </div>
 
-      <div style="margin-top: 20px;">
+      <div style="margin-top:18px;">
         <div class="callout">
           <strong>Your voice in one sentence:</strong> Katie writes like a clever, warm friend who leads with story and earns the insight — British, grounded, gently funny, and never performing its spirituality.
         </div>
       </div>
     </div>
 
-    <!-- Feedback -->
     <div class="section">
       <div class="section-header">
         <h2 class="section-title">Feedback</h2>
@@ -661,7 +679,7 @@
         <div>
           <div class="feedback-title">How is it going?</div>
           <div class="feedback-desc">Three questions, two minutes. If something feels off — the voice isn't right, a skill isn't working, or you're not sure how to do something — tell me here or drop me a WhatsApp. Your feedback is what makes the system get better.</div>
-          <a href="[FEEDBACK FORM URL]" class="feedback-btn">Give feedback →</a>
+          <a href="[FEEDBACK FORM URL]" class="feedback-btn">Give feedback</a>
         </div>
       </div>
     </div>
@@ -669,14 +687,13 @@
   </div><!-- /panel-home -->
 
 
-  <!-- SKILLS tab -->
+  <!-- SKILLS -->
   <div class="tab-panel" id="panel-skills">
 
     <div class="section">
       <div class="section-header">
         <h2 class="section-title">Getting started</h2>
       </div>
-
       <div class="skill-list">
 
         <div class="skill-card">
@@ -704,8 +721,7 @@
       <div class="section-header">
         <h2 class="section-title">Your skills</h2>
       </div>
-
-      <p style="font-size: 13px; color: var(--text-mid); margin-bottom: 20px; line-height: 1.6;">These are the skills most relevant to how you work. The full library has 50+ — start here.</p>
+      <p style="font-size: 14px; color: var(--body-text); margin-bottom: 24px; line-height: 1.6;">These are the skills most relevant to how you work. The full library has 50+ — start here.</p>
 
       <div class="skill-list">
 
@@ -794,7 +810,7 @@
   </div><!-- /panel-skills -->
 
 
-  <!-- TRAINING tab -->
+  <!-- TRAINING -->
   <div class="tab-panel" id="panel-training">
 
     <div class="section">
@@ -802,7 +818,7 @@
         <h2 class="section-title">Training</h2>
       </div>
 
-      <p style="font-size: 13px; color: var(--text-mid); margin-bottom: 20px; line-height: 1.6;">Video walkthroughs and written guides. Filter by topic or browse everything.</p>
+      <p style="font-size: 14px; color: var(--body-text); margin-bottom: 24px; line-height: 1.6;">Video walkthroughs and written guides. Filter by topic or browse everything.</p>
 
       <div class="filter-bar">
         <button class="filter-chip active" data-filter="all">All</button>
@@ -816,15 +832,10 @@
 
         <a class="training-card is-video" data-tag="getting-started" href="#" target="_blank">
           <div class="card-thumb">
-            <div class="play-btn">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M5 3l9 5-9 5V3z"/></svg>
-            </div>
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M5 3l9 5-9 5V3z"/></svg></div>
           </div>
           <div class="card-info">
-            <div class="card-type-row">
-              <span class="card-type-badge">Getting started</span>
-              <span class="card-format">Video</span>
-            </div>
+            <div class="card-type-row"><span class="card-type-badge">Getting started</span><span class="card-format">Video</span></div>
             <div class="card-title">Opening your system for the first time</div>
             <div class="card-meta">3 min · Replace href with Loom URL</div>
           </div>
@@ -832,15 +843,10 @@
 
         <a class="training-card is-video" data-tag="workflow" href="#" target="_blank">
           <div class="card-thumb">
-            <div class="play-btn">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M5 3l9 5-9 5V3z"/></svg>
-            </div>
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M5 3l9 5-9 5V3z"/></svg></div>
           </div>
           <div class="card-info">
-            <div class="card-type-row">
-              <span class="card-type-badge">Your workflow</span>
-              <span class="card-format">Video</span>
-            </div>
+            <div class="card-type-row"><span class="card-type-badge">Your workflow</span><span class="card-format">Video</span></div>
             <div class="card-title">Repurposing a video from start to finish</div>
             <div class="card-meta">Replace href with Loom URL</div>
           </div>
@@ -848,15 +854,10 @@
 
         <a class="training-card is-video" data-tag="content" href="#" target="_blank">
           <div class="card-thumb">
-            <div class="play-btn">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M5 3l9 5-9 5V3z"/></svg>
-            </div>
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M5 3l9 5-9 5V3z"/></svg></div>
           </div>
           <div class="card-info">
-            <div class="card-type-row">
-              <span class="card-type-badge">Content</span>
-              <span class="card-format">Video</span>
-            </div>
+            <div class="card-type-row"><span class="card-type-badge">Content</span><span class="card-format">Video</span></div>
             <div class="card-title">Using the content router</div>
             <div class="card-meta">Replace href with Loom URL</div>
           </div>
@@ -864,15 +865,10 @@
 
         <a class="training-card is-video" data-tag="daily-habit" href="#" target="_blank">
           <div class="card-thumb">
-            <div class="play-btn">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M5 3l9 5-9 5V3z"/></svg>
-            </div>
+            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M5 3l9 5-9 5V3z"/></svg></div>
           </div>
           <div class="card-info">
-            <div class="card-type-row">
-              <span class="card-type-badge">Daily habit</span>
-              <span class="card-format">Video</span>
-            </div>
+            <div class="card-type-row"><span class="card-type-badge">Daily habit</span><span class="card-format">Video</span></div>
             <div class="card-title">The wrap-up ritual</div>
             <div class="card-meta">Replace href with Loom URL</div>
           </div>
@@ -880,13 +876,10 @@
 
         <a class="training-card is-written" data-tag="getting-started" href="#" target="_blank">
           <div class="card-thumb">
-            <svg class="doc-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" color="var(--accent)"><rect x="6" y="4" width="24" height="28" rx="3"/><path d="M11 12h14M11 18h14M11 24h8"/></svg>
+            <svg class="doc-icon" viewBox="0 0 36 36" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"><rect x="6" y="4" width="24" height="28" rx="2"/><path d="M11 12h14M11 18h14M11 24h8"/></svg>
           </div>
           <div class="card-info">
-            <div class="card-type-row">
-              <span class="card-type-badge">Getting started</span>
-              <span class="card-format">Guide</span>
-            </div>
+            <div class="card-type-row"><span class="card-type-badge">Getting started</span><span class="card-format">Guide</span></div>
             <div class="card-title">How to check in with your system</div>
             <div class="card-meta">Written guide · Replace href with link</div>
           </div>
@@ -894,13 +887,10 @@
 
         <a class="training-card is-written" data-tag="daily-habit" href="#" target="_blank">
           <div class="card-thumb">
-            <svg class="doc-icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" color="var(--accent)"><rect x="6" y="4" width="24" height="28" rx="3"/><path d="M11 12h14M11 18h14M11 24h8"/></svg>
+            <svg class="doc-icon" viewBox="0 0 36 36" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"><rect x="6" y="4" width="24" height="28" rx="2"/><path d="M11 12h14M11 18h14M11 24h8"/></svg>
           </div>
           <div class="card-info">
-            <div class="card-type-row">
-              <span class="card-type-badge">Daily habit</span>
-              <span class="card-format">Guide</span>
-            </div>
+            <div class="card-type-row"><span class="card-type-badge">Daily habit</span><span class="card-format">Guide</span></div>
             <div class="card-title">The wrap-up ritual — step by step</div>
             <div class="card-meta">Written guide · Replace href with link</div>
           </div>
@@ -914,7 +904,6 @@
 </div><!-- /page-body -->
 
 <script>
-  // Tab switching
   document.querySelectorAll('.nav-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
@@ -924,7 +913,6 @@
     });
   });
 
-  // Filter chips (training tab)
   document.querySelectorAll('.filter-chip').forEach(chip => {
     chip.addEventListener('click', () => {
       document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));

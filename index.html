@@ -2138,11 +2138,8 @@
     title.addEventListener('click', () => {
       const module = title.closest('.sidebar-module');
       const isOpen = module.classList.contains('open');
-      // Toggle accordion — close all modules in this tab, open clicked one
-      const tabPanel = module.closest('.tab-panel');
-      tabPanel.querySelectorAll('.sidebar-module').forEach(m => m.classList.remove('open'));
+      module.classList.toggle('open');
       if (!isOpen) {
-        module.classList.add('open');
         // Show intro panel
         document.querySelectorAll('.sidebar-lesson').forEach(l => l.classList.remove('active'));
         document.querySelectorAll('.sidebar-module-title').forEach(t => t.classList.remove('active'));

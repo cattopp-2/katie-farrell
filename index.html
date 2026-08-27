@@ -1211,6 +1211,7 @@
             <li>SEO: keyword research, blog writing, page optimisation, rank tracking</li>
             <li>Research: trends, competitor content, topic and hook ideas</li>
             <li>Strategy: content routing, weekly planning, end-of-day review</li>
+            <li>Website & page building: service pages, sales pages, HTML page design built to your brand</li>
             <li>Pipelines: one command that produces multiple outputs (a transcript into a full week of content, a YouTube video into a blog post plus social posts plus email)</li>
             <li>Utility: fact checking, formatting, PDF generation, publishing</li>
           </ul>
@@ -1343,6 +1344,19 @@
               <tbody>
                 <tr><td><code>end-of-day</code></td><td>5-minute close ritual — sets tomorrow's focus and updates your memory files</td><td>"Run end of day"</td></tr>
                 <tr><td><code>wrap-up</code></td><td>End-of-session wrap-up — writes memory block and logs skill feedback</td><td>"Run wrap-up"</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+
+          <details class="cs-group">
+            <summary class="cs-group-title">Website &amp; page building</summary>
+            <div class="skill-table-wrap"><table class="skill-table">
+              <thead><tr><th>Skill</th><th>What it does</th><th>Say something like…</th></tr></thead>
+              <tbody>
+                <tr><td><code>service-page-writer</code></td><td>Write an SEO-optimised service page — keyword strategy, meta, headings, CTAs</td><td>"Write a service page for [offer]"</td></tr>
+                <tr><td><code>sales-page-writer</code></td><td>Write a full conversion-focused sales page for any offer type</td><td>"Write a sales page for [offer]"</td></tr>
+                <tr><td><code>sales-page-html-builder</code></td><td>Take finished page copy and build a branded HTML file ready to paste into WordPress</td><td>"Build an HTML page from this copy"</td></tr>
+                <tr><td><code>viz-interface-design</code></td><td>Design a distinctive, on-brand page from scratch — layout, sections, visual hierarchy</td><td>"Design a page for [offer]"</td></tr>
               </tbody>
             </table></div>
           </details>
@@ -1883,6 +1897,7 @@
           <div class="sidebar-lesson" data-lesson="tr-cfg-voice">Your Brand Voice</div>
           <div class="sidebar-lesson" data-lesson="tr-cfg-language">Language Rules</div>
           <div class="sidebar-lesson" data-lesson="tr-cfg-audience">Map Your Audience</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-visual-brand">Your Visual Brand</div>
         </div>
       </div>
 
@@ -2081,6 +2096,27 @@
           <p>The more you add over time, the more accurately the system can write for your specific audience rather than a generic version of them.</p>
           <h3>Going deeper with mkt-icp</h3>
           <p>When you're ready to go further, <code>run mkt-icp</code> goes out and finds language you don't have yet — researching what your audience says in public (Amazon reviews, Reddit threads, YouTube comments) and surfacing the exact words they use when nobody's watching.</p>
+        </div>
+      </div>
+
+      <!-- Your Visual Brand -->
+      <div class="lesson-panel" id="lesson-tr-cfg-visual-brand">
+        <div class="lesson-title">Your Visual Brand</div>
+        <div class="lesson-body">
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Your brand standards file is what keeps every page you build looking consistent — the same colours, fonts, and spacing, every time.</p>
+          <h3>Where it lives</h3>
+          <p>Your visual brand guidelines are stored in your <code>brand-context/Website/</code> folder. This includes your design tokens — the exact colour values, font names, spacing scales, and button styles that define your brand on screen.</p>
+          <h3>How it gets used</h3>
+          <p>When you ask Claude to build a page using <code>viz-interface-design</code>, it reads these files first. That means every page starts from your palette and type system rather than something generic. You don't have to describe your brand each time — it's already loaded.</p>
+          <h3>Building a new page</h3>
+          <p>The typical workflow is:</p>
+          <ol>
+            <li>Write the copy first — using <code>service-page-writer</code>, <code>sales-page-writer</code>, or by drafting it yourself</li>
+            <li>Say: <em>"Design a page for [offer] using this copy"</em> — <code>viz-interface-design</code> takes the copy and builds the layout</li>
+            <li>The output is an HTML file you paste into a WordPress page builder (Divi) code block</li>
+          </ol>
+          <h3>Keeping it updated</h3>
+          <p>If your brand ever evolves — new accent colour, updated fonts, different button style — the design tokens file is the single place to change it. Every future page build picks up the new values automatically.</p>
         </div>
       </div>
 

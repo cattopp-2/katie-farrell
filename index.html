@@ -525,6 +525,313 @@
 
   .feedback-btn:hover { background: var(--amber-dark); color: var(--white); }
 
+  /* ── Course layout (Skills tab) ── */
+  #panel-skills {
+    margin-left: -40px;
+    margin-right: -40px;
+    margin-top: -20px;
+  }
+
+  .course-layout {
+    display: flex;
+    min-height: calc(100vh - var(--nav-h) - var(--phase-h));
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* Sidebar */
+  .course-sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--mid-grey);
+    padding: 28px 0 60px;
+    overflow-y: auto;
+  }
+
+  .sidebar-module { margin-bottom: 4px; }
+
+  .sidebar-module-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--charcoal);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .sidebar-module-arrow {
+    font-size: 10px;
+    color: #bbb;
+    transition: transform 0.15s;
+    flex-shrink: 0;
+  }
+
+  .sidebar-module.open .sidebar-module-arrow { transform: rotate(180deg); }
+
+  .sidebar-lessons { display: none; }
+  .sidebar-module.open .sidebar-lessons { display: block; }
+
+  .sidebar-lesson {
+    display: block;
+    padding: 8px 20px 8px 28px;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #777;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: all 0.12s;
+  }
+
+  .sidebar-lesson:hover { color: var(--charcoal); background: var(--light-grey); }
+
+  .sidebar-lesson.active {
+    color: var(--charcoal);
+    font-weight: 700;
+    background: rgba(255,189,74,0.18);
+    border-left-color: var(--amber);
+  }
+
+  /* Main content */
+  .course-main {
+    flex: 1;
+    min-width: 0;
+    padding: 40px 48px 80px;
+    overflow-y: auto;
+  }
+
+  .lesson-panel { display: none; }
+  .lesson-panel.active { display: block; }
+
+  .lesson-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--charcoal);
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--mid-grey);
+  }
+
+  .lesson-body p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--body-text);
+    margin-bottom: 18px;
+  }
+
+  .lesson-body h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    margin: 32px 0 14px;
+  }
+
+  .lesson-callout {
+    background: var(--teal-bg);
+    border-left: 3px solid var(--teal);
+    padding: 16px 20px;
+    margin: 20px 0 24px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--body-text);
+  }
+
+  .lesson-callout strong { color: var(--teal-dark); }
+
+  /* Method cards (How to Call) */
+  .method-cards { display: flex; flex-direction: column; gap: 12px; margin: 20px 0 28px; }
+
+  .method-card {
+    border: 1px solid var(--mid-grey);
+    padding: 18px 22px;
+  }
+
+  .method-card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .method-num {
+    width: 26px; height: 26px;
+    background: var(--teal);
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .method-name {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  .method-tag {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: var(--teal-bg);
+    padding: 2px 8px;
+  }
+
+  .method-desc {
+    font-size: 13px;
+    color: var(--body-text);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .method-example {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: var(--light-grey);
+    padding: 8px 12px;
+    color: var(--charcoal);
+    line-height: 1.6;
+  }
+
+  /* Skill table */
+  .skill-table-wrap { overflow-x: auto; margin: 8px 0 28px; }
+
+  .skill-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .skill-table thead tr { border-bottom: 2px solid var(--mid-grey); }
+
+  .skill-table th {
+    padding: 9px 14px;
+    text-align: left;
+    font-family: 'Lato', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #aaa;
+  }
+
+  .skill-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--mid-grey);
+    line-height: 1.5;
+    vertical-align: top;
+    color: var(--body-text);
+  }
+
+  .skill-table tbody tr:last-child td { border-bottom: none; }
+  .skill-table tbody tr:hover td { background: var(--light-grey); }
+  .skill-table td:first-child { white-space: nowrap; }
+
+  .skill-table code, .lesson-body code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    background: var(--teal-bg);
+    color: var(--teal-dark);
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+
+  /* Cheatsheet accordion inside lesson */
+  .cs-group { border: 1px solid var(--mid-grey); margin-bottom: 6px; }
+
+  .cs-group-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+    cursor: pointer;
+    list-style: none;
+    background: var(--light-grey);
+    user-select: none;
+  }
+
+  .cs-group-title::-webkit-details-marker { display: none; }
+  .cs-group-title::after { content: '+'; font-size: 16px; font-weight: 300; color: var(--teal); }
+  details[open] .cs-group-title::after { content: '−'; }
+
+  /* Curated skill cards in sidebar lessons */
+  .lesson-skill-card {
+    border: 1px solid var(--mid-grey);
+    padding: 20px 22px;
+    margin-bottom: 12px;
+  }
+
+  .lesson-skill-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .lesson-skill-name {
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--charcoal);
+  }
+
+  .lesson-skill-tag {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: var(--teal-bg);
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+
+  .lesson-skill-desc {
+    font-size: 14px;
+    color: var(--body-text);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .lesson-skill-cmd {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    background: var(--light-grey);
+    padding: 8px 12px;
+    color: var(--charcoal);
+    margin-bottom: 10px;
+  }
+
+  .lesson-skill-example {
+    font-size: 13px;
+    color: #777;
+    border-left: 2px solid var(--amber);
+    padding-left: 12px;
+    line-height: 1.6;
+  }
+
   @media (max-width: 640px) {
     .topnav { padding: 0 20px; }
     .page-body { padding-left: 20px; padding-right: 20px; }
@@ -532,6 +839,10 @@
     .phasebar-connector { width: 20px; }
     .welcome-banner { padding: 32px 28px; }
     .nav-tab { padding: 8px 14px; }
+    #panel-skills { margin-left: -20px; margin-right: -20px; }
+    .course-sidebar { width: 180px; }
+    .course-main { padding: 28px 20px 60px; }
+    .skill-table th:last-child, .skill-table td:last-child { display: none; }
   }
 </style>
 
@@ -689,123 +1000,422 @@
 
   <!-- SKILLS -->
   <div class="tab-panel" id="panel-skills">
+  <div class="course-layout">
 
-    <div class="section">
-      <div class="section-header">
-        <h2 class="section-title">Getting started</h2>
+    <!-- ═══ SIDEBAR ═══ -->
+    <div class="course-sidebar">
+
+      <div class="sidebar-module open" data-module="what-are-skills">
+        <div class="sidebar-module-title">What Are Skills? <span class="sidebar-module-arrow">▾</span></div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson active" data-lesson="getting-started">Getting Started</div>
+          <div class="sidebar-lesson" data-lesson="how-to-call">How to Call a Skill</div>
+          <div class="sidebar-lesson" data-lesson="skill-library">What's in the Library</div>
+          <div class="sidebar-lesson" data-lesson="cheatsheet">Skills Cheatsheet</div>
+          <div class="sidebar-lesson" data-lesson="how-improve">How Skills Improve</div>
+        </div>
       </div>
-      <div class="skill-list">
 
-        <div class="skill-card">
-          <div class="skill-header">
-            <div class="skill-name">Check in with your system</div>
-            <div class="skill-tag">First thing</div>
-          </div>
-          <div class="skill-desc">At the start of every session, Claude reads your context files. Confirm it's loaded correctly before you start work.</div>
-          <div class="skill-command"><span class="command-prefix">Say:</span> Who am I and what am I working on?</div>
+      <div class="sidebar-module open" data-module="daily-habits">
+        <div class="sidebar-module-title">Daily Habits <span class="sidebar-module-arrow">▾</span></div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson" data-lesson="check-in">Check In With Your System</div>
+          <div class="sidebar-lesson" data-lesson="wrap-up-habit">End Every Session</div>
         </div>
-
-        <div class="skill-card">
-          <div class="skill-header">
-            <div class="skill-name">End every session with wrap-up</div>
-            <div class="skill-tag">Daily habit</div>
-          </div>
-          <div class="skill-desc">Run this every time before you close Claude. It saves your open threads, captures any feedback, and makes sure nothing gets lost between sessions. Without this, the system doesn't compound.</div>
-          <div class="skill-command"><span class="command-prefix">Type:</span> /wrap-up</div>
-        </div>
-
       </div>
-    </div>
 
-    <div class="section">
-      <div class="section-header">
-        <h2 class="section-title">Your skills</h2>
+      <div class="sidebar-module open" data-module="your-skills">
+        <div class="sidebar-module-title">Your Skills <span class="sidebar-module-arrow">▾</span></div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson" data-lesson="repurpose-video">Repurpose Video</div>
+          <div class="sidebar-lesson" data-lesson="content-suite">Content Suite</div>
+          <div class="sidebar-lesson" data-lesson="content-router">Content Router</div>
+          <div class="sidebar-lesson" data-lesson="email-sequence">Email Sequence Writer</div>
+          <div class="sidebar-lesson" data-lesson="social-post">Social Post Writer</div>
+          <div class="sidebar-lesson" data-lesson="ceo-check">CEO Check</div>
+          <div class="sidebar-lesson" data-lesson="content-ideas">Content Ideas</div>
+        </div>
       </div>
-      <p style="font-size: 14px; color: var(--body-text); margin-bottom: 24px; line-height: 1.6;">These are the skills most relevant to how you work. The full library has 50+ — start here.</p>
 
-      <div class="skill-list">
+    </div><!-- /course-sidebar -->
 
-        <div class="skill-card">
-          <div class="skill-header">
-            <div class="skill-name">Repurpose Video</div>
-            <div class="skill-tag">Your #1 workflow</div>
-          </div>
-          <div class="skill-desc">Turn one YouTube video or recording into a full week of content — Facebook posts, LinkedIn, Threads thread, and email. This is what gets your back catalogue working for you.</div>
-          <div class="skill-command"><span class="command-prefix">Type:</span> run repurpose-video</div>
-          <div class="skill-example">
-            <span class="skill-example-label">Example prompt for you</span>
-            Paste or link your YouTube video URL, or drop a transcript into source/ and say: "Repurpose this video — it's about nervous system regulation and why willpower doesn't work long-term"
-          </div>
+    <!-- ═══ MAIN CONTENT ═══ -->
+    <div class="course-main">
+
+      <!-- Getting Started -->
+      <div class="lesson-panel active" id="lesson-getting-started">
+        <div class="lesson-title">Getting Started</div>
+        <div class="lesson-body">
+          <p>Skills are pre-built instructions that tell Claude how to handle a specific type of task — in your voice, for your audience, using your context files.</p>
+          <p>When you run a skill, Claude reads the instructions for that task, loads your voice profile, your audience language, and your offer details, then produces output that fits your brand. It doesn't generate generic output from scratch — it works from your system.</p>
+          <div class="lesson-callout"><strong>Think of it like this:</strong> a skill is a trained member of staff who already knows your business. You don't explain who your clients are every time, or what your tone of voice is, or how you like your emails structured. The skill already has all of that.</div>
+          <h3>Skills also follow proven frameworks</h3>
+          <p>A sales page skill doesn't just write words — it follows a specific structure built on conversion principles. An email sequence skill knows the right flow to take someone from first contact to ready to buy. A social post skill uses frameworks designed to stop the scroll.</p>
+          <p>You get the output of those frameworks without needing to follow a template — it's all built in.</p>
+          <h3>What's in your library</h3>
+          <p>Your system comes with over 50 skills covering writing copy, SEO, research, strategy, content pipelines, and more. You don't need to learn them all before you start. You'll discover the relevant ones as you build your content rhythm.</p>
+          <p>The full list is in the <strong>Skills Cheatsheet</strong> lesson. The <strong>Your Skills</strong> section above highlights the ones most relevant to how you work.</p>
         </div>
-
-        <div class="skill-card">
-          <div class="skill-header">
-            <div class="skill-name">Content Suite</div>
-            <div class="skill-tag">Content</div>
-          </div>
-          <div class="skill-desc">One idea → 2 Facebook/LinkedIn posts, 4 Threads threads, and an email. Asks for your offer and CTA before writing so everything is joined up.</div>
-          <div class="skill-command"><span class="command-prefix">Type:</span> run content-suite</div>
-          <div class="skill-example">
-            <span class="skill-example-label">Example prompt for you</span>
-            "The idea is: high-achieving women don't have an ambition problem — they have a self-abandonment pattern running underneath everything. CTA: Her Evolution programme."
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-header">
-            <div class="skill-name">Content Router</div>
-            <div class="skill-tag">Most used</div>
-          </div>
-          <div class="skill-desc">The content router takes any idea — a topic, a theme, a story you want to tell — and asks which format you want. It handles everything from there.</div>
-          <div class="skill-command"><span class="command-prefix">Type:</span> /content-router</div>
-          <div class="skill-example">
-            <span class="skill-example-label">Example prompt for you</span>
-            "I want to write about the moment I realised my exhaustion was my body's way of communicating — not something to push through"
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-header">
-            <div class="skill-name">Email Sequence Writer</div>
-            <div class="skill-tag">Email</div>
-          </div>
-          <div class="skill-desc">Full email sequences for your lead magnets and offers — freebie delivery, nurture to book-a-call, and Her Evolution launch. Asks you questions first, then writes in your voice.</div>
-          <div class="skill-command"><span class="command-prefix">Type:</span> run email-sequence-writer</div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-header">
-            <div class="skill-name">Social Post Writer</div>
-            <div class="skill-tag">Social</div>
-          </div>
-          <div class="skill-desc">Facebook and LinkedIn posts using 22 copy frameworks — story-led, pain-agitate-solve, direct offer, success story, and more. Always in your voice.</div>
-          <div class="skill-command"><span class="command-prefix">Type:</span> run social-post-writer</div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-header">
-            <div class="skill-name">CEO Check</div>
-            <div class="skill-tag">Strategy</div>
-          </div>
-          <div class="skill-desc">Before you say yes to a new idea, a collaboration, or a piece of content — run this. It checks the thing against your north star and tells you if it's aligned, off-track, or uncertain.</div>
-          <div class="skill-command"><span class="command-prefix">Type:</span> run ceo-check</div>
-          <div class="skill-example">
-            <span class="skill-example-label">Example prompt for you</span>
-            "CEO check — someone's asked me to co-host a summit on women's leadership. Is this worth my time right now?"
-          </div>
-        </div>
-
-        <div class="skill-card">
-          <div class="skill-header">
-            <div class="skill-name">Content Ideas from Source Material</div>
-            <div class="skill-tag">Planning</div>
-          </div>
-          <div class="skill-desc">Drop in a transcript, a voice note, or a Google Doc — this skill extracts 10–15 content ideas and saves approved ones to your Airtable queue ready to write.</div>
-          <div class="skill-command"><span class="command-prefix">Type:</span> /content-ideas</div>
-        </div>
-
       </div>
-    </div>
+
+      <!-- How to Call -->
+      <div class="lesson-panel" id="lesson-how-to-call">
+        <div class="lesson-title">How to Call a Skill</div>
+        <div class="lesson-body">
+          <p>There are three ways to call a skill. Use whichever feels most natural — they all work.</p>
+          <div class="method-cards">
+            <div class="method-card">
+              <div class="method-card-head">
+                <div class="method-num">1</div>
+                <div class="method-name">Slash commands</div>
+                <div class="method-tag">Fastest</div>
+              </div>
+              <div class="method-desc">Some of the most-used skills have a shortcut. Type it into the chat panel and press enter.</div>
+              <div class="method-example">/content-router — takes an idea and writes it in whatever format you choose<br>/content-ideas — extract ideas from a transcript or doc<br>/wrap-up — closes the session and saves what needs saving</div>
+            </div>
+            <div class="method-card">
+              <div class="method-card-head">
+                <div class="method-num">2</div>
+                <div class="method-name">Run by name</div>
+                <div class="method-tag">Most common</div>
+              </div>
+              <div class="method-desc">For skills without a slash command, type <em>run [skill name]</em>. Claude loads the skill, asks any questions it needs, and does the work.</div>
+              <div class="method-example">run repurpose-video<br>run email-sequence-writer<br>run ceo-check</div>
+            </div>
+            <div class="method-card">
+              <div class="method-card-head">
+                <div class="method-num">3</div>
+                <div class="method-name">Describe what you want</div>
+                <div class="method-tag">Most natural</div>
+              </div>
+              <div class="method-desc">You don't need to know which skill handles it. Describe what you want and Claude identifies the right skill and runs it.</div>
+              <div class="method-example">"Write me a Facebook post about nervous system regulation"<br>"I need an email sequence for my new offer"<br>"Turn this YouTube video into a week of content"</div>
+            </div>
+          </div>
+          <div class="lesson-callout">The slash commands and run syntax are shortcuts for when you already know what you want. Most of the time, just describing what you need is enough.</div>
+        </div>
+      </div>
+
+      <!-- Skill Library overview -->
+      <div class="lesson-panel" id="lesson-skill-library">
+        <div class="lesson-title">What's in the Skill Library</div>
+        <div class="lesson-body">
+          <p>Your system comes with over 50 skills. Some you'll use every day. Others you'll reach for occasionally when you need something specific. Here's a sense of the range:</p>
+          <h3>Writing copy in your voice</h3>
+          <p>Social posts, emails, sales pages, blog posts, Threads threads, Instagram captions. Every one reads your voice profile and audience language before writing — so output sounds like you, not a generic AI.</p>
+          <h3>SEO</h3>
+          <p>Keyword research, blog writing, page optimisation, rank tracking. These connect to your actual site and keyword data when you have the relevant integrations set up.</p>
+          <h3>Research</h3>
+          <p>Trending topics, competitor content, story angles, audience language mining. Real-time research pulled from Reddit, YouTube, and the web — not Claude's training data.</p>
+          <h3>Strategy</h3>
+          <p>CEO check, weekly planning, end-of-day review. These keep you working on the right things rather than just staying busy.</p>
+          <h3>Pipelines</h3>
+          <p>One command that produces multiple outputs at once. A YouTube video into a full week of content. A transcript into a blog post, social posts, and email. These are the time-savers.</p>
+          <h3>Utility</h3>
+          <p>Fact checking, PDF generation, WordPress publishing, YouTube transcript fetching. Tools that handle the admin side of content production.</p>
+          <p style="margin-top: 20px;">See the <strong>Skills Cheatsheet</strong> for the full list with descriptions and example prompts.</p>
+        </div>
+      </div>
+
+      <!-- Cheatsheet -->
+      <div class="lesson-panel" id="lesson-cheatsheet">
+        <div class="lesson-title">Skills Cheatsheet</div>
+        <div class="lesson-body">
+          <p>All 57 skills, grouped by category. You don't need to memorise these — describe what you want and Claude routes to the right one. Use this as a reference when you want to explore what's available.</p>
+
+          <details class="cs-group" open>
+            <summary class="cs-group-title">Setup — run once when getting started</summary>
+            <div class="skill-table-wrap"><table class="skill-table">
+              <thead><tr><th>Skill</th><th>What it does</th><th>Say something like…</th></tr></thead>
+              <tbody>
+                <tr><td><code>setup-user-profile</code></td><td>Asks you questions and writes your USER.md — who you are, your brand, your working style</td><td>"Run setup-user-profile"</td></tr>
+                <tr><td><code>setup-north-star</code></td><td>Writes your CEO north star and revenue tracker</td><td>"Run setup-north-star"</td></tr>
+                <tr><td><code>setup-brand-voice</code></td><td>Reads your writing samples and generates your voice profile</td><td>"Run setup-brand-voice"</td></tr>
+                <tr><td><code>setup-icp</code></td><td>Interviews you and writes your ideal client profile</td><td>"Run setup-icp"</td></tr>
+                <tr><td><code>setup-brand-stories</code></td><td>Compiles your brand stories and testimonials into a story bank</td><td>"Run setup-brand-stories"</td></tr>
+                <tr><td><code>setup-language-rules</code></td><td>Creates your language rules — words and phrases Claude must never use</td><td>"Run setup-language-rules"</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+
+          <details class="cs-group">
+            <summary class="cs-group-title">Brand &amp; strategy</summary>
+            <div class="skill-table-wrap"><table class="skill-table">
+              <thead><tr><th>Skill</th><th>What it does</th><th>Say something like…</th></tr></thead>
+              <tbody>
+                <tr><td><code>mkt-icp</code></td><td>Deepen your ICP using interview, research, or both — mines reviews, Reddit, social</td><td>"Deepen my audience profile"</td></tr>
+                <tr><td><code>mkt-positioning</code></td><td>Map your competitors and find your positioning angle</td><td>"What makes me different from competitors?"</td></tr>
+                <tr><td><code>ceo-check</code></td><td>Check any task or decision against your north star</td><td>"CEO check on this idea"</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+
+          <details class="cs-group">
+            <summary class="cs-group-title">Content workflow — start here day-to-day</summary>
+            <div class="skill-table-wrap"><table class="skill-table">
+              <thead><tr><th>Skill</th><th>What it does</th><th>Say something like…</th></tr></thead>
+              <tbody>
+                <tr><td><code>content-idea-extractor</code></td><td>Read a transcript, doc, or video → extract 10–15 content ideas</td><td>"Extract content ideas from this"</td></tr>
+                <tr><td><code>content-router</code></td><td>Pick an idea → choose a format → routes to the right skill</td><td>"Route this idea to a blog post"</td></tr>
+                <tr><td><code>content-suite</code></td><td>One idea → 2 FB/LI posts + 4 Threads threads + email, all at once</td><td>"Write a content suite for this idea"</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+
+          <details class="cs-group">
+            <summary class="cs-group-title">Writing skills</summary>
+            <div class="skill-table-wrap"><table class="skill-table">
+              <thead><tr><th>Skill</th><th>What it does</th><th>Say something like…</th></tr></thead>
+              <tbody>
+                <tr><td><code>social-post-writer</code></td><td>Facebook or LinkedIn posts using 22 proven copy frameworks</td><td>"Write a Facebook post about X"</td></tr>
+                <tr><td><code>email-sequence-writer</code></td><td>Complete nurture, welcome, or sales email sequences (5 types)</td><td>"Write a welcome sequence for my freebie"</td></tr>
+                <tr><td><code>sales-page-writer</code></td><td>Full sales pages for 8 offer types</td><td>"Write a sales page for my course"</td></tr>
+                <tr><td><code>authority-piece</code></td><td>Blog post + LinkedIn article + Facebook post from one topic</td><td>"Write an authority piece on X"</td></tr>
+                <tr><td><code>instagram-captions</code></td><td>Single image or carousel captions in your brand voice</td><td>"Write Instagram captions for this"</td></tr>
+                <tr><td><code>instagram-carousel-creator</code></td><td>Carousel slide copy + Canva design</td><td>"Create an Instagram carousel about X"</td></tr>
+                <tr><td><code>threads-writer</code></td><td>5–7 post Threads thread</td><td>"Write a Threads thread on X"</td></tr>
+                <tr><td><code>value-bomb</code></td><td>One-sentence post that generates comments → DM conversations</td><td>"Write a value bomb post"</td></tr>
+                <tr><td><code>reels-creator</code></td><td>Reels concepts with hooks, text overlays, and B-roll notes from a transcript</td><td>"Turn this transcript into Reels ideas"</td></tr>
+                <tr><td><code>repurpose-video</code></td><td>YouTube video → week of social content</td><td>"Repurpose this YouTube video"</td></tr>
+                <tr><td><code>video-transcript-repurpose</code></td><td>Video transcript → blog + social posts + email</td><td>"Repurpose this transcript"</td></tr>
+                <tr><td><code>youtube-description-creator</code></td><td>Keyword-optimised YouTube description with title, bullets, and CTAs</td><td>"Write a YouTube description for this video"</td></tr>
+                <tr><td><code>mkt-longform-article</code></td><td>Video transcript → magazine-style editorial article (2,000–5,000 words)</td><td>"Turn this into a long-form article"</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+
+          <details class="cs-group">
+            <summary class="cs-group-title">Email utilities</summary>
+            <div class="skill-table-wrap"><table class="skill-table">
+              <thead><tr><th>Skill</th><th>What it does</th><th>Say something like…</th></tr></thead>
+              <tbody>
+                <tr><td><code>email-ideas-generator</code></td><td>Mid-scene email opening ideas — starts in the middle of a story</td><td>"Give me email opening ideas"</td></tr>
+                <tr><td><code>email-subject-line-generator</code></td><td>10 subject line options for an email you've written</td><td>"Write subject lines for this email"</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+
+          <details class="cs-group">
+            <summary class="cs-group-title">Copy utilities</summary>
+            <div class="skill-table-wrap"><table class="skill-table">
+              <thead><tr><th>Skill</th><th>What it does</th><th>Say something like…</th></tr></thead>
+              <tbody>
+                <tr><td><code>headline-creator</code></td><td>Conversion-focused headlines for any format</td><td>"Write headlines for this sales page"</td></tr>
+                <tr><td><code>fascinator-bullets</code></td><td>Curiosity-driven bullet points that tease without telling</td><td>"Write fascinator bullets for this offer"</td></tr>
+                <tr><td><code>tool-humanizer</code></td><td>Remove AI writing patterns and restore natural voice</td><td>"Humanize this draft"</td></tr>
+                <tr><td><code>tool-fact-checker</code></td><td>Verify claims and flag anything unverified</td><td>"Fact-check this article"</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+
+          <details class="cs-group">
+            <summary class="cs-group-title">SEO</summary>
+            <div class="skill-table-wrap"><table class="skill-table">
+              <thead><tr><th>Skill</th><th>What it does</th><th>Say something like…</th></tr></thead>
+              <tbody>
+                <tr><td><code>seo-blog-writer</code></td><td>Write a fully optimised SEO blog post from a keyword</td><td>"Write an SEO blog post targeting X"</td></tr>
+                <tr><td><code>seo-keyword-planner</code></td><td>Map a keyword list into a content cluster plan</td><td>"Plan content clusters from this list"</td></tr>
+                <tr><td><code>seo-page-optimiser</code></td><td>Audit a specific page and output a prioritised fix list</td><td>"Audit my homepage for SEO"</td></tr>
+                <tr><td><code>seo-service-page-writer</code></td><td>Write a conversion-focused SEO service page</td><td>"Write a service page for X"</td></tr>
+                <tr><td><code>seo-page-rewriter</code></td><td>Audit and rewrite an existing page with SEO improvements</td><td>"Rewrite this page for SEO"</td></tr>
+                <tr><td><code>seo-rank-tracker</code></td><td>Review rank movements and surface quick wins and drops</td><td>"Review my rank tracker"</td></tr>
+                <tr><td><code>str-ai-seo</code></td><td>Optimise content to be cited by AI search engines</td><td>"Optimise this for AI search"</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+
+          <details class="cs-group">
+            <summary class="cs-group-title">Research &amp; strategy</summary>
+            <div class="skill-table-wrap"><table class="skill-table">
+              <thead><tr><th>Skill</th><th>What it does</th><th>Say something like…</th></tr></thead>
+              <tbody>
+                <tr><td><code>str-trending-research</code></td><td>What's trending in the last 30 days on Reddit, X, and the web</td><td>"What's trending in [topic] right now?"</td></tr>
+                <tr><td><code>story-researcher</code></td><td>Research story angles across 4 types — surface 6–10 usable hooks</td><td>"Find story hooks for the topic of X"</td></tr>
+                <tr><td><code>blog-weekly-review</code></td><td>Monday blog brief — rank movements, quick wins, next keyword candidates</td><td>"Run the Monday blog review"</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+
+          <details class="cs-group">
+            <summary class="cs-group-title">Session management</summary>
+            <div class="skill-table-wrap"><table class="skill-table">
+              <thead><tr><th>Skill</th><th>What it does</th><th>Say something like…</th></tr></thead>
+              <tbody>
+                <tr><td><code>end-of-day</code></td><td>5-minute close ritual — sets tomorrow's focus and updates your memory files</td><td>"Run end of day"</td></tr>
+                <tr><td><code>wrap-up</code></td><td>End-of-session wrap-up — writes memory block and logs skill feedback</td><td>"Run wrap-up"</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+
+          <details class="cs-group">
+            <summary class="cs-group-title">Publishing &amp; utility</summary>
+            <div class="skill-table-wrap"><table class="skill-table">
+              <thead><tr><th>Skill</th><th>What it does</th><th>Say something like…</th></tr></thead>
+              <tbody>
+                <tr><td><code>wp-publisher</code></td><td>Publish a finished blog post to WordPress as a draft</td><td>"Publish this post to WordPress"</td></tr>
+                <tr><td><code>sales-page-html-builder</code></td><td>Convert finished sales page copy into a branded HTML landing page</td><td>"Build an HTML page from this copy"</td></tr>
+                <tr><td><code>tool-youtube</code></td><td>Get transcripts, metadata, or thumbnails from any YouTube video</td><td>"Get the transcript from this video"</td></tr>
+                <tr><td><code>tool-pdf-generator</code></td><td>Generate a clean PDF from markdown content</td><td>"Turn this into a PDF"</td></tr>
+                <tr><td><code>00-slides</code></td><td>Research + structure + build a full HTML presentation from any topic</td><td>"Create a presentation about X"</td></tr>
+              </tbody>
+            </table></div>
+          </details>
+
+        </div>
+      </div>
+
+      <!-- How Skills Improve -->
+      <div class="lesson-panel" id="lesson-how-improve">
+        <div class="lesson-title">How Skills Improve Over Time</div>
+        <div class="lesson-body">
+          <p>After every skill run, Claude asks if you have any feedback. If you do — "make the emails shorter", "skip the bullet lists", "don't open with a question" — that gets saved to a file called <code>learnings.md</code> inside that skill's folder.</p>
+          <p>The next time you run that skill, it reads those notes first and applies them before it starts. You never have to repeat yourself. The system gets better the more you use it.</p>
+          <div class="lesson-callout"><strong>The compound effect:</strong> small feedback notes accumulate over time. After a few weeks of real use, skills have absorbed your preferences across tone, format, structure, and specifics. The output starts to need very little editing.</div>
+          <h3>The wrap-up skill captures everything</h3>
+          <p>At the end of every session, running <code>/wrap-up</code> checks whether anything from your conversation is worth saving permanently: preferences, decisions, context that matters next time.</p>
+          <p>It also proposes updates to how Claude behaves if it noticed patterns in how you corrected the output — "always ask about the offer before writing", "don't summarise at the end". You approve or reject each one.</p>
+          <p>Two minutes at the end of each session, and nothing gets lost.</p>
+        </div>
+      </div>
+
+      <!-- Check in -->
+      <div class="lesson-panel" id="lesson-check-in">
+        <div class="lesson-title">Check In With Your System</div>
+        <div class="lesson-body">
+          <p>At the start of every session, Claude reads your context files — your USER.md, your north star, your open threads, today's session memory. But it's worth confirming this has loaded correctly before you start work.</p>
+          <div class="lesson-callout"><strong>Type this at the start of every session:</strong><br><br>Who am I and what am I working on?</div>
+          <p>Claude should respond with your name, your brand, and your current priorities. If the response feels generic or doesn't mention your business, something hasn't loaded right — close and reopen your folder.</p>
+          <h3>Why this matters</h3>
+          <p>The context window is what Claude holds in memory for a session. If you start asking it to write content before it has your files loaded, you'll get output that sounds like a general AI rather than your system. One quick check prevents this.</p>
+        </div>
+      </div>
+
+      <!-- Wrap-up habit -->
+      <div class="lesson-panel" id="lesson-wrap-up-habit">
+        <div class="lesson-title">End Every Session With Wrap-Up</div>
+        <div class="lesson-body">
+          <p>Run this every time before you close Claude. It takes about two minutes and it's what makes the system compound over time.</p>
+          <div class="lesson-callout"><strong>Type at the end of every session:</strong><br><br>/wrap-up</div>
+          <h3>What it saves</h3>
+          <p>The wrap-up skill writes three things:</p>
+          <p><strong>memory/sessions/[date].md</strong> — today's session log. What you worked on, what decisions were made, what was produced.</p>
+          <p><strong>memory/MEMORY.md</strong> — the persistent facts index. Key decisions, preferences, and context Claude should remember across all future sessions.</p>
+          <p><strong>context/tomorrow.md</strong> — your open threads list. Anything left unfinished, any decisions still pending, any tasks carried forward.</p>
+          <h3>What happens without it</h3>
+          <p>Claude's built-in memory doesn't persist between sessions. Without wrap-up, the next session starts cold — no memory of what you decided, no open threads, no captured feedback. The system loses what it learned.</p>
+          <p>With wrap-up, every session builds on the last. This is the habit that makes the whole thing work.</p>
+        </div>
+      </div>
+
+      <!-- Curated skill lessons -->
+      <div class="lesson-panel" id="lesson-repurpose-video">
+        <div class="lesson-title">Repurpose Video</div>
+        <div class="lesson-body">
+          <div class="lesson-skill-card">
+            <div class="lesson-skill-head"><div class="lesson-skill-name">repurpose-video</div><div class="lesson-skill-tag">Your #1 workflow</div></div>
+            <div class="lesson-skill-desc">Turn one YouTube video or recording into a full week of content — Facebook posts, LinkedIn, Threads thread, and email. This is what gets your back catalogue working for you.</div>
+            <div class="lesson-skill-cmd">run repurpose-video</div>
+            <div class="lesson-skill-example">Paste or link your YouTube video URL, or drop a transcript into source/ and say: "Repurpose this video — it's about nervous system regulation and why willpower doesn't work long-term"</div>
+          </div>
+          <h3>How it works</h3>
+          <p>The skill asks for your video URL or transcript. If you give it a URL, it fetches the transcript automatically. It then produces a Facebook post, a LinkedIn post, a Threads thread, and an email — all in your voice, all using the content from the video.</p>
+          <p>It reads your offer files and asks which offer to reference before writing, so every piece has the right CTA.</p>
+          <h3>Getting the most from it</h3>
+          <p>This works best when the video has a clear topic or teaching. Talking-head content, Q&A videos, and teaching sessions all repurpose well. A video that meanders through several topics will produce weaker output — the skill works from the transcript and follows wherever the content goes.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-content-suite">
+        <div class="lesson-title">Content Suite</div>
+        <div class="lesson-body">
+          <div class="lesson-skill-card">
+            <div class="lesson-skill-head"><div class="lesson-skill-name">content-suite</div><div class="lesson-skill-tag">Content</div></div>
+            <div class="lesson-skill-desc">One idea → 2 Facebook/LinkedIn posts, 4 Threads threads, and an email. Asks for your offer and CTA before writing so everything is joined up.</div>
+            <div class="lesson-skill-cmd">run content-suite</div>
+            <div class="lesson-skill-example">"The idea is: high-achieving women don't have an ambition problem — they have a self-abandonment pattern running underneath everything. CTA: Her Evolution programme."</div>
+          </div>
+          <h3>When to use it</h3>
+          <p>Use content-suite when you have a clear idea and want multiple formats from it in one run. It's faster than running separate skills for each platform. The output is always thematically connected but adapted for each platform's native format.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-content-router">
+        <div class="lesson-title">Content Router</div>
+        <div class="lesson-body">
+          <div class="lesson-skill-card">
+            <div class="lesson-skill-head"><div class="lesson-skill-name">content-router</div><div class="lesson-skill-tag">Most used</div></div>
+            <div class="lesson-skill-desc">Takes any idea — a topic, a theme, a story you want to tell — and asks which format you want. It handles everything from there.</div>
+            <div class="lesson-skill-cmd">/content-router</div>
+            <div class="lesson-skill-example">"I want to write about the moment I realised my exhaustion was my body's way of communicating — not something to push through"</div>
+          </div>
+          <h3>When to use it vs content-suite</h3>
+          <p>The router is for when you want one specific format. You describe the idea, it asks what format (blog, Facebook post, email, Instagram, Threads), and writes it. Use content-suite when you want everything at once. Use the router when you have a specific destination in mind.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-email-sequence">
+        <div class="lesson-title">Email Sequence Writer</div>
+        <div class="lesson-body">
+          <div class="lesson-skill-card">
+            <div class="lesson-skill-head"><div class="lesson-skill-name">email-sequence-writer</div><div class="lesson-skill-tag">Email</div></div>
+            <div class="lesson-skill-desc">Full email sequences for your lead magnets and offers — freebie delivery, nurture to book-a-call, and Her Evolution launch. Asks you questions first, then writes in your voice.</div>
+            <div class="lesson-skill-cmd">run email-sequence-writer</div>
+          </div>
+          <h3>Sequence types available</h3>
+          <p>The skill has five sequence types built in: freebie to low-ticket, freebie to book-a-call, fill your webinar, webinar registration, and upsell from webinar. It asks which type you need and then asks questions about the offer, the audience, and the transformation before writing.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-social-post">
+        <div class="lesson-title">Social Post Writer</div>
+        <div class="lesson-body">
+          <div class="lesson-skill-card">
+            <div class="lesson-skill-head"><div class="lesson-skill-name">social-post-writer</div><div class="lesson-skill-tag">Social</div></div>
+            <div class="lesson-skill-desc">Facebook and LinkedIn posts using 22 copy frameworks — story-led, pain-agitate-solve, direct offer, success story, and more. Always in your voice.</div>
+            <div class="lesson-skill-cmd">run social-post-writer</div>
+          </div>
+          <h3>The 22 frameworks</h3>
+          <p>The skill has 22 proven copy structures built in — from pure story posts to direct offers to pattern-interrupts. It asks what you want to write about and what CTA you need, then recommends the framework that fits. You can accept its recommendation or pick a different one.</p>
+          <p>This is what makes the output feel intentional rather than just "a social post" — there's always a structural reason behind how the content is shaped.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-ceo-check">
+        <div class="lesson-title">CEO Check</div>
+        <div class="lesson-body">
+          <div class="lesson-skill-card">
+            <div class="lesson-skill-head"><div class="lesson-skill-name">ceo-check</div><div class="lesson-skill-tag">Strategy</div></div>
+            <div class="lesson-skill-desc">Before you say yes to a new idea, a collaboration, or a piece of content — run this. It checks the thing against your north star and tells you if it's aligned, off-track, or uncertain.</div>
+            <div class="lesson-skill-cmd">run ceo-check</div>
+            <div class="lesson-skill-example">"CEO check — someone's asked me to co-host a summit on women's leadership. Is this worth my time right now?"</div>
+          </div>
+          <h3>What the verdicts mean</h3>
+          <p><strong>Aligned</strong> — this is a good use of your time right now. Do it.</p>
+          <p><strong>Off-track</strong> — this pulls you away from your current priorities. Park it or decline.</p>
+          <p><strong>Uncertain</strong> — there's a case either way. Claude flags what's unclear and suggests what would help you decide.</p>
+          <h3>The habit that makes it useful</h3>
+          <p>The skill is most valuable when you use it before you say yes. Before you commit to something, run a CEO check. It takes about 30 seconds and stops you spending a week on something that doesn't move the needle.</p>
+          <p>You can also run it on your full open threads list: "CEO check on my open threads" — Claude reads through your tomorrow.md and tells you what to focus on and what to drop.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-content-ideas">
+        <div class="lesson-title">Content Ideas from Source Material</div>
+        <div class="lesson-body">
+          <div class="lesson-skill-card">
+            <div class="lesson-skill-head"><div class="lesson-skill-name">content-idea-extractor</div><div class="lesson-skill-tag">Planning</div></div>
+            <div class="lesson-skill-desc">Drop in a transcript, a voice note, or a Google Doc — this skill extracts 10–15 content ideas and saves approved ones to your Airtable queue ready to write.</div>
+            <div class="lesson-skill-cmd">/content-ideas</div>
+          </div>
+          <h3>What counts as source material</h3>
+          <p>Anything with your ideas and words in it: a recording of a talk you gave, a coaching session transcript, a workshop replay, notes from a client conversation, a voice memo you recorded in the car. The richer the source, the better the ideas.</p>
+          <h3>How it works</h3>
+          <p>The skill reads the material, identifies 10–15 distinct ideas with a suggested format for each. You approve the ones you want. Approved ideas save to your Airtable content queue, ready to write with <code>/content-router</code>.</p>
+        </div>
+      </div>
+
+    </div><!-- /course-main -->
+  </div><!-- /course-layout -->
 
   </div><!-- /panel-skills -->
 
@@ -921,6 +1531,22 @@
       document.querySelectorAll('.training-card').forEach(card => {
         card.classList.toggle('hidden', filter !== 'all' && card.dataset.tag !== filter);
       });
+    });
+  });
+
+  document.querySelectorAll('.sidebar-lesson').forEach(lesson => {
+    lesson.addEventListener('click', () => {
+      document.querySelectorAll('.sidebar-lesson').forEach(l => l.classList.remove('active'));
+      document.querySelectorAll('.lesson-panel').forEach(p => p.classList.remove('active'));
+      lesson.classList.add('active');
+      const panel = document.getElementById('lesson-' + lesson.dataset.lesson);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('.sidebar-module-title').forEach(title => {
+    title.addEventListener('click', () => {
+      title.closest('.sidebar-module').classList.toggle('open');
     });
   });
 </script>

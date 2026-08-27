@@ -1804,8 +1804,19 @@
       document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       tab.classList.add('active');
-      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+      const panel = document.getElementById('panel-' + tab.dataset.tab);
+      panel.classList.add('active');
       document.body.classList.toggle('skills-active', ['skills','training','setup'].includes(tab.dataset.tab));
+
+      // Reset to first lesson in this tab
+      document.querySelectorAll('.sidebar-lesson').forEach(l => l.classList.remove('active'));
+      document.querySelectorAll('.lesson-panel').forEach(p => p.classList.remove('active'));
+      const firstLesson = panel.querySelector('.sidebar-lesson');
+      if (firstLesson) {
+        firstLesson.classList.add('active');
+        const firstPanel = document.getElementById('lesson-' + firstLesson.dataset.lesson);
+        if (firstPanel) firstPanel.classList.add('active');
+      }
     });
   });
 

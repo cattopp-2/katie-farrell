@@ -562,24 +562,15 @@
     background: #f0f2f4;
   }
 
-  .sidebar-module { margin-bottom: 20px; }
+  .sidebar-module { margin-bottom: 4px; }
 
   .sidebar-module-title {
-    padding: 10px 20px 2px;
+    padding: 10px 20px;
     font-family: 'Lato', sans-serif;
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--teal);
-  }
-
-  .sidebar-module-desc {
-    padding: 0 20px 8px;
-    font-family: 'Lato', sans-serif;
-    font-size: 11px;
-    color: #999;
-    line-height: 1.4;
+    letter-spacing: 0.04em;
+    color: var(--charcoal);
   }
 
   .sidebar-lessons { display: block; }
@@ -1054,7 +1045,6 @@
 
       <div class="sidebar-module open" data-module="what-are-skills">
         <div class="sidebar-module-title">What Are Skills?</div>
-        <div class="sidebar-module-desc">How the skill system works and what's available to you.</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson active" data-lesson="getting-started">Getting Started</div>
           <div class="sidebar-lesson" data-lesson="how-to-call">How to Call a Skill</div>
@@ -1066,7 +1056,6 @@
 
       <div class="sidebar-module open" data-module="daily-habits">
         <div class="sidebar-module-title">Daily Habits</div>
-        <div class="sidebar-module-desc">The one thing to do at the end of every session.</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson" data-lesson="wrap-up-habit">End Every Session</div>
         </div>
@@ -1074,7 +1063,6 @@
 
       <div class="sidebar-module open" data-module="your-skills">
         <div class="sidebar-module-title">Your Skills</div>
-        <div class="sidebar-module-desc">The skills built specifically for how you work.</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson" data-lesson="repurpose-video">Repurpose Video</div>
           <div class="sidebar-lesson" data-lesson="content-suite">Content Suite</div>
@@ -1095,6 +1083,7 @@
       <div class="lesson-panel active" id="lesson-getting-started">
         <div class="lesson-title">Getting Started</div>
         <div class="lesson-body">
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">How the skill system works and what's available to you.</p>
           <p>Skills are pre-built instructions that tell Claude how to handle a specific type of task, in your voice, for your audience, using your context files.</p>
           <p>When you run a skill, Claude reads the instructions for that task, loads the relevant context files (your voice profile, your audience language, your offer details), and produces output that fits your brand. It doesn't produce generic output from scratch. It works from your system.</p>
           <p>Think of a skill like a trained staff member who already knows your business. You don't explain who your clients are every time, or what your tone of voice is, or how you like your emails structured. The skill already has all of that.</p>
@@ -1322,6 +1311,7 @@
       <div class="lesson-panel" id="lesson-wrap-up-habit">
         <div class="lesson-title">End Every Session With Wrap-Up</div>
         <div class="lesson-body">
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">The one thing to do before you close Claude every time.</p>
           <p>Run this every time before you close Claude. It takes about two minutes and it's what makes the system compound over time.</p>
           <div class="lesson-callout lesson-callout--labeled"><strong>Type at the end of every session:</strong><br><br>/wrap-up</div>
           <h3>What it saves</h3>
@@ -1339,6 +1329,7 @@
       <div class="lesson-panel" id="lesson-repurpose-video">
         <div class="lesson-title">Repurpose Video</div>
         <div class="lesson-body">
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">The skills built specifically for how you work — start with these.</p>
           <div class="lesson-skill-card">
             <div class="lesson-skill-head"><div class="lesson-skill-name">repurpose-video</div><div class="lesson-skill-tag">Your #1 workflow</div></div>
             <div class="lesson-skill-desc">Turn one YouTube video or recording into a full week of content — Facebook posts, LinkedIn, Threads thread, and email. This is what gets your back catalogue working for you.</div>
@@ -1457,7 +1448,6 @@
 
       <div class="sidebar-module open">
         <div class="sidebar-module-title">The Folder Structure</div>
-        <div class="sidebar-module-desc">What each folder in your system does and what lives inside it.</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson active" data-lesson="tr-folder-overview">Overview</div>
           <div class="sidebar-lesson" data-lesson="tr-folder-context">context/</div>
@@ -1472,7 +1462,6 @@
 
       <div class="sidebar-module open">
         <div class="sidebar-module-title">Working with Markdown</div>
-        <div class="sidebar-module-desc">How to open, read, and edit the files your system runs on.</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson" data-lesson="tr-md-what">What is Markdown?</div>
           <div class="sidebar-lesson" data-lesson="tr-md-open">Opening and Editing Files</div>
@@ -1489,6 +1478,7 @@
       <div class="lesson-panel active" id="lesson-tr-folder-overview">
         <div class="lesson-title">The Folder Structure</div>
         <div class="lesson-body">
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">What each folder in your system does and what lives inside it.</p>
           <p>When you open the Business Brain OS folder, you'll see a collection of folders and files. Each one has a specific job. Together they're what lets Claude show up already knowing your business every time you open a session.</p>
           <p>This module covers each one in turn. By the end you'll know exactly where everything lives and why.</p>
           <p>You don't need to do anything with them yet. Just understand the layout before you start filling it in.</p>
@@ -1568,6 +1558,7 @@
       <div class="lesson-panel" id="lesson-tr-md-what">
         <div class="lesson-title">What is Markdown?</div>
         <div class="lesson-body">
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">How to open, read, and edit the files your system runs on.</p>
           <p>Almost everything in the Business Brain OS is stored as a <strong>markdown file</strong> — a plain text file with a <code>.md</code> extension. Your brand voice, your audience language, your offer details, your daily memory, your context files: all markdown.</p>
           <p>If you've never heard of markdown before, don't worry. You don't need to learn it properly. But knowing what it is and how to handle it will save you confusion later.</p>
           <h3>Why Markdown?</h3>
@@ -1613,7 +1604,6 @@
 
       <div class="sidebar-module open">
         <div class="sidebar-module-title">Working With Claude Code</div>
-        <div class="sidebar-module-desc">Get comfortable in the interface before you start configuring anything.</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson active" data-lesson="tr-cc-install">Install and Open</div>
           <div class="sidebar-lesson" data-lesson="tr-cc-interface">The Interface</div>
@@ -1625,7 +1615,6 @@
 
       <div class="sidebar-module open">
         <div class="sidebar-module-title">Configure Your System</div>
-        <div class="sidebar-module-desc">Run the setup skills that load your voice, strategy, and audience into Claude.</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson" data-lesson="tr-cfg-overview">Overview</div>
           <div class="sidebar-lesson" data-lesson="tr-cfg-strategy">Your Strategy Layer</div>
@@ -1642,6 +1631,7 @@
       <div class="lesson-panel active" id="lesson-tr-cc-install">
         <div class="lesson-title">Install and Open Claude Code</div>
         <div class="lesson-body">
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Get comfortable in the interface before you start configuring anything.</p>
           <ul>
             <li>Install the Claude Code desktop app from <strong>claude.ai/code</strong> and sign in</li>
             <li>Open Claude Code, click <strong>File → Open folder</strong>, navigate to the folder you cloned and open it</li>
@@ -1729,6 +1719,7 @@
       <div class="lesson-panel" id="lesson-tr-cfg-overview">
         <div class="lesson-title">Configure Your System</div>
         <div class="lesson-body">
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Run the setup skills that load your voice, strategy, and audience into Claude.</p>
           <p>Claude Code is installed and running. Now you build out your profiles so Claude shows up already knowing your business.</p>
           <p>This module is where you run the setup skills that generate your strategy layer, your brand voice, your audience language, and your offer files.</p>
           <p>Run them in this order:</p>

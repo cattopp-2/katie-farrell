@@ -1452,93 +1452,343 @@
 
   <!-- TRAINING -->
   <div class="tab-panel" id="panel-training">
+  <div class="course-layout">
 
-    <div class="section">
-      <div class="section-header">
-        <h2 class="section-title">Training</h2>
+    <!-- Training Sidebar -->
+    <div class="course-sidebar">
+
+      <div class="sidebar-module open">
+        <div class="sidebar-module-title">The Folder Structure <span>−</span></div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson active" data-lesson="tr-folder-overview">Overview</div>
+          <div class="sidebar-lesson" data-lesson="tr-folder-context">context/</div>
+          <div class="sidebar-lesson" data-lesson="tr-folder-memory">memory/</div>
+          <div class="sidebar-lesson" data-lesson="tr-folder-brand">brand-context/</div>
+          <div class="sidebar-lesson" data-lesson="tr-folder-offers">offers/</div>
+          <div class="sidebar-lesson" data-lesson="tr-folder-source">source/</div>
+          <div class="sidebar-lesson" data-lesson="tr-folder-skills">skills/</div>
+          <div class="sidebar-lesson" data-lesson="tr-folder-claudemd">CLAUDE.md</div>
+        </div>
       </div>
 
-      <p style="font-size: 14px; color: var(--body-text); margin-bottom: 24px; line-height: 1.6;">Video walkthroughs and written guides. Filter by topic or browse everything.</p>
-
-      <div class="filter-bar">
-        <button class="filter-chip active" data-filter="all">All</button>
-        <button class="filter-chip" data-filter="getting-started">Getting started</button>
-        <button class="filter-chip" data-filter="workflow">Your workflow</button>
-        <button class="filter-chip" data-filter="content">Content</button>
-        <button class="filter-chip" data-filter="daily-habit">Daily habit</button>
+      <div class="sidebar-module open">
+        <div class="sidebar-module-title">Working with Markdown <span>−</span></div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson" data-lesson="tr-md-what">What is Markdown?</div>
+          <div class="sidebar-lesson" data-lesson="tr-md-open">Opening and Editing Files</div>
+          <div class="sidebar-lesson" data-lesson="tr-md-import">Getting Documents In</div>
+        </div>
       </div>
 
-      <div class="training-grid">
-
-        <a class="training-card is-video" data-tag="getting-started" href="#" target="_blank">
-          <div class="card-thumb">
-            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M5 3l9 5-9 5V3z"/></svg></div>
-          </div>
-          <div class="card-info">
-            <div class="card-type-row"><span class="card-type-badge">Getting started</span><span class="card-format">Video</span></div>
-            <div class="card-title">Opening your system for the first time</div>
-            <div class="card-meta">3 min · Replace href with Loom URL</div>
-          </div>
-        </a>
-
-        <a class="training-card is-video" data-tag="workflow" href="#" target="_blank">
-          <div class="card-thumb">
-            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M5 3l9 5-9 5V3z"/></svg></div>
-          </div>
-          <div class="card-info">
-            <div class="card-type-row"><span class="card-type-badge">Your workflow</span><span class="card-format">Video</span></div>
-            <div class="card-title">Repurposing a video from start to finish</div>
-            <div class="card-meta">Replace href with Loom URL</div>
-          </div>
-        </a>
-
-        <a class="training-card is-video" data-tag="content" href="#" target="_blank">
-          <div class="card-thumb">
-            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M5 3l9 5-9 5V3z"/></svg></div>
-          </div>
-          <div class="card-info">
-            <div class="card-type-row"><span class="card-type-badge">Content</span><span class="card-format">Video</span></div>
-            <div class="card-title">Using the content router</div>
-            <div class="card-meta">Replace href with Loom URL</div>
-          </div>
-        </a>
-
-        <a class="training-card is-video" data-tag="daily-habit" href="#" target="_blank">
-          <div class="card-thumb">
-            <div class="play-btn"><svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M5 3l9 5-9 5V3z"/></svg></div>
-          </div>
-          <div class="card-info">
-            <div class="card-type-row"><span class="card-type-badge">Daily habit</span><span class="card-format">Video</span></div>
-            <div class="card-title">The wrap-up ritual</div>
-            <div class="card-meta">Replace href with Loom URL</div>
-          </div>
-        </a>
-
-        <a class="training-card is-written" data-tag="getting-started" href="#" target="_blank">
-          <div class="card-thumb">
-            <svg class="doc-icon" viewBox="0 0 36 36" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"><rect x="6" y="4" width="24" height="28" rx="2"/><path d="M11 12h14M11 18h14M11 24h8"/></svg>
-          </div>
-          <div class="card-info">
-            <div class="card-type-row"><span class="card-type-badge">Getting started</span><span class="card-format">Guide</span></div>
-            <div class="card-title">How to check in with your system</div>
-            <div class="card-meta">Written guide · Replace href with link</div>
-          </div>
-        </a>
-
-        <a class="training-card is-written" data-tag="daily-habit" href="#" target="_blank">
-          <div class="card-thumb">
-            <svg class="doc-icon" viewBox="0 0 36 36" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round"><rect x="6" y="4" width="24" height="28" rx="2"/><path d="M11 12h14M11 18h14M11 24h8"/></svg>
-          </div>
-          <div class="card-info">
-            <div class="card-type-row"><span class="card-type-badge">Daily habit</span><span class="card-format">Guide</span></div>
-            <div class="card-title">The wrap-up ritual — step by step</div>
-            <div class="card-meta">Written guide · Replace href with link</div>
-          </div>
-        </a>
-
+      <div class="sidebar-module open">
+        <div class="sidebar-module-title">Install Claude Code <span>−</span></div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson" data-lesson="tr-cc-install">Install and Open</div>
+          <div class="sidebar-lesson" data-lesson="tr-cc-interface">The Interface</div>
+          <div class="sidebar-lesson" data-lesson="tr-cc-permissions">Permissions</div>
+          <div class="sidebar-lesson" data-lesson="tr-cc-mcps">Connecting External Tools</div>
+          <div class="sidebar-lesson" data-lesson="tr-cc-memory">Your Memory System</div>
+        </div>
       </div>
-    </div>
 
+      <div class="sidebar-module open">
+        <div class="sidebar-module-title">Configure Your System <span>−</span></div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson" data-lesson="tr-cfg-overview">Overview</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-strategy">Your Strategy Layer</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-voice">Your Brand Voice</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-language">Language Rules</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-audience">Map Your Audience</div>
+        </div>
+      </div>
+
+    </div><!-- /course-sidebar -->
+
+    <!-- Training Lesson Panels -->
+    <div class="course-main">
+
+      <!-- Folder Structure -->
+      <div class="lesson-panel active" id="lesson-tr-folder-overview">
+        <div class="lesson-title">The Folder Structure</div>
+        <div class="lesson-body">
+          <p>When you open the Business Brain OS folder, you'll see a collection of folders and files. Each one has a specific job. Together they're what lets Claude show up already knowing your business every time you open a session.</p>
+          <p>This module covers each one in turn. By the end you'll know exactly where everything lives and why.</p>
+          <p>You don't need to do anything with them yet. Just understand the layout before you start filling it in.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-folder-context">
+        <div class="lesson-title">context/</div>
+        <div class="lesson-body">
+          <p>This is where Claude learns who you are and how you work.</p>
+          <p>It contains files like:</p>
+          <ul>
+            <li><strong>USER.md</strong> — your profile: name, business, role, how you like to communicate</li>
+            <li><strong>ceo-north-star.md</strong> — your strategic priorities and income targets</li>
+            <li><strong>soul.md</strong> — how Claude behaves: its tone, working rules, and personality. This is what makes it feel consistent every time you open a session.</li>
+          </ul>
+          <p>Every time you open a session, Claude reads these files and that's why it can show up already knowing your context.</p>
+          <p>There's also <strong>tomorrow.md</strong>, a running list of open threads and tasks carried forward from your last session. Think of it as the handover note you leave for yourself.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-folder-memory">
+        <div class="lesson-title">memory/</div>
+        <div class="lesson-body">
+          <p>This is where everything that accumulates over time lives.</p>
+          <p>Claude saves persistent facts about your business (decisions made, projects in progress, preferences Claude should remember) in one folder.</p>
+          <p>There is also a sessions subfolder with one file per day logging what happened in each session.</p>
+          <p>You don't need to manage either. They build automatically.</p>
+          <p>What you can be confident of is that Claude is remembering what you tell it, and building knowledge over time of you, your business, and your preferences. This is how your system learns and gets better over time.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-folder-brand">
+        <div class="lesson-title">brand-context/</div>
+        <div class="lesson-body">
+          <p>Everything that makes your content sound like you and speak to your audience.</p>
+          <p>Your voice profile lives here, your audience language files (the exact words your clients use, not your paraphrased version), your writing samples, and any website assets.</p>
+          <p>This is the folder the system reads before writing anything. The richer it is, the better every output will be.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-folder-offers">
+        <div class="lesson-title">offers/</div>
+        <div class="lesson-body">
+          <p>One file per active offer. Claude reads these when it's writing promotional content, so it knows what you sell, who it's for, what's included, and what makes it different. The more specific these files are, the better the copy.</p>
+          <p>If you sell three things, you'll have three files here. If you add a new offer, you add a new file. Simple.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-folder-source">
+        <div class="lesson-title">source/</div>
+        <div class="lesson-body">
+          <p>Your raw material goes here. Transcripts of calls, voice recordings, workshop replays, discovery call notes — anything you want to feed into the system to generate content or capture insight.</p>
+          <p>This folder is entirely yours and is never touched when you pull updates from GitHub.</p>
+          <p>Think of it as your inbox: things come in here before they get processed into content or context.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-folder-skills">
+        <div class="lesson-title">.claude/skills/</div>
+        <div class="lesson-body">
+          <p>The skill library. This is where all 50+ pre-built skills live. You'll never need to open this folder directly. Just call the skills by name from the chat panel. But it's useful to know where they are.</p>
+          <p>When you pull an update from GitHub, this is the folder that gets refreshed with new and improved skills. Your other folders stay untouched.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-folder-claudemd">
+        <div class="lesson-title">CLAUDE.md</div>
+        <div class="lesson-body">
+          <p>The master instruction file. This is the first thing Claude reads at the start of every session. It tells Claude what context files to load, how to behave, what skills are available, and how this system works.</p>
+          <p>You don't need to edit it. It comes pre-configured for the Business Brain OS.</p>
+          <p>Everything slots into place once you start running the setup skills in the Configure Your System module. For now, just know where things live.</p>
+        </div>
+      </div>
+
+      <!-- Working with Markdown -->
+      <div class="lesson-panel" id="lesson-tr-md-what">
+        <div class="lesson-title">What is Markdown?</div>
+        <div class="lesson-body">
+          <p>Almost everything in the Business Brain OS is stored as a <strong>markdown file</strong> — a plain text file with a <code>.md</code> extension. Your brand voice, your audience language, your offer details, your daily memory, your context files: all markdown.</p>
+          <p>If you've never heard of markdown before, don't worry. You don't need to learn it properly. But knowing what it is and how to handle it will save you confusion later.</p>
+          <h3>Why Markdown?</h3>
+          <p>Claude reads plain text files natively and quickly. Markdown adds basic structure (headings, bullet points, bold text) without needing a word processor. The files are small, portable, and easy to version-control — which is how GitHub tracks updates to your skills without touching your personal files.</p>
+          <p>Most importantly: Claude can read, write, and edit markdown files directly inside your session. You don't need another app.</p>
+          <h3>What it Looks Like</h3>
+          <p>Markdown is just text with a few simple symbols. A <code>#</code> at the start of a line makes a heading. <code>**text**</code> makes it bold. A <code>-</code> at the start of a line makes a bullet point. Everything else is a normal paragraph.</p>
+          <p>That's 90% of what you'll ever see in your files. The rest Claude handles for you.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-md-open">
+        <div class="lesson-title">Opening and Editing Files</div>
+        <div class="lesson-body">
+          <p>Inside Claude Code, click any <code>.md</code> file in the sidebar. It opens in a panel on the right. You can read it there, and you can ask Claude to make changes: "Update my north star file to add X" or "Add this to my writing samples."</p>
+          <p>You can also edit files directly. Click the pencil icon in the panel to switch from preview to edit mode, make your change, and save.</p>
+          <p>Outside Claude Code, any text editor will open a markdown file: Notepad on Windows, TextEdit on Mac, or VS Code if you have it. It's just text.</p>
+          <div class="lesson-callout">Never open a markdown file in Microsoft Word. Word adds invisible formatting that can break how Claude reads the file.</div>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-md-import">
+        <div class="lesson-title">Getting Documents Into Your System</div>
+        <div class="lesson-body">
+          <p>You'll sometimes want to bring in content from outside: a Google Doc, a PDF, an old email, notes from a call. Here's how.</p>
+          <ul>
+            <li><strong>If you can copy the text</strong> — paste it into the chat. Then ask Claude to save it: "Save this as a file in brand-context/writing-samples/ and call it email-example-1.md." Claude creates the file, formats it cleanly, and puts it in the right place.</li>
+            <li><strong>For Google Docs</strong> — copy the text and paste it into the chat. The formatting won't come through cleanly, but a quick "tidy this up and save it" prompt fixes it in a few seconds.</li>
+            <li><strong>For PDFs</strong> — either paste the text (if it's selectable) or drag the file into the Claude Code chat window. Claude can read PDFs directly and pull out what you need.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Install Claude Code -->
+      <div class="lesson-panel" id="lesson-tr-cc-install">
+        <div class="lesson-title">Install and Open Claude Code</div>
+        <div class="lesson-body">
+          <ul>
+            <li>Install the Claude Code desktop app from <strong>claude.ai/code</strong> and sign in</li>
+            <li>Open Claude Code, click <strong>File → Open folder</strong>, navigate to the folder you cloned and open it</li>
+            <li>Confirm it's working: Claude should greet you and reference the Business Brain OS</li>
+          </ul>
+          <p>You've downloaded the Business Brain OS and know what's inside it. Now you need the engine that runs it. By the end of this module you'll be comfortable in the interface, you'll understand what Claude can and can't do, and you'll be ready to start configuring the system.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cc-interface">
+        <div class="lesson-title">The Interface</div>
+        <div class="lesson-body">
+          <p>When you open Claude Code, you'll see three main areas.</p>
+          <h3>1. The Chat Panel</h3>
+          <p>The middle of the screen — where your conversations with Claude take place. You type at the bottom prompt, press Enter, and Claude responds in the space above.</p>
+          <p><strong>The context bar</strong> shows how much of the chat panel is being filled as the conversation grows. When it gets close to full, Claude starts to lose track of things said earlier in the session. Around 120K tokens is a good time to wrap up rather than pushing on.</p>
+          <p><strong>Modes:</strong> Leave it on <strong>Auto</strong> for day-to-day use. Switch to <strong>Plan</strong> if you're about to ask Claude to do something big and want to review the steps first. Don't use Bypass permissions.</p>
+          <p><strong>Models:</strong> Use <strong>Sonnet 4.6</strong> as your default. Switch to Opus only if you're doing something that genuinely needs more reasoning power.</p>
+          <h3>2. The Left Sidebar</h3>
+          <p>Your conversation history. Every session you've had in Claude Code is listed here, most recent at the top. You can pin sessions, rename them, and group related ones into folders.</p>
+          <h3>3. The Right-hand File Panel</h3>
+          <p>Your window into the folder your system lives in. Click a file to open it in preview. Click the pencil icon to switch to edit mode.</p>
+          <p>Use it for: checking what's in a context file, making a quick edit, confirming Claude saved something correctly. For rewriting, reorganising, or updating skills — ask Claude to do that instead.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cc-permissions">
+        <div class="lesson-title">Permissions</div>
+        <div class="lesson-body">
+          <p>Claude Code is not running in the background. It doesn't do anything unless you open a session and give it an instruction. When you close the app, nothing runs.</p>
+          <p>The Business Brain OS comes pre-configured with a permissions file that controls exactly what Claude is and isn't allowed to do.</p>
+          <h3>What it's allowed to do</h3>
+          <ul>
+            <li>Read, edit, and write files inside your Business Brain OS folder</li>
+            <li>Run specific scripts that power the skills</li>
+            <li>Basic file navigation: listing folders, checking where things are</li>
+          </ul>
+          <h3>What it's blocked from doing</h3>
+          <ul>
+            <li>Installing software — blocked by default</li>
+            <li>Deleting files or folders permanently — blocked by default</li>
+            <li>Reading your credentials or <code>.env</code> files</li>
+          </ul>
+          <div class="lesson-callout">Even if Claude misunderstood an instruction and tried to delete a folder, the system would stop it.</div>
+          <p>The mode selector controls how much Claude checks in with you before acting — not what it's capable of doing. The guardrails above apply regardless of which mode you're in.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cc-mcps">
+        <div class="lesson-title">Connecting External Tools</div>
+        <div class="lesson-body">
+          <p>Left to itself, Claude can only work with files on your computer. It can't see your email, your Google Drive, your Airtable, or any other external tool — unless you connect it.</p>
+          <p>That's what MCP connections do. MCP stands for Model Context Protocol — the standard that lets Claude plug into external apps. Each connection is something you set up deliberately, and it only gives Claude access to that specific tool.</p>
+          <h3>What becomes possible with MCP connections</h3>
+          <ul>
+            <li><strong>Airtable</strong> — Claude can read your content queue, save posts, and update records directly</li>
+            <li><strong>Google Drive</strong> — Claude can read documents from a link, without you copying and pasting</li>
+            <li><strong>WordPress</strong> — Claude can publish blog posts as drafts straight from a session</li>
+          </ul>
+          <p>If a connection isn't set up, Claude simply can't access that tool. And the connections only work within the scope of what you've configured.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cc-memory">
+        <div class="lesson-title">Your Memory System</div>
+        <div class="lesson-body">
+          <p>Every time you open Claude Code in your Business Brain OS folder, the first thing it does is read your CLAUDE.md file. From there, it reads the relevant files depending on what you've asked it to do.</p>
+          <h3>Your open threads list</h3>
+          <p>Your open threads list is saved in a file called <strong>tomorrow.md</strong> that carries forward between sessions. Anything left open at the end of a session gets saved here by the wrap-up skill. When you open a new session, Claude reads this file and picks up where you left off.</p>
+          <h3>The context window</h3>
+          <p>You'll notice a progress bar at the top of the chat panel. This is the context window — the total amount of conversation Claude can hold in memory at once. Around 120K tokens is a good point to either wrap up or use <code>/compact</code>.</p>
+          <h3>/compact</h3>
+          <p>When you're in the middle of something and don't want to stop, type <code>/compact and save to working memory what we're working on</code>. Claude compresses the conversation history and saves a summary so it doesn't lose the thread.</p>
+          <h3>The wrap-up skill</h3>
+          <p>At the end of every session, type <code>/wrap-up</code>. It writes to three files:</p>
+          <ul>
+            <li><strong>memory/sessions/[date].md</strong> — today's session log</li>
+            <li><strong>memory/MEMORY.md</strong> — the persistent facts index</li>
+            <li><strong>context/tomorrow.md</strong> — your open threads list</li>
+          </ul>
+          <div class="lesson-callout">Without running wrap-up, you risk losing all the learnings and context from that session. This is the habit that makes the whole system compound over time.</div>
+        </div>
+      </div>
+
+      <!-- Configure Your System -->
+      <div class="lesson-panel" id="lesson-tr-cfg-overview">
+        <div class="lesson-title">Configure Your System</div>
+        <div class="lesson-body">
+          <p>Claude Code is installed and running. Now you build out your profiles so Claude shows up already knowing your business.</p>
+          <p>This module is where you run the setup skills that generate your strategy layer, your brand voice, your audience language, and your offer files.</p>
+          <p>Run them in this order:</p>
+          <ul>
+            <li><strong>setup-user-profile</strong> — asks questions about your business and how you like to work, then writes USER.md</li>
+            <li><strong>setup-north-star</strong> — builds your strategy layer: mission, 90-day priorities, income target</li>
+            <li><strong>setup-brand-voice</strong> — reads your writing samples and brand stories, extracts your voice profile</li>
+            <li><strong>setup-icp</strong> — builds your ideal client profile and first audience language file</li>
+            <li><strong>setup-brand-stories</strong> — compiles brand stories and testimonials into a story bank</li>
+          </ul>
+          <p>If you didn't finish gathering material beforehand, don't worry. Most setup skills can walk you through it on the spot.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cfg-strategy">
+        <div class="lesson-title">Your Strategy Layer</div>
+        <div class="lesson-body">
+          <h3>Your User Profile</h3>
+          <p>Type <code>run setup-user-profile</code> in the chat panel. It will pull in any material you already uploaded to your brand-context/about-me folder. Anything missing, and it will ask you questions one at a time: your name, your brand, what you sell, who you sell it to, how you like to communicate.</p>
+          <h3>Your North Star</h3>
+          <p>Type <code>run setup-north-star</code>. This skill writes two files: ceo-north-star.md (your mission, offers, and 90-day priorities) and revenue-tracker.md (your income target and current pipeline).</p>
+          <h3>SOUL.md</h3>
+          <p>SOUL.md comes pre-configured in the Business Brain OS. It controls how Claude behaves in your sessions. You don't need to edit it now — over time it will update as you develop preferences. The wrap-up skill proposes updates when it detects repeated patterns of corrections. You approve or reject each one.</p>
+          <h3>Verify it's working</h3>
+          <p>Once you've run both setup skills, close Claude Code completely and open it again. Type: <em>Who am I and what am I working on?</em></p>
+          <p>Claude should respond with your name, your brand, and your current priorities.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cfg-voice">
+        <div class="lesson-title">Your Brand Voice</div>
+        <div class="lesson-body">
+          <h3>Setup Brand Voice</h3>
+          <p>Type <code>run setup-brand-voice</code> in the chat panel. This skill reads everything in your writing-samples and brand-stories folders and generates a voice profile automatically — the patterns, rhythm, tone, and things to avoid that make your writing sound like you.</p>
+          <p>It produces two files: <strong>brand-context/voice-profile.md</strong> (the voice guide every content skill reads before writing) and <strong>brand-context/writing-examples.md</strong> (a curated set of gold-standard sentences from your own writing).</p>
+          <h3>Test it</h3>
+          <p>Once the skill has finished, ask Claude to write a short Facebook post on any topic you know well. Read it back. Does it sound like you?</p>
+          <p>If it's way off, add more examples to brand-context/writing-samples/ and regenerate. You can run setup-brand-voice as many times as you need.</p>
+          <h3>Setup Brand Stories</h3>
+          <p>Run <code>setup-brand-stories</code> after setup-brand-voice. This skill reads everything in your brand-stories and testimonials folders, compiles them into a story bank, and updates your voice profile with real material for copy skills to draw on.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cfg-language">
+        <div class="lesson-title">Language Rules</div>
+        <div class="lesson-body">
+          <p>Your voice profile captures how you sound. Language rules add a separate layer: what Claude is explicitly never allowed to write.</p>
+          <p>Without language rules, Claude defaults to patterns that are technically fine but feel off: em dashes, phrases like "here's the thing", structures like "it's not X, it's Y". These are so common in AI-generated content that they've become dead giveaways.</p>
+          <h3>Run setup-language-rules</h3>
+          <p>Type <code>run setup-language-rules</code> in the chat panel. The skill starts with a curated list of the most common AI writing offenders, asks you four quick questions to personalise it, then saves your file.</p>
+          <p>Your language rules save to <strong>brand-context/language-rules.md</strong>. Every content skill loads this file alongside your voice profile before writing anything. The rules are treated as hard constraints, not suggestions.</p>
+          <h3>The ongoing habit</h3>
+          <p>Every time Claude produces a phrase that jars — something that makes you think "I'd never say that" — tell it in the session and then say: <em>"Add that to my language rules."</em></p>
+          <p>Claude opens the file, adds the phrase, confirms it's done. That phrase will never appear in your content again.</p>
+          <div class="lesson-callout">Over time, this file becomes one of the most valuable parts of your system. The more you refine it, the less editing you do.</div>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cfg-audience">
+        <div class="lesson-title">Map Your Audience</div>
+        <div class="lesson-body">
+          <h3>Set Up Your ICP</h3>
+          <p>Type <code>run setup-icp</code>. This skill builds two files: your ideal client profile and your first audience language file. These are what every copy skill reads before writing anything promotional.</p>
+          <p>If you've saved material to your audience-language folder, it picks everything up automatically. If not, it walks you through questions one at a time: who your ideal client is, what they want, how they describe their problem, the exact words they use.</p>
+          <h3>How to keep adding language over time</h3>
+          <p>After every discovery call, testimonial, survey response, or comment — paste the quote directly. Say to Claude: "Add this to my audience language file" and paste what you have. It goes in as-is, verbatim.</p>
+          <p>The more you add over time, the more accurately the system can write for your specific audience rather than a generic version of them.</p>
+          <h3>Going deeper with mkt-icp</h3>
+          <p>When you're ready to go further, <code>run mkt-icp</code> goes out and finds language you don't have yet — researching what your audience says in public (Amazon reviews, Reddit threads, YouTube comments) and surfacing the exact words they use when nobody's watching.</p>
+        </div>
+      </div>
+
+    </div><!-- /course-main -->
+  </div><!-- /course-layout -->
   </div><!-- /panel-training -->
 
 </div><!-- /page-body -->
@@ -1550,7 +1800,7 @@
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       tab.classList.add('active');
       document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
-      document.body.classList.toggle('skills-active', tab.dataset.tab === 'skills');
+      document.body.classList.toggle('skills-active', tab.dataset.tab === 'skills' || tab.dataset.tab === 'training');
     });
   });
 

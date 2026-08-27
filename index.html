@@ -637,17 +637,36 @@
   }
 
   .lesson-callout {
-    background: #fdf9f0;
-    border-top: 3px solid var(--amber);
-    border-radius: 0 0 4px 4px;
+    background: #D4900A;
+    border-radius: 6px;
     padding: 16px 20px;
     margin: 20px 0 24px;
-    font-size: 14px;
     line-height: 1.65;
-    color: var(--body-text);
+    color: #fff;
   }
 
-  .lesson-callout strong { color: var(--charcoal); }
+  .lesson-callout:not(.lesson-callout--labeled)::before {
+    content: "Key point";
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 6px;
+  }
+
+  .lesson-callout--labeled strong {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 6px;
+  }
+
+  .lesson-callout strong { color: #fff; font-weight: 600; }
 
   /* Method cards (How to Call) */
   .method-cards { display: flex; flex-direction: column; gap: 12px; margin: 20px 0 28px; }
@@ -1274,7 +1293,7 @@
         <div class="lesson-title">Check In With Your System</div>
         <div class="lesson-body">
           <p>At the start of every session, Claude reads your context files — your USER.md, your north star, your open threads, today's session memory. But it's worth confirming this has loaded correctly before you start work.</p>
-          <div class="lesson-callout"><strong>Type this at the start of every session:</strong><br><br>Who am I and what am I working on?</div>
+          <div class="lesson-callout lesson-callout--labeled"><strong>Type this at the start of every session:</strong><br><br>Who am I and what am I working on?</div>
           <p>Claude should respond with your name, your brand, and your current priorities. If the response feels generic or doesn't mention your business, something hasn't loaded right — close and reopen your folder.</p>
           <h3>Why this matters</h3>
           <p>The context window is what Claude holds in memory for a session. If you start asking it to write content before it has your files loaded, you'll get output that sounds like a general AI rather than your system. One quick check prevents this.</p>
@@ -1286,7 +1305,7 @@
         <div class="lesson-title">End Every Session With Wrap-Up</div>
         <div class="lesson-body">
           <p>Run this every time before you close Claude. It takes about two minutes and it's what makes the system compound over time.</p>
-          <div class="lesson-callout"><strong>Type at the end of every session:</strong><br><br>/wrap-up</div>
+          <div class="lesson-callout lesson-callout--labeled"><strong>Type at the end of every session:</strong><br><br>/wrap-up</div>
           <h3>What it saves</h3>
           <p>The wrap-up skill writes three things:</p>
           <p><strong>memory/sessions/[date].md</strong> — today's session log. What you worked on, what decisions were made, what was produced.</p>

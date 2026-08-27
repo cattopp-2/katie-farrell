@@ -582,6 +582,20 @@
   .sidebar-lessons { display: none; }
   .sidebar-module.open .sidebar-lessons { display: block; }
 
+  .sidebar-module-title::after {
+    content: '›';
+    float: right;
+    font-size: 14px;
+    color: #aaa;
+    transition: transform 0.2s;
+    display: inline-block;
+    transform: rotate(0deg);
+  }
+  .sidebar-module.open .sidebar-module-title::after {
+    transform: rotate(90deg);
+    color: var(--teal);
+  }
+
   .sidebar-lesson {
     display: block;
     padding: 8px 20px 8px 28px;

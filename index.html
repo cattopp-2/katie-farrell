@@ -22,6 +22,10 @@
   body {
     font-family: 'Lato', system-ui, sans-serif;
     background: var(--white);
+  }
+
+  body.skills-active {
+    background: #f0f2f4;
     color: var(--body-text);
     line-height: 1.7;
     font-size: 16px;
@@ -537,12 +541,9 @@
 
   /* ── Course layout (Skills tab) ── */
   #panel-skills {
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    margin-left: -40px;
+    margin-right: -40px;
     margin-top: -20px;
-    padding-left: calc(50vw - 50%);
-    padding-right: calc(50vw - 50%);
-    background: #f0f2f4;
     min-height: calc(100vh - var(--nav-h) - var(--phase-h));
   }
 
@@ -1565,6 +1566,7 @@
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       tab.classList.add('active');
       document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+      document.body.classList.toggle('skills-active', tab.dataset.tab === 'skills');
     });
   });
 

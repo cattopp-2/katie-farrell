@@ -571,7 +571,13 @@
     font-weight: 700;
     letter-spacing: 0.04em;
     color: var(--charcoal);
+    cursor: pointer;
+    transition: color 0.12s;
   }
+
+  .sidebar-module-title:hover { color: var(--teal); }
+
+  .sidebar-module-title.active { color: var(--teal); }
 
   .sidebar-lessons { display: block; }
 
@@ -1045,7 +1051,7 @@
     <div class="course-sidebar">
 
       <div class="sidebar-module open" data-module="what-are-skills">
-        <div class="sidebar-module-title">What Are Skills?</div>
+        <div class="sidebar-module-title" data-lesson="mod-what-are-skills">What Are Skills?</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson active" data-lesson="getting-started">Getting Started</div>
           <div class="sidebar-lesson" data-lesson="how-to-call">How to Call a Skill</div>
@@ -1056,14 +1062,14 @@
       </div>
 
       <div class="sidebar-module open" data-module="daily-habits">
-        <div class="sidebar-module-title">Daily Habits</div>
+        <div class="sidebar-module-title" data-lesson="mod-daily-habits">Daily Habits</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson" data-lesson="wrap-up-habit">End Every Session</div>
         </div>
       </div>
 
       <div class="sidebar-module open" data-module="your-skills">
-        <div class="sidebar-module-title">Your Skills</div>
+        <div class="sidebar-module-title" data-lesson="mod-your-skills">Your Skills</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson" data-lesson="repurpose-video">Repurpose Video</div>
           <div class="sidebar-lesson" data-lesson="content-suite">Content Suite</div>
@@ -1079,6 +1085,52 @@
 
     <!-- ═══ MAIN CONTENT ═══ -->
     <div class="course-main">
+
+      <!-- Module intro: What Are Skills? -->
+      <div class="lesson-panel" id="lesson-mod-what-are-skills">
+        <div class="lesson-title">What Are Skills?</div>
+        <div class="lesson-body">
+          <p>Skills are pre-built instructions that tell Claude how to handle a specific type of task — in your voice, for your audience, using your context files.</p>
+          <p>This module covers how the skill system works, how to call a skill, what's in your library, and how skills get better over time.</p>
+          <ul>
+            <li><strong>Getting Started</strong> — what a skill actually is and why it works</li>
+            <li><strong>How to Call a Skill</strong> — the three ways to run one</li>
+            <li><strong>What's in the Library</strong> — an overview of what's available</li>
+            <li><strong>Skills Cheatsheet</strong> — the quick reference for every skill</li>
+            <li><strong>How Skills Improve</strong> — the feedback loop that makes them better</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Module intro: Daily Habits -->
+      <div class="lesson-panel" id="lesson-mod-daily-habits">
+        <div class="lesson-title">Daily Habits</div>
+        <div class="lesson-body">
+          <p>There's one habit that makes the difference between a system that compounds and one that stays flat: running the wrap-up at the end of every session.</p>
+          <p>This module is short on purpose. One lesson, one habit.</p>
+          <ul>
+            <li><strong>End Every Session</strong> — what the wrap-up does and why it matters</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Module intro: Your Skills -->
+      <div class="lesson-panel" id="lesson-mod-your-skills">
+        <div class="lesson-title">Your Skills</div>
+        <div class="lesson-body">
+          <p>These are the skills built specifically for how you work — the ones you'll use most often, tailored to your voice, your audience, and your offers.</p>
+          <p>You don't need to learn all of them before you start. Begin with the ones that match what you're trying to create right now.</p>
+          <ul>
+            <li><strong>Repurpose Video</strong> — your primary workflow: one recording into a week of content</li>
+            <li><strong>Content Suite</strong> — one idea into posts, threads, and an email</li>
+            <li><strong>Content Router</strong> — pick an idea, pick a format, Claude handles the rest</li>
+            <li><strong>Email Sequence Writer</strong> — full sequences for your lead magnets and offers</li>
+            <li><strong>Social Post Writer</strong> — individual posts across 20+ copy frameworks</li>
+            <li><strong>CEO Check</strong> — check any decision against your north star</li>
+            <li><strong>Content Ideas</strong> — extract ideas from a transcript or document</li>
+          </ul>
+        </div>
+      </div>
 
       <!-- Getting Started -->
       <div class="lesson-panel active" id="lesson-getting-started">
@@ -1447,7 +1499,7 @@
     <div class="course-sidebar">
 
       <div class="sidebar-module open">
-        <div class="sidebar-module-title">Repurpose Audio &amp; Video</div>
+        <div class="sidebar-module-title" data-lesson="wf-repurpose-overview">Repurpose Audio &amp; Video</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson active" data-lesson="wf-repurpose-overview">Overview</div>
           <div class="sidebar-lesson" data-lesson="wf-repurpose-step1">Step 1 — Save your file</div>
@@ -1458,7 +1510,7 @@
       </div>
 
       <div class="sidebar-module open">
-        <div class="sidebar-module-title">Your Airtable Content System</div>
+        <div class="sidebar-module-title" data-lesson="wf-airtable-overview">Your Airtable Content System</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson" data-lesson="wf-airtable-overview">Overview</div>
           <div class="sidebar-lesson" data-lesson="wf-airtable-review">Reviewing drafts</div>
@@ -1613,7 +1665,7 @@
     <div class="course-sidebar">
 
       <div class="sidebar-module open">
-        <div class="sidebar-module-title">The Folder Structure</div>
+        <div class="sidebar-module-title" data-lesson="mod-folder-structure">The Folder Structure</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson active" data-lesson="tr-folder-overview">Overview</div>
           <div class="sidebar-lesson" data-lesson="tr-folder-context">context/</div>
@@ -1627,7 +1679,7 @@
       </div>
 
       <div class="sidebar-module open">
-        <div class="sidebar-module-title">Working with Markdown</div>
+        <div class="sidebar-module-title" data-lesson="mod-working-markdown">Working with Markdown</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson" data-lesson="tr-md-what">What is Markdown?</div>
           <div class="sidebar-lesson" data-lesson="tr-md-open">Opening and Editing Files</div>
@@ -1639,6 +1691,35 @@
 
     <!-- Training Lesson Panels -->
     <div class="course-main">
+
+      <!-- Module intro: The Folder Structure -->
+      <div class="lesson-panel" id="lesson-mod-folder-structure">
+        <div class="lesson-title">The Folder Structure</div>
+        <div class="lesson-body">
+          <p>Your Business Brain OS is built from a specific set of folders, each with a clear job. Understanding where things live means you know where to look, what to edit, and what to leave alone.</p>
+          <ul>
+            <li><strong>context/</strong> — who you are and how Claude behaves</li>
+            <li><strong>brand-context/</strong> — your voice, audience language, and offer files</li>
+            <li><strong>memory/</strong> — what Claude remembers between sessions (don't edit this)</li>
+            <li><strong>offers/</strong> — detail files for each of your offers</li>
+            <li><strong>source/</strong> — raw material you bring in (transcripts, notes)</li>
+            <li><strong>CLAUDE.md</strong> — the instruction file Claude reads at the start of every session</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Module intro: Working with Markdown -->
+      <div class="lesson-panel" id="lesson-mod-working-markdown">
+        <div class="lesson-title">Working with Markdown</div>
+        <div class="lesson-body">
+          <p>Almost everything in the Business Brain OS is stored as a markdown file — plain text with a <code>.md</code> extension. This module covers what that means in practice and how to work with those files confidently.</p>
+          <ul>
+            <li><strong>What is Markdown?</strong> — why it's used and what it looks like</li>
+            <li><strong>Opening and Editing Files</strong> — how to read and update your context files</li>
+            <li><strong>Getting Documents In</strong> — how to bring external documents into your system</li>
+          </ul>
+        </div>
+      </div>
 
       <!-- Folder Structure -->
       <div class="lesson-panel active" id="lesson-tr-folder-overview">
@@ -1769,7 +1850,7 @@
     <div class="course-sidebar">
 
       <div class="sidebar-module open">
-        <div class="sidebar-module-title">Working With Claude Code</div>
+        <div class="sidebar-module-title" data-lesson="mod-working-with-cc">Working With Claude Code</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson active" data-lesson="tr-cc-install">Install and Open</div>
           <div class="sidebar-lesson" data-lesson="tr-cc-interface">The Interface</div>
@@ -1780,7 +1861,7 @@
       </div>
 
       <div class="sidebar-module open">
-        <div class="sidebar-module-title">Configure Your System</div>
+        <div class="sidebar-module-title" data-lesson="mod-configure-system">Configure Your System</div>
         <div class="sidebar-lessons">
           <div class="sidebar-lesson" data-lesson="tr-cfg-overview">Overview</div>
           <div class="sidebar-lesson" data-lesson="tr-cfg-strategy">Your Strategy Layer</div>
@@ -1793,6 +1874,36 @@
     </div><!-- /course-sidebar -->
 
     <div class="course-main">
+
+      <!-- Module intro: Working With Claude Code -->
+      <div class="lesson-panel" id="lesson-mod-working-with-cc">
+        <div class="lesson-title">Working With Claude Code</div>
+        <div class="lesson-body">
+          <p>Before you start configuring your system, you need to be comfortable in the tool that runs it. This module walks you through getting Claude Code installed, understanding the interface, and knowing what it can and can't do.</p>
+          <ul>
+            <li><strong>Install and Open</strong> — get Claude Code running and open your folder</li>
+            <li><strong>The Interface</strong> — the chat panel, the file sidebar, and the modes</li>
+            <li><strong>Permissions</strong> — what Claude is and isn't allowed to do</li>
+            <li><strong>Connecting External Tools</strong> — how Airtable and other MCPs connect</li>
+            <li><strong>Your Memory System</strong> — how Claude remembers things between sessions</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Module intro: Configure Your System -->
+      <div class="lesson-panel" id="lesson-mod-configure-system">
+        <div class="lesson-title">Configure Your System</div>
+        <div class="lesson-body">
+          <p>This is where you run the setup skills that load your voice, strategy, and audience into Claude. Once done, every session starts with Claude already knowing your business.</p>
+          <ul>
+            <li><strong>Overview</strong> — what the configuration process involves</li>
+            <li><strong>Your Strategy Layer</strong> — mission, priorities, income target</li>
+            <li><strong>Your Brand Voice</strong> — how Claude learns to sound like you</li>
+            <li><strong>Language Rules</strong> — words and phrases Claude must never use</li>
+            <li><strong>Map Your Audience</strong> — your ideal client profile and audience language</li>
+          </ul>
+        </div>
+      </div>
 
       <div class="lesson-panel active" id="lesson-tr-cc-install">
         <div class="lesson-title">Install and Open Claude Code</div>
@@ -2000,9 +2111,21 @@
   document.querySelectorAll('.sidebar-lesson').forEach(lesson => {
     lesson.addEventListener('click', () => {
       document.querySelectorAll('.sidebar-lesson').forEach(l => l.classList.remove('active'));
+      document.querySelectorAll('.sidebar-module-title').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.lesson-panel').forEach(p => p.classList.remove('active'));
       lesson.classList.add('active');
       const panel = document.getElementById('lesson-' + lesson.dataset.lesson);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('.sidebar-module-title[data-lesson]').forEach(title => {
+    title.addEventListener('click', () => {
+      document.querySelectorAll('.sidebar-lesson').forEach(l => l.classList.remove('active'));
+      document.querySelectorAll('.sidebar-module-title').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.lesson-panel').forEach(p => p.classList.remove('active'));
+      title.classList.add('active');
+      const panel = document.getElementById('lesson-' + title.dataset.lesson);
       if (panel) panel.classList.add('active');
     });
   });

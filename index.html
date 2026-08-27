@@ -908,6 +908,7 @@
     <button class="nav-tab active" data-tab="home">Home</button>
     <button class="nav-tab" data-tab="skills">Skills</button>
     <button class="nav-tab" data-tab="training">Training</button>
+    <button class="nav-tab" data-tab="setup">Setup</button>
   </div>
   <a href="[FEEDBACK FORM URL]" class="nav-feedback">Leave feedback</a>
 </nav>
@@ -1480,28 +1481,6 @@
         </div>
       </div>
 
-      <div class="sidebar-module open">
-        <div class="sidebar-module-title">Install Claude Code <span>−</span></div>
-        <div class="sidebar-lessons">
-          <div class="sidebar-lesson" data-lesson="tr-cc-install">Install and Open</div>
-          <div class="sidebar-lesson" data-lesson="tr-cc-interface">The Interface</div>
-          <div class="sidebar-lesson" data-lesson="tr-cc-permissions">Permissions</div>
-          <div class="sidebar-lesson" data-lesson="tr-cc-mcps">Connecting External Tools</div>
-          <div class="sidebar-lesson" data-lesson="tr-cc-memory">Your Memory System</div>
-        </div>
-      </div>
-
-      <div class="sidebar-module open">
-        <div class="sidebar-module-title">Configure Your System <span>−</span></div>
-        <div class="sidebar-lessons">
-          <div class="sidebar-lesson" data-lesson="tr-cfg-overview">Overview</div>
-          <div class="sidebar-lesson" data-lesson="tr-cfg-strategy">Your Strategy Layer</div>
-          <div class="sidebar-lesson" data-lesson="tr-cfg-voice">Your Brand Voice</div>
-          <div class="sidebar-lesson" data-lesson="tr-cfg-language">Language Rules</div>
-          <div class="sidebar-lesson" data-lesson="tr-cfg-audience">Map Your Audience</div>
-        </div>
-      </div>
-
     </div><!-- /course-sidebar -->
 
     <!-- Training Lesson Panels -->
@@ -1623,8 +1602,43 @@
         </div>
       </div>
 
-      <!-- Install Claude Code -->
-      <div class="lesson-panel" id="lesson-tr-cc-install">
+    </div><!-- /course-main -->
+  </div><!-- /course-layout -->
+  </div><!-- /panel-training -->
+
+  <!-- Setup Tab -->
+  <div class="tab-panel" id="panel-setup">
+  <div class="course-layout">
+
+    <div class="course-sidebar">
+
+      <div class="sidebar-module open">
+        <div class="sidebar-module-title">Working With Claude Code <span>−</span></div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson active" data-lesson="tr-cc-install">Install and Open</div>
+          <div class="sidebar-lesson" data-lesson="tr-cc-interface">The Interface</div>
+          <div class="sidebar-lesson" data-lesson="tr-cc-permissions">Permissions</div>
+          <div class="sidebar-lesson" data-lesson="tr-cc-mcps">Connecting External Tools</div>
+          <div class="sidebar-lesson" data-lesson="tr-cc-memory">Your Memory System</div>
+        </div>
+      </div>
+
+      <div class="sidebar-module open">
+        <div class="sidebar-module-title">Configure Your System <span>−</span></div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson" data-lesson="tr-cfg-overview">Overview</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-strategy">Your Strategy Layer</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-voice">Your Brand Voice</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-language">Language Rules</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-audience">Map Your Audience</div>
+        </div>
+      </div>
+
+    </div><!-- /course-sidebar -->
+
+    <div class="course-main">
+
+      <div class="lesson-panel active" id="lesson-tr-cc-install">
         <div class="lesson-title">Install and Open Claude Code</div>
         <div class="lesson-body">
           <ul>
@@ -1711,7 +1725,6 @@
         </div>
       </div>
 
-      <!-- Configure Your System -->
       <div class="lesson-panel" id="lesson-tr-cfg-overview">
         <div class="lesson-title">Configure Your System</div>
         <div class="lesson-body">
@@ -1789,7 +1802,7 @@
 
     </div><!-- /course-main -->
   </div><!-- /course-layout -->
-  </div><!-- /panel-training -->
+  </div><!-- /panel-setup -->
 
 </div><!-- /page-body -->
 
@@ -1800,7 +1813,7 @@
       document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
       tab.classList.add('active');
       document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
-      document.body.classList.toggle('skills-active', tab.dataset.tab === 'skills' || tab.dataset.tab === 'training');
+      document.body.classList.toggle('skills-active', ['skills','training','setup'].includes(tab.dataset.tab));
     });
   });
 

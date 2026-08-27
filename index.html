@@ -2109,20 +2109,22 @@
       <div class="lesson-panel" id="lesson-tr-cfg-visual-brand">
         <div class="lesson-title">Your Visual Brand</div>
         <div class="lesson-body">
-          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Your brand standards file is what keeps every page you build looking consistent — the same colours, fonts, and spacing, every time.</p>
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Your brand guidelines file is the single source of truth for how everything visual looks — website pages, carousels, presentations, any design Claude builds for you.</p>
           <h3>Where it lives</h3>
-          <p>Your visual brand guidelines are stored in your <code>brand-context/Website/</code> folder. This includes your design tokens — the exact colour values, font names, spacing scales, and button styles that define your brand on screen.</p>
+          <p>Your visual brand guidelines are stored in:</p>
+          <div class="lesson-callout lesson-callout--labeled"><strong>Folder:</strong><br><br>brand-context/Visual Brand Guidelines/</div>
+          <p>The key file is <code>brand-guidelines.md</code>. It contains your full colour palette (with HEX values), your typography system (heading, body, subheading, accent fonts and their Google Fonts fallbacks), CSS variables ready to drop into any build, your logo variants and when to use each one, and usage rules for colour and type.</p>
           <h3>How it gets used</h3>
-          <p>When you ask Claude to build a page using <code>viz-interface-design</code>, it reads these files first. That means every page starts from your palette and type system rather than something generic. You don't have to describe your brand each time — it's already loaded.</p>
-          <h3>Building a new page</h3>
+          <p>When you ask Claude to build a page or a visual, it reads <code>brand-guidelines.md</code> first. That means every page starts from your navy, gold, and rose palette, your Playfair Display headings, and your EB Garamond body copy — not something generic. You don't describe your brand each time; it's already loaded.</p>
+          <h3>Building a page</h3>
           <p>The typical workflow is:</p>
           <ol>
-            <li>Write the copy first — using <code>service-page-writer</code>, <code>sales-page-writer</code>, or by drafting it yourself</li>
-            <li>Say: <em>"Design a page for [offer] using this copy"</em> — <code>viz-interface-design</code> takes the copy and builds the layout</li>
-            <li>The output is an HTML file you paste into a WordPress page builder (Divi) code block</li>
+            <li>Write the copy — using <code>service-page-writer</code>, <code>sales-page-writer</code>, or your own draft</li>
+            <li>Say: <em>"Design a page for [offer] using this copy"</em> — Claude reads your brand guidelines and builds the layout using <code>viz-interface-design</code></li>
+            <li>The output is an HTML file you paste into a Divi code block on your WordPress site</li>
           </ol>
-          <h3>Keeping it updated</h3>
-          <p>If your brand ever evolves — new accent colour, updated fonts, different button style — the design tokens file is the single place to change it. Every future page build picks up the new values automatically.</p>
+          <h3>If your brand evolves</h3>
+          <p>Update <code>brand-guidelines.md</code> — change a colour value, swap a font, update a rule. Every future build picks up the change automatically. The HTML version (<code>brand-guidelines.html</code>) is a visual reference you can open in a browser to see everything at a glance.</p>
         </div>
       </div>
 

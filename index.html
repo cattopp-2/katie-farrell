@@ -894,6 +894,7 @@
     <button class="nav-tab" data-tab="training">Business Brain Overview</button>
     <button class="nav-tab" data-tab="setup">Setup</button>
     <button class="nav-tab" data-tab="skills">Skills Library</button>
+    <button class="nav-tab" data-tab="workflows">Workflows</button>
   </div>
   <a href="[FEEDBACK FORM URL]" class="nav-feedback">Leave feedback</a>
 </nav>
@@ -1439,6 +1440,171 @@
   </div><!-- /panel-skills -->
 
 
+  <!-- WORKFLOWS -->
+  <div class="tab-panel" id="panel-workflows">
+  <div class="course-layout">
+
+    <div class="course-sidebar">
+
+      <div class="sidebar-module open">
+        <div class="sidebar-module-title">Repurpose Audio &amp; Video</div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson active" data-lesson="wf-repurpose-overview">Overview</div>
+          <div class="sidebar-lesson" data-lesson="wf-repurpose-step1">Step 1 — Save your file</div>
+          <div class="sidebar-lesson" data-lesson="wf-repurpose-step2">Step 2 — Transcribe</div>
+          <div class="sidebar-lesson" data-lesson="wf-repurpose-step3">Step 3 — Run the skill</div>
+          <div class="sidebar-lesson" data-lesson="wf-repurpose-step4">Step 4 — Review in Airtable</div>
+        </div>
+      </div>
+
+      <div class="sidebar-module open">
+        <div class="sidebar-module-title">Your Airtable Content System</div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson" data-lesson="wf-airtable-overview">Overview</div>
+          <div class="sidebar-lesson" data-lesson="wf-airtable-review">Reviewing drafts</div>
+          <div class="sidebar-lesson" data-lesson="wf-airtable-publish">Marking as finalised</div>
+        </div>
+      </div>
+
+    </div><!-- /course-sidebar -->
+
+    <div class="course-main">
+
+      <!-- Repurpose Overview -->
+      <div class="lesson-panel active" id="lesson-wf-repurpose-overview">
+        <div class="lesson-title">Repurpose Audio &amp; Video</div>
+        <div class="lesson-body">
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Turn one recording into a full week of content — Facebook, LinkedIn, Instagram, and email.</p>
+          <p>This is your primary content workflow. You record a voice note or video — talking about something you're thinking about, a client situation, a pattern you've noticed — and Claude turns it into a full batch of platform-ready posts.</p>
+          <p>The whole process takes about five minutes of your time. Claude does the rest.</p>
+          <h3>What you get from one recording</h3>
+          <ul>
+            <li>2 Facebook posts (different angles and frameworks)</li>
+            <li>1 short Facebook post + first comment (for engagement)</li>
+            <li>2 LinkedIn posts</li>
+            <li>1 Instagram caption</li>
+            <li>1 Instagram carousel (slide copy)</li>
+            <li>1 nurture email with subject line options</li>
+          </ul>
+          <p>Everything lands in Airtable as a draft for you to review. Nothing gets posted without your sign-off.</p>
+        </div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="lesson-panel" id="lesson-wf-repurpose-step1">
+        <div class="lesson-title">Step 1 — Save your file</div>
+        <div class="lesson-body">
+          <p>Save your audio or video file to this folder in Dropbox:</p>
+          <div class="lesson-callout lesson-callout--labeled"><strong>Folder:</strong><br><br>brand-context/Videos and Audios to repurpose/</div>
+          <p>Any format works — <code>.m4a</code>, <code>.mp3</code>, <code>.mp4</code>, <code>.mov</code>. Name it something recognisable, like <code>Energetic Triggers.m4a</code> or <code>Nervous system post.m4a</code>. You don't need to tidy it up.</p>
+          <p>If you already have a written transcript or an <code>.srt</code> subtitle file, you can drop that in the same folder instead — Claude can read those directly and skip the transcription step.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="lesson-panel" id="lesson-wf-repurpose-step2">
+        <div class="lesson-title">Step 2 — Transcribe</div>
+        <div class="lesson-body">
+          <p>Open a Claude Code session and say:</p>
+          <div class="lesson-callout lesson-callout--labeled"><strong>Type:</strong><br><br>Transcribe [filename] — it's in brand-context/Videos and Audios to repurpose/</div>
+          <p>Claude will run the transcription tool and save a <code>.md</code> file in the same folder. The file will be named with the date and topic, like <code>2026-08-27-energetic-triggers.md</code>.</p>
+          <p>Once it's saved, Claude will tell you it's done. You can read it back to check, but you don't need to — it goes straight into the next step.</p>
+          <p>If you already dropped in a transcript or SRT file, skip this step entirely.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="lesson-panel" id="lesson-wf-repurpose-step3">
+        <div class="lesson-title">Step 3 — Run the skill</div>
+        <div class="lesson-body">
+          <p>Once the transcript file exists, say:</p>
+          <div class="lesson-callout lesson-callout--labeled"><strong>Type:</strong><br><br>Repurpose this voice note — [brief description of the topic]</div>
+          <p>For example: <em>"Repurpose this voice note — it's about how people get energetically triggered by others who are spiritually open."</em></p>
+          <p>The description helps Claude pick the right angles and offer connection. Keep it to one sentence.</p>
+          <h3>What Claude does next</h3>
+          <ul>
+            <li>Reads the transcript and extracts the core insight and angles</li>
+            <li>Writes each piece using a different framework and angle — no repetition</li>
+            <li>Runs everything through the humaniser to remove AI tells</li>
+            <li>Saves files to <code>projects/social-posts/[date]_[topic]/</code></li>
+            <li>Saves all 7 pieces to Airtable as <strong>Katie to check</strong></li>
+          </ul>
+          <p>Claude will ask you one question at most — usually about the CTA if it's not obvious from the recording. Otherwise it runs through without stopping.</p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="lesson-panel" id="lesson-wf-repurpose-step4">
+        <div class="lesson-title">Step 4 — Review in Airtable</div>
+        <div class="lesson-body">
+          <p>When the skill finishes, your content is in Airtable. Open the <strong>Katie to check</strong> view and you'll see the new posts listed.</p>
+          <div class="lesson-callout lesson-callout--labeled"><strong>Airtable:</strong><br><br>Katie's Content System → SM Content → Katie to check</div>
+          <p>Click into each record to read the post. If you're happy with it, move it to <strong>Finalised</strong>. If you want changes, drop a note in the record or come back to Claude and say what needs adjusting.</p>
+          <p>You don't need to review everything at once. The drafts sit there until you're ready.</p>
+        </div>
+      </div>
+
+      <!-- Airtable Overview -->
+      <div class="lesson-panel" id="lesson-wf-airtable-overview">
+        <div class="lesson-title">Your Airtable Content System</div>
+        <div class="lesson-body">
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Where all your content drafts live between being written and being published.</p>
+          <p>Your Airtable base is called <strong>Katie's Content System</strong>. The main table you'll work in is <strong>SM Content</strong>.</p>
+          <h3>The three views</h3>
+          <ul>
+            <li><strong>Katie to check</strong> — drafts that Claude has written and saved. These are ready for your review.</li>
+            <li><strong>Katie's feedback</strong> — posts you've flagged for rework. Add a note in the record and come back to Claude to fix them.</li>
+            <li><strong>Finalised</strong> — approved posts ready to schedule or publish.</li>
+          </ul>
+          <p>You move a post between views by changing its <strong>Status</strong> field. That's all there is to it.</p>
+          <h3>Other tables</h3>
+          <ul>
+            <li><strong>Videos and Audios</strong> — a record of source recordings and what's been repurposed from them</li>
+            <li><strong>Freebies</strong> — lead magnet tracking</li>
+            <li><strong>Testimonials &amp; Case Studies</strong> — client results and quotes</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Reviewing drafts -->
+      <div class="lesson-panel" id="lesson-wf-airtable-review">
+        <div class="lesson-title">Reviewing drafts</div>
+        <div class="lesson-body">
+          <p>When new content appears in <strong>Katie to check</strong>, open each record and read it through.</p>
+          <h3>If you're happy with it</h3>
+          <p>Change the Status to <strong>Finalised</strong>. It moves out of Katie to check and into the Finalised view.</p>
+          <h3>If something needs changing</h3>
+          <p>Change the Status to <strong>Katie's feedback</strong> and add a note in the record — what's off, what direction you want instead. Then come back to Claude and say:</p>
+          <div class="lesson-callout lesson-callout--labeled"><strong>Example:</strong><br><br>"The Facebook Post 1 from the Energetic Triggers batch needs reworking — the hook is too abstract. Can you try a more personal story angle instead?"</div>
+          <p>Claude will rewrite it and save the updated version back to the same record.</p>
+          <h3>What to look for when reviewing</h3>
+          <ul>
+            <li>Does it sound like you?</li>
+            <li>Is the opening strong enough to stop the scroll?</li>
+            <li>Is the offer or CTA the right one for where you are right now?</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Marking as finalised -->
+      <div class="lesson-panel" id="lesson-wf-airtable-publish">
+        <div class="lesson-title">Marking as finalised</div>
+        <div class="lesson-body">
+          <p>Once you're happy with a post, change its Status to <strong>Finalised</strong>. It moves into the Finalised view, where you can schedule or copy it across to your platform.</p>
+          <p>The <strong>Date</strong> and <strong>Published</strong> fields are there if you want to track when something went out — these are optional but useful if you want to look back at what's been posted.</p>
+          <h3>Scheduling</h3>
+          <p>Airtable doesn't post to social platforms directly. You'll copy the content into Meta Business Suite, LinkedIn, or your scheduling tool of choice. The Airtable record is your review and tracking layer — not a publishing tool.</p>
+          <div class="lesson-callout">
+            <strong>Tip:</strong> Work through one recording's batch at a time. Review, approve, schedule — then move on to the next. It's faster than dipping in and out.
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /course-main -->
+  </div><!-- /course-layout -->
+  </div><!-- /panel-workflows -->
+
+
   <!-- TRAINING -->
   <div class="tab-panel" id="panel-training">
   <div class="course-layout">
@@ -1806,7 +1972,7 @@
       tab.classList.add('active');
       const panel = document.getElementById('panel-' + tab.dataset.tab);
       panel.classList.add('active');
-      document.body.classList.toggle('skills-active', ['skills','training','setup'].includes(tab.dataset.tab));
+      document.body.classList.toggle('skills-active', ['skills','training','setup','workflows'].includes(tab.dataset.tab));
 
       // Reset to first lesson in this tab
       document.querySelectorAll('.sidebar-lesson').forEach(l => l.classList.remove('active'));

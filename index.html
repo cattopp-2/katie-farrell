@@ -323,6 +323,9 @@
     border-radius: 8px;
   }
 
+  .check-item.status-progress { background: rgba(29,154,188,0.18); border-color: rgba(29,154,188,0.25); }
+  .check-item.status-waiting  { background: rgba(255,189,74,0.22); border-color: rgba(255,189,74,0.35); }
+
   .status-dot {
     flex-shrink: 0;
     width: 10px; height: 10px;
@@ -981,7 +984,7 @@
       </div>
       <p style="font-size: 14px; color: var(--body-text); margin-bottom: 20px; line-height: 1.6;">Things Cathy is building or finishing on your behalf.</p>
       <div class="check-list">
-        <div class="check-item">
+        <div class="check-item status-progress">
           <div class="status-dot"></div>
           <div class="check-content">
             <div class="check-label">User guide — recording lesson videos and embedding them throughout</div>
@@ -996,7 +999,7 @@
       </div>
       <p style="font-size: 14px; color: var(--body-text); margin-bottom: 20px; line-height: 1.6;">Things that need your eyes on them.</p>
       <div class="check-list">
-        <div class="check-item">
+        <div class="check-item status-waiting">
           <div class="status-dot"></div>
           <div class="check-content">
             <div class="check-label">"Energetic Triggers" content batch — take a look and let me know what you think</div>

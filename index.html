@@ -674,12 +674,12 @@
   }
 
   .lesson-callout {
-    background: var(--amber);
-    border-radius: 0;
-    padding: 16px 20px;
+    background: transparent;
+    border-left: 3px solid var(--teal);
+    padding: 14px 18px;
     margin: 20px 0 24px;
     line-height: 1.65;
-    color: #1a1a1a;
+    color: var(--charcoal);
   }
 
   .lesson-callout:not(.lesson-callout--labeled)::before {
@@ -689,7 +689,7 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(0,0,0,0.5);
+    color: var(--teal);
     margin-bottom: 6px;
   }
 
@@ -699,11 +699,11 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(0,0,0,0.5);
+    color: var(--teal);
     margin-bottom: 6px;
   }
 
-  .lesson-callout strong { color: #1a1a1a; font-weight: 600; }
+  .lesson-callout strong { color: var(--charcoal); font-weight: 600; }
 
   /* Method cards (How to Call) */
   .method-cards { display: flex; flex-direction: column; gap: 12px; margin: 20px 0 28px; }

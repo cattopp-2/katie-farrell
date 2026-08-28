@@ -1533,6 +1533,16 @@
         </div>
       </div>
 
+      <div class="sidebar-module">
+        <div class="sidebar-module-title" data-lesson="wf-webpage-overview">Building a Website Page</div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson" data-lesson="wf-webpage-overview">Overview</div>
+          <div class="sidebar-lesson" data-lesson="wf-webpage-step1">Step 1 — Write the copy</div>
+          <div class="sidebar-lesson" data-lesson="wf-webpage-step2">Step 2 — Build the HTML</div>
+          <div class="sidebar-lesson" data-lesson="wf-webpage-step3">Step 3 — Paste into Divi</div>
+        </div>
+      </div>
+
     </div><!-- /course-sidebar -->
 
     <div class="course-main">
@@ -1664,6 +1674,82 @@
           <div class="lesson-callout">
             <strong>Tip:</strong> Work through one recording's batch at a time. Review, approve, schedule — then move on to the next. It's faster than dipping in and out.
           </div>
+        </div>
+      </div>
+
+      <!-- Website Page — Overview -->
+      <div class="lesson-panel" id="lesson-wf-webpage-overview">
+        <div class="lesson-title">Building a Website Page</div>
+        <div class="lesson-body">
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Write the copy first, then ask Claude to build the HTML. The skill reads your brand guidelines automatically so every page matches your design system.</p>
+          <p>This is a two-step workflow. The copy and the design are separate jobs — getting them in the right order means you're never retrofitting words into a layout, or redesigning around copy that's going to change.</p>
+          <h3>The two steps</h3>
+          <ol>
+            <li><strong>Write the copy</strong> — use a writer skill to draft it, review and approve it</li>
+            <li><strong>Build the HTML</strong> — run <code>web-page-builder</code>, which reads your brand guidelines and existing pages to produce consistent HTML ready for Divi</li>
+          </ol>
+          <h3>What <code>web-page-builder</code> does</h3>
+          <ul>
+            <li>Reads your brand guidelines (colours, fonts, CSS variables, usage rules)</li>
+            <li>Studies the existing pages to match the established patterns</li>
+            <li>Plans the section structure and waits for your approval before building</li>
+            <li>Produces a single self-contained HTML file saved to <code>brand-context/Website/pages/</code></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Website Page — Step 1 -->
+      <div class="lesson-panel" id="lesson-wf-webpage-step1">
+        <div class="lesson-title">Step 1 — Write the Copy</div>
+        <div class="lesson-body">
+          <p>Use the right writer skill for the page type:</p>
+          <ul>
+            <li><strong>Service page</strong> (Human Design, Energy Healing, Retreats) → <code>service-page-writer</code></li>
+            <li><strong>Sales / programme page</strong> (Her Evolution, group offer) → <code>sales-page-writer</code></li>
+            <li><strong>Short page</strong> (opt-in, thank you) → write it yourself or ask Claude to draft it directly</li>
+          </ul>
+          <div class="lesson-callout lesson-callout--labeled"><strong>Say:</strong><br><br>Run service-page-writer for my [offer name] page</div>
+          <p>The skill will ask you questions about the offer, the audience, and the keyword you want to target. Answer them one at a time. It will produce a full copy draft.</p>
+          <h3>Before moving to Step 2</h3>
+          <p>Read through the copy. Make any changes — add specifics, adjust the tone, swap out any lines that don't sound like you. Once you're happy with it, say: <em>"The copy is approved — build the HTML."</em></p>
+        </div>
+      </div>
+
+      <!-- Website Page — Step 2 -->
+      <div class="lesson-panel" id="lesson-wf-webpage-step2">
+        <div class="lesson-title">Step 2 — Build the HTML</div>
+        <div class="lesson-body">
+          <p>With the copy approved, say:</p>
+          <div class="lesson-callout lesson-callout--labeled"><strong>Say:</strong><br><br>Build the HTML for this page using web-page-builder</div>
+          <p>The skill will:</p>
+          <ol>
+            <li>Read your brand guidelines and study the existing pages</li>
+            <li>Plan the section layout and show you the structure — hero, content sections, CTA</li>
+            <li>Wait for you to confirm the plan before building</li>
+            <li>Produce the full HTML and save it to <code>brand-context/Website/pages/[Page Name]/</code></li>
+          </ol>
+          <h3>Reviewing the output</h3>
+          <p>Open the saved HTML file in your browser to preview it. You can ask Claude to adjust anything — spacing, section order, colours, copy tweaks — before it goes into WordPress.</p>
+        </div>
+      </div>
+
+      <!-- Website Page — Step 3 -->
+      <div class="lesson-panel" id="lesson-wf-webpage-step3">
+        <div class="lesson-title">Step 3 — Paste into Divi</div>
+        <div class="lesson-body">
+          <p>Once you're happy with the preview:</p>
+          <ol>
+            <li>Open the HTML file and copy the entire contents</li>
+            <li>In WordPress, open the page in Divi Builder</li>
+            <li>Add a <strong>full-width section</strong> → insert a <strong>Code module</strong></li>
+            <li>Paste the HTML into the code module and save</li>
+            <li>Preview the page in WordPress to check it renders correctly</li>
+          </ol>
+          <div class="lesson-callout">
+            <strong>Note:</strong> Divi's own header and footer wrap the page automatically — the HTML Claude produces is just the page body content, so there's no duplication.
+          </div>
+          <h3>If something looks off</h3>
+          <p>Come back to Claude and describe what's wrong: <em>"The hero text is too small"</em>, <em>"The CTA button isn't showing"</em>, <em>"The spacing between sections is too tight."</em> Claude will fix the HTML and you re-paste it.</p>
         </div>
       </div>
 
@@ -2105,6 +2191,8 @@
           </ol>
           <h3>If your brand evolves</h3>
           <p>Update <code>brand-guidelines.md</code> — change a colour value, swap a font, update a rule. Every future build picks up the change automatically. The HTML version (<code>brand-guidelines.html</code>) is a visual reference you can open in a browser to see everything at a glance.</p>
+          <h3>If you ever need to rebuild it</h3>
+          <p>The guidelines were extracted from your brand PDF (<code>Brand Guide.pdf</code> in the same folder). If you ever need to rebuild the file from scratch — say, after a full rebrand — say to Claude: <em>"Rebuild my brand guidelines from the PDF in brand-context/Visual Brand Guidelines/"</em> and it will extract the colours, fonts, and rules and rewrite the file.</p>
         </div>
       </div>
 

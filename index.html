@@ -321,13 +321,7 @@
     background: var(--white);
     border: 1px solid var(--mid-grey);
     border-radius: 8px;
-    border-left: 4px solid var(--mid-grey);
   }
-
-  .check-item.status-progress { border-left-color: var(--teal); }
-  .check-item.status-waiting  { border-left-color: var(--amber); }
-  .check-item.status-blocked  { border-left-color: #EF4444; }
-  .check-item.status-done     { border-left-color: #10B981; }
 
   .status-dot {
     flex-shrink: 0;
@@ -983,14 +977,13 @@
 
     <div class="section">
       <div class="section-header">
-        <h2 class="section-title">What I'm working on</h2>
+        <h2 class="section-title">Coming up</h2>
       </div>
       <p style="font-size: 14px; color: var(--body-text); margin-bottom: 20px; line-height: 1.6;">Things Cathy is building or finishing on your behalf.</p>
       <div class="check-list">
-        <div class="check-item status-progress">
+        <div class="check-item">
           <div class="status-dot"></div>
           <div class="check-content">
-            <div class="check-status-tag">In progress</div>
             <div class="check-label">User guide — recording lesson videos and embedding them throughout</div>
           </div>
         </div>
@@ -999,15 +992,14 @@
 
     <div class="section">
       <div class="section-header">
-        <h2 class="section-title">What I need from you</h2>
+        <h2 class="section-title">Over to you</h2>
       </div>
-      <p style="font-size: 14px; color: var(--body-text); margin-bottom: 20px; line-height: 1.6;">Things that are waiting on your input before we can move forward.</p>
+      <p style="font-size: 14px; color: var(--body-text); margin-bottom: 20px; line-height: 1.6;">Things that need your eyes on them.</p>
       <div class="check-list">
-        <div class="check-item status-waiting">
+        <div class="check-item">
           <div class="status-dot"></div>
           <div class="check-content">
-            <div class="check-status-tag">Waiting on you</div>
-            <div class="check-label">"Energetic Triggers" content batch — waiting for your feedback on the second batch</div>
+            <div class="check-label">"Energetic Triggers" content batch — take a look and let me know what you think</div>
             <div class="check-note"><a href="https://airtable.com/appRvCkLb6MPlEAxc/tblY3fk8orD9AkSF1/viw12EBMTSLKzswXw?blocks=hide" target="_blank" style="color: var(--teal);">View in Airtable</a></div>
           </div>
         </div>

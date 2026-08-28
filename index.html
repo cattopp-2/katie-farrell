@@ -946,7 +946,7 @@
     <button class="nav-tab" data-tab="workflows">Workflows</button>
     <button class="nav-tab" data-tab="skills">Skills Library</button>
   </div>
-  <a href="[FEEDBACK FORM URL]" class="nav-feedback">Leave feedback</a>
+  <a href="#feedback-section" class="nav-feedback" onclick="document.querySelector('[data-tab=home]').click(); setTimeout(()=>document.getElementById('feedback-section').scrollIntoView({behavior:'smooth'}),50); return false;">Leave feedback</a>
 </nav>
 
 </div>
@@ -1016,7 +1016,7 @@
     </div>
 
 
-    <div class="section">
+    <div class="section" id="feedback-section">
       <div class="section-header">
         <h2 class="section-title">Feedback and Questions</h2>
       </div>

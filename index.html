@@ -883,7 +883,6 @@
     <button class="nav-tab active" data-tab="home">Home</button>
     <button class="nav-tab" data-tab="training">Business Brain Overview</button>
     <button class="nav-tab" data-tab="workflows">Workflows</button>
-    <button class="nav-tab" data-tab="setup">Setup</button>
     <button class="nav-tab" data-tab="skills">Skills Library</button>
   </div>
   <a href="[FEEDBACK FORM URL]" class="nav-feedback">Leave feedback</a>
@@ -1512,6 +1511,18 @@
         </div>
       </div>
 
+      <div class="sidebar-module">
+        <div class="sidebar-module-title" data-lesson="mod-configure-system">Configure Your System</div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson" data-lesson="tr-cfg-overview">Overview</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-strategy">Your Strategy Layer</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-voice">Your Brand Voice</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-language">Language Rules</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-audience">Map Your Audience</div>
+          <div class="sidebar-lesson" data-lesson="tr-cfg-visual-brand">Your Visual Brand</div>
+        </div>
+      </div>
+
     </div><!-- /course-sidebar -->
 
     <div class="course-main">
@@ -1718,6 +1729,121 @@
         </div>
       </div>
 
+      <!-- Module intro: Configure Your System -->
+      <div class="lesson-panel" id="lesson-mod-configure-system">
+        <div class="lesson-title">Configure Your System</div>
+        <div class="lesson-body">
+          <p>This is where you run the setup skills that load your voice, strategy, and audience into Claude. Once done, every session starts with Claude already knowing your business.</p>
+          <ul>
+            <li><strong>Overview</strong> — what the configuration process involves</li>
+            <li><strong>Your Strategy Layer</strong> — mission, priorities, income target</li>
+            <li><strong>Your Brand Voice</strong> — how Claude learns to sound like you</li>
+            <li><strong>Language Rules</strong> — words and phrases Claude must never use</li>
+            <li><strong>Map Your Audience</strong> — your ideal client profile and audience language</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cfg-overview">
+        <div class="lesson-title">Configure Your System</div>
+        <div class="lesson-body">
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Run the setup skills that load your voice, strategy, and audience into Claude.</p>
+          <p>Claude Code is installed and running. Now you build out your profiles so Claude shows up already knowing your business.</p>
+          <p>This module is where you run the setup skills that generate your strategy layer, your brand voice, your audience language, and your offer files.</p>
+          <p>Run them in this order:</p>
+          <ul>
+            <li><strong>setup-user-profile</strong> — asks questions about your business and how you like to work, then writes USER.md</li>
+            <li><strong>setup-north-star</strong> — builds your strategy layer: mission, 90-day priorities, income target</li>
+            <li><strong>setup-brand-voice</strong> — reads your writing samples and brand stories, extracts your voice profile</li>
+            <li><strong>setup-icp</strong> — builds your ideal client profile and first audience language file</li>
+            <li><strong>setup-brand-stories</strong> — compiles brand stories and testimonials into a story bank</li>
+          </ul>
+          <p>If you didn't finish gathering material beforehand, don't worry. Most setup skills can walk you through it on the spot.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cfg-strategy">
+        <div class="lesson-title">Your Strategy Layer</div>
+        <div class="lesson-body">
+          <h3>Your User Profile</h3>
+          <p>Type <code>run setup-user-profile</code> in the chat panel. It will pull in any material you already uploaded to your brand-context/about-me folder. Anything missing, and it will ask you questions one at a time: your name, your brand, what you sell, who you sell it to, how you like to communicate.</p>
+          <h3>Your North Star</h3>
+          <p>Type <code>run setup-north-star</code>. This skill writes two files: ceo-north-star.md (your mission, offers, and 90-day priorities) and revenue-tracker.md (your income target and current pipeline).</p>
+          <h3>SOUL.md</h3>
+          <p>SOUL.md comes pre-configured in the Business Brain OS. It controls how Claude behaves in your sessions. You don't need to edit it now — over time it will update as you develop preferences. The wrap-up skill proposes updates when it detects repeated patterns of corrections. You approve or reject each one.</p>
+          <h3>Verify it's working</h3>
+          <p>Once you've run both setup skills, close Claude Code completely and open it again. Type: <em>Who am I and what am I working on?</em></p>
+          <p>Claude should respond with your name, your brand, and your current priorities.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cfg-voice">
+        <div class="lesson-title">Your Brand Voice</div>
+        <div class="lesson-body">
+          <h3>Setup Brand Voice</h3>
+          <p>Type <code>run setup-brand-voice</code> in the chat panel. This skill reads everything in your writing-samples and brand-stories folders and generates a voice profile automatically — the patterns, rhythm, tone, and things to avoid that make your writing sound like you.</p>
+          <p>It produces two files: <strong>brand-context/voice-profile.md</strong> (the voice guide every content skill reads before writing) and <strong>brand-context/writing-examples.md</strong> (a curated set of gold-standard sentences from your own writing).</p>
+          <h3>Test it</h3>
+          <p>Once the skill has finished, ask Claude to write a short Facebook post on any topic you know well. Read it back. Does it sound like you?</p>
+          <p>If it's way off, add more examples to brand-context/writing-samples/ and regenerate. You can run setup-brand-voice as many times as you need.</p>
+          <h3>Setup Brand Stories</h3>
+          <p>Run <code>setup-brand-stories</code> after setup-brand-voice. This skill reads everything in your brand-stories and testimonials folders, compiles them into a story bank, and updates your voice profile with real material for copy skills to draw on.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cfg-language">
+        <div class="lesson-title">Language Rules</div>
+        <div class="lesson-body">
+          <p>Your voice profile captures how you sound. Language rules add a separate layer: what Claude is explicitly never allowed to write.</p>
+          <p>Without language rules, Claude defaults to patterns that are technically fine but feel off: em dashes, phrases like "here's the thing", structures like "it's not X, it's Y". These are so common in AI-generated content that they've become dead giveaways.</p>
+          <h3>Run setup-language-rules</h3>
+          <p>Type <code>run setup-language-rules</code> in the chat panel. The skill starts with a curated list of the most common AI writing offenders, asks you four quick questions to personalise it, then saves your file.</p>
+          <p>Your language rules save to <strong>brand-context/language-rules.md</strong>. Every content skill loads this file alongside your voice profile before writing anything. The rules are treated as hard constraints, not suggestions.</p>
+          <h3>The ongoing habit</h3>
+          <p>Every time Claude produces a phrase that jars — something that makes you think "I'd never say that" — tell it in the session and then say: <em>"Add that to my language rules."</em></p>
+          <p>Claude opens the file, adds the phrase, confirms it's done. That phrase will never appear in your content again.</p>
+          <p><em>Over time, this file becomes one of the most valuable parts of your system. The more you refine it, the less editing you do.</em></p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cfg-audience">
+        <div class="lesson-title">Map Your Audience</div>
+        <div class="lesson-body">
+          <h3>Set Up Your ICP</h3>
+          <p>Type <code>run setup-icp</code>. This skill builds two files: your ideal client profile and your first audience language file. These are what every copy skill reads before writing anything promotional.</p>
+          <p>If you've saved material to your audience-language folder, it picks everything up automatically. If not, it walks you through questions one at a time: who your ideal client is, what they want, how they describe their problem, the exact words they use.</p>
+          <h3>How to keep adding language over time</h3>
+          <p>After every discovery call, testimonial, survey response, or comment — paste the quote directly. Say to Claude: "Add this to my audience language file" and paste what you have. It goes in as-is, verbatim.</p>
+          <p>The more you add over time, the more accurately the system can write for your specific audience rather than a generic version of them.</p>
+          <h3>Going deeper with mkt-icp</h3>
+          <p>When you're ready to go further, <code>run mkt-icp</code> goes out and finds language you don't have yet — researching what your audience says in public (Amazon reviews, Reddit threads, YouTube comments) and surfacing the exact words they use when nobody's watching.</p>
+        </div>
+      </div>
+
+      <div class="lesson-panel" id="lesson-tr-cfg-visual-brand">
+        <div class="lesson-title">Your Visual Brand</div>
+        <div class="lesson-body">
+          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Your brand guidelines file is the single source of truth for how everything visual looks — website pages, carousels, presentations, any design Claude builds for you.</p>
+          <h3>Where it lives</h3>
+          <p>Your visual brand guidelines are stored in:</p>
+          <p><strong>Folder:</strong><br><em>brand-context/Visual Brand Guidelines/</em></p>
+          <p>The key file is <code>brand-guidelines.md</code>. It contains your full colour palette (with HEX values), your typography system (heading, body, subheading, accent fonts and their Google Fonts fallbacks), CSS variables ready to drop into any build, your logo variants and when to use each one, and usage rules for colour and type.</p>
+          <h3>How it gets used</h3>
+          <p>When you ask Claude to build a page or a visual, it reads <code>brand-guidelines.md</code> first. That means every page starts from your navy, gold, and rose palette, your Playfair Display headings, and your EB Garamond body copy — not something generic. You don't describe your brand each time; it's already loaded.</p>
+          <h3>Building a page</h3>
+          <p>The typical workflow is:</p>
+          <ol>
+            <li>Write the copy — using <code>service-page-writer</code>, <code>sales-page-writer</code>, or your own draft</li>
+            <li>Say: <em>"Design a page for [offer] using this copy"</em> — Claude reads your brand guidelines and builds the layout using <code>viz-interface-design</code></li>
+            <li>The output is an HTML file you paste into a Divi code block on your WordPress site</li>
+          </ol>
+          <h3>If your brand evolves</h3>
+          <p>Update <code>brand-guidelines.md</code> — change a colour value, swap a font, update a rule. Every future build picks up the change automatically. The HTML version (<code>brand-guidelines.html</code>) is a visual reference you can open in a browser to see everything at a glance.</p>
+          <h3>If you ever need to rebuild it</h3>
+          <p>The guidelines were extracted from your brand PDF (<code>Brand Guide.pdf</code> in the same folder). If you ever need to rebuild the file from scratch — say, after a full rebrand — say to Claude: <em>"Rebuild my brand guidelines from the PDF in brand-context/Visual Brand Guidelines/"</em> and it will extract the colours, fonts, and rules and rewrite the file.</p>
+        </div>
+      </div>
+
     </div><!-- /course-main -->
   </div><!-- /course-layout -->
   </div><!-- /panel-workflows -->
@@ -1750,6 +1876,17 @@
           <div class="sidebar-lesson" data-lesson="tr-md-what">What is Markdown?</div>
           <div class="sidebar-lesson" data-lesson="tr-md-open">Opening and Editing Files</div>
           <div class="sidebar-lesson" data-lesson="tr-md-import">Getting Documents In</div>
+        </div>
+      </div>
+
+      <div class="sidebar-module">
+        <div class="sidebar-module-title" data-lesson="mod-working-with-cc">Working With Claude Code</div>
+        <div class="sidebar-lessons">
+          <div class="sidebar-lesson" data-lesson="tr-cc-install">Install and Open</div>
+          <div class="sidebar-lesson" data-lesson="tr-cc-interface">The Interface</div>
+          <div class="sidebar-lesson" data-lesson="tr-cc-permissions">Permissions</div>
+          <div class="sidebar-lesson" data-lesson="tr-cc-mcps">Connecting External Tools</div>
+          <div class="sidebar-lesson" data-lesson="tr-cc-memory">Your Memory System</div>
         </div>
       </div>
 
@@ -1907,43 +2044,6 @@
         </div>
       </div>
 
-    </div><!-- /course-main -->
-  </div><!-- /course-layout -->
-  </div><!-- /panel-training -->
-
-  <!-- Setup Tab -->
-  <div class="tab-panel" id="panel-setup">
-  <div class="course-layout">
-
-    <div class="course-sidebar">
-
-      <div class="sidebar-module open">
-        <div class="sidebar-module-title" data-lesson="mod-working-with-cc">Working With Claude Code</div>
-        <div class="sidebar-lessons">
-          <div class="sidebar-lesson active" data-lesson="tr-cc-install">Install and Open</div>
-          <div class="sidebar-lesson" data-lesson="tr-cc-interface">The Interface</div>
-          <div class="sidebar-lesson" data-lesson="tr-cc-permissions">Permissions</div>
-          <div class="sidebar-lesson" data-lesson="tr-cc-mcps">Connecting External Tools</div>
-          <div class="sidebar-lesson" data-lesson="tr-cc-memory">Your Memory System</div>
-        </div>
-      </div>
-
-      <div class="sidebar-module">
-        <div class="sidebar-module-title" data-lesson="mod-configure-system">Configure Your System</div>
-        <div class="sidebar-lessons">
-          <div class="sidebar-lesson" data-lesson="tr-cfg-overview">Overview</div>
-          <div class="sidebar-lesson" data-lesson="tr-cfg-strategy">Your Strategy Layer</div>
-          <div class="sidebar-lesson" data-lesson="tr-cfg-voice">Your Brand Voice</div>
-          <div class="sidebar-lesson" data-lesson="tr-cfg-language">Language Rules</div>
-          <div class="sidebar-lesson" data-lesson="tr-cfg-audience">Map Your Audience</div>
-          <div class="sidebar-lesson" data-lesson="tr-cfg-visual-brand">Your Visual Brand</div>
-        </div>
-      </div>
-
-    </div><!-- /course-sidebar -->
-
-    <div class="course-main">
-
       <!-- Module intro: Working With Claude Code -->
       <div class="lesson-panel" id="lesson-mod-working-with-cc">
         <div class="lesson-title">Working With Claude Code</div>
@@ -1959,22 +2059,7 @@
         </div>
       </div>
 
-      <!-- Module intro: Configure Your System -->
-      <div class="lesson-panel" id="lesson-mod-configure-system">
-        <div class="lesson-title">Configure Your System</div>
-        <div class="lesson-body">
-          <p>This is where you run the setup skills that load your voice, strategy, and audience into Claude. Once done, every session starts with Claude already knowing your business.</p>
-          <ul>
-            <li><strong>Overview</strong> — what the configuration process involves</li>
-            <li><strong>Your Strategy Layer</strong> — mission, priorities, income target</li>
-            <li><strong>Your Brand Voice</strong> — how Claude learns to sound like you</li>
-            <li><strong>Language Rules</strong> — words and phrases Claude must never use</li>
-            <li><strong>Map Your Audience</strong> — your ideal client profile and audience language</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="lesson-panel active" id="lesson-tr-cc-install">
+      <div class="lesson-panel" id="lesson-tr-cc-install">
         <div class="lesson-title">Install and Open Claude Code</div>
         <div class="lesson-body">
           <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Get comfortable in the interface before you start configuring anything.</p>
@@ -2062,110 +2147,10 @@
         </div>
       </div>
 
-      <div class="lesson-panel" id="lesson-tr-cfg-overview">
-        <div class="lesson-title">Configure Your System</div>
-        <div class="lesson-body">
-          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Run the setup skills that load your voice, strategy, and audience into Claude.</p>
-          <p>Claude Code is installed and running. Now you build out your profiles so Claude shows up already knowing your business.</p>
-          <p>This module is where you run the setup skills that generate your strategy layer, your brand voice, your audience language, and your offer files.</p>
-          <p>Run them in this order:</p>
-          <ul>
-            <li><strong>setup-user-profile</strong> — asks questions about your business and how you like to work, then writes USER.md</li>
-            <li><strong>setup-north-star</strong> — builds your strategy layer: mission, 90-day priorities, income target</li>
-            <li><strong>setup-brand-voice</strong> — reads your writing samples and brand stories, extracts your voice profile</li>
-            <li><strong>setup-icp</strong> — builds your ideal client profile and first audience language file</li>
-            <li><strong>setup-brand-stories</strong> — compiles brand stories and testimonials into a story bank</li>
-          </ul>
-          <p>If you didn't finish gathering material beforehand, don't worry. Most setup skills can walk you through it on the spot.</p>
-        </div>
-      </div>
-
-      <div class="lesson-panel" id="lesson-tr-cfg-strategy">
-        <div class="lesson-title">Your Strategy Layer</div>
-        <div class="lesson-body">
-          <h3>Your User Profile</h3>
-          <p>Type <code>run setup-user-profile</code> in the chat panel. It will pull in any material you already uploaded to your brand-context/about-me folder. Anything missing, and it will ask you questions one at a time: your name, your brand, what you sell, who you sell it to, how you like to communicate.</p>
-          <h3>Your North Star</h3>
-          <p>Type <code>run setup-north-star</code>. This skill writes two files: ceo-north-star.md (your mission, offers, and 90-day priorities) and revenue-tracker.md (your income target and current pipeline).</p>
-          <h3>SOUL.md</h3>
-          <p>SOUL.md comes pre-configured in the Business Brain OS. It controls how Claude behaves in your sessions. You don't need to edit it now — over time it will update as you develop preferences. The wrap-up skill proposes updates when it detects repeated patterns of corrections. You approve or reject each one.</p>
-          <h3>Verify it's working</h3>
-          <p>Once you've run both setup skills, close Claude Code completely and open it again. Type: <em>Who am I and what am I working on?</em></p>
-          <p>Claude should respond with your name, your brand, and your current priorities.</p>
-        </div>
-      </div>
-
-      <div class="lesson-panel" id="lesson-tr-cfg-voice">
-        <div class="lesson-title">Your Brand Voice</div>
-        <div class="lesson-body">
-          <h3>Setup Brand Voice</h3>
-          <p>Type <code>run setup-brand-voice</code> in the chat panel. This skill reads everything in your writing-samples and brand-stories folders and generates a voice profile automatically — the patterns, rhythm, tone, and things to avoid that make your writing sound like you.</p>
-          <p>It produces two files: <strong>brand-context/voice-profile.md</strong> (the voice guide every content skill reads before writing) and <strong>brand-context/writing-examples.md</strong> (a curated set of gold-standard sentences from your own writing).</p>
-          <h3>Test it</h3>
-          <p>Once the skill has finished, ask Claude to write a short Facebook post on any topic you know well. Read it back. Does it sound like you?</p>
-          <p>If it's way off, add more examples to brand-context/writing-samples/ and regenerate. You can run setup-brand-voice as many times as you need.</p>
-          <h3>Setup Brand Stories</h3>
-          <p>Run <code>setup-brand-stories</code> after setup-brand-voice. This skill reads everything in your brand-stories and testimonials folders, compiles them into a story bank, and updates your voice profile with real material for copy skills to draw on.</p>
-        </div>
-      </div>
-
-      <div class="lesson-panel" id="lesson-tr-cfg-language">
-        <div class="lesson-title">Language Rules</div>
-        <div class="lesson-body">
-          <p>Your voice profile captures how you sound. Language rules add a separate layer: what Claude is explicitly never allowed to write.</p>
-          <p>Without language rules, Claude defaults to patterns that are technically fine but feel off: em dashes, phrases like "here's the thing", structures like "it's not X, it's Y". These are so common in AI-generated content that they've become dead giveaways.</p>
-          <h3>Run setup-language-rules</h3>
-          <p>Type <code>run setup-language-rules</code> in the chat panel. The skill starts with a curated list of the most common AI writing offenders, asks you four quick questions to personalise it, then saves your file.</p>
-          <p>Your language rules save to <strong>brand-context/language-rules.md</strong>. Every content skill loads this file alongside your voice profile before writing anything. The rules are treated as hard constraints, not suggestions.</p>
-          <h3>The ongoing habit</h3>
-          <p>Every time Claude produces a phrase that jars — something that makes you think "I'd never say that" — tell it in the session and then say: <em>"Add that to my language rules."</em></p>
-          <p>Claude opens the file, adds the phrase, confirms it's done. That phrase will never appear in your content again.</p>
-          <p><em>Over time, this file becomes one of the most valuable parts of your system. The more you refine it, the less editing you do.</em></p>
-        </div>
-      </div>
-
-      <div class="lesson-panel" id="lesson-tr-cfg-audience">
-        <div class="lesson-title">Map Your Audience</div>
-        <div class="lesson-body">
-          <h3>Set Up Your ICP</h3>
-          <p>Type <code>run setup-icp</code>. This skill builds two files: your ideal client profile and your first audience language file. These are what every copy skill reads before writing anything promotional.</p>
-          <p>If you've saved material to your audience-language folder, it picks everything up automatically. If not, it walks you through questions one at a time: who your ideal client is, what they want, how they describe their problem, the exact words they use.</p>
-          <h3>How to keep adding language over time</h3>
-          <p>After every discovery call, testimonial, survey response, or comment — paste the quote directly. Say to Claude: "Add this to my audience language file" and paste what you have. It goes in as-is, verbatim.</p>
-          <p>The more you add over time, the more accurately the system can write for your specific audience rather than a generic version of them.</p>
-          <h3>Going deeper with mkt-icp</h3>
-          <p>When you're ready to go further, <code>run mkt-icp</code> goes out and finds language you don't have yet — researching what your audience says in public (Amazon reviews, Reddit threads, YouTube comments) and surfacing the exact words they use when nobody's watching.</p>
-        </div>
-      </div>
-
-      <!-- Your Visual Brand -->
-      <div class="lesson-panel" id="lesson-tr-cfg-visual-brand">
-        <div class="lesson-title">Your Visual Brand</div>
-        <div class="lesson-body">
-          <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Your brand guidelines file is the single source of truth for how everything visual looks — website pages, carousels, presentations, any design Claude builds for you.</p>
-          <h3>Where it lives</h3>
-          <p>Your visual brand guidelines are stored in:</p>
-          <p><strong>Folder:</strong><br><em>brand-context/Visual Brand Guidelines/</em></p>
-          <p>The key file is <code>brand-guidelines.md</code>. It contains your full colour palette (with HEX values), your typography system (heading, body, subheading, accent fonts and their Google Fonts fallbacks), CSS variables ready to drop into any build, your logo variants and when to use each one, and usage rules for colour and type.</p>
-          <h3>How it gets used</h3>
-          <p>When you ask Claude to build a page or a visual, it reads <code>brand-guidelines.md</code> first. That means every page starts from your navy, gold, and rose palette, your Playfair Display headings, and your EB Garamond body copy — not something generic. You don't describe your brand each time; it's already loaded.</p>
-          <h3>Building a page</h3>
-          <p>The typical workflow is:</p>
-          <ol>
-            <li>Write the copy — using <code>service-page-writer</code>, <code>sales-page-writer</code>, or your own draft</li>
-            <li>Say: <em>"Design a page for [offer] using this copy"</em> — Claude reads your brand guidelines and builds the layout using <code>viz-interface-design</code></li>
-            <li>The output is an HTML file you paste into a Divi code block on your WordPress site</li>
-          </ol>
-          <h3>If your brand evolves</h3>
-          <p>Update <code>brand-guidelines.md</code> — change a colour value, swap a font, update a rule. Every future build picks up the change automatically. The HTML version (<code>brand-guidelines.html</code>) is a visual reference you can open in a browser to see everything at a glance.</p>
-          <h3>If you ever need to rebuild it</h3>
-          <p>The guidelines were extracted from your brand PDF (<code>Brand Guide.pdf</code> in the same folder). If you ever need to rebuild the file from scratch — say, after a full rebrand — say to Claude: <em>"Rebuild my brand guidelines from the PDF in brand-context/Visual Brand Guidelines/"</em> and it will extract the colours, fonts, and rules and rewrite the file.</p>
-        </div>
-      </div>
-
     </div><!-- /course-main -->
   </div><!-- /course-layout -->
-  </div><!-- /panel-setup -->
+  </div><!-- /panel-training -->
+
 
 </div><!-- /page-body -->
 

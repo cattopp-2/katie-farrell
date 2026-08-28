@@ -310,58 +310,68 @@
     padding: 2px 10px;
   }
 
-  /* ── Checkbox list ── */
-  .check-list { display: flex; flex-direction: column; gap: 10px; }
+  /* ── Task list ── */
+  .check-list { display: flex; flex-direction: column; gap: 8px; }
 
   .check-item {
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    padding: 14px 16px;
+    gap: 16px;
+    padding: 18px 20px;
     background: var(--white);
     border: 1px solid var(--mid-grey);
-    border-radius: 6px;
+    border-radius: 8px;
+    border-left: 4px solid var(--mid-grey);
   }
 
-  .check-box {
+  .check-item.status-progress { border-left-color: var(--teal); }
+  .check-item.status-waiting  { border-left-color: var(--amber); }
+  .check-item.status-blocked  { border-left-color: #EF4444; }
+  .check-item.status-done     { border-left-color: #10B981; }
+
+  .status-dot {
     flex-shrink: 0;
-    width: 18px; height: 18px;
-    border-radius: 4px;
-    border: 2px solid var(--mid-grey);
-    margin-top: 1px;
-    display: flex; align-items: center; justify-content: center;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--mid-grey);
+    margin-top: 5px;
   }
 
-  .check-box.done {
-    background: var(--teal);
-    border-color: var(--teal);
-  }
+  .check-item.status-progress .status-dot { background: var(--teal); }
+  .check-item.status-waiting  .status-dot { background: var(--amber); }
+  .check-item.status-blocked  .status-dot { background: #EF4444; }
+  .check-item.status-done     .status-dot { background: #10B981; }
 
-  .check-box.done::after {
-    content: '';
-    width: 10px; height: 6px;
-    border-left: 2px solid white;
-    border-bottom: 2px solid white;
-    transform: rotate(-45deg) translateY(-1px);
-    display: block;
-  }
+  .check-content { flex: 1; }
 
-  .check-box.blocked {
-    border-color: #EF4444;
-    background: #FEE2E2;
-  }
-
-  .check-box.blocked::after {
-    content: '–';
-    color: #EF4444;
-    font-size: 12px;
+  .check-label {
+    font-size: 14px;
     font-weight: 700;
-    line-height: 1;
+    color: var(--charcoal);
+    line-height: 1.5;
   }
 
-  .check-label { font-size: 14px; color: var(--charcoal); line-height: 1.5; flex: 1; }
-  .check-note { font-size: 12px; color: var(--body-text); margin-top: 5px; line-height: 1.5; }
-  .check-item.is-done .check-label { color: var(--body-text); text-decoration: line-through; }
+  .check-status-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+  }
+
+  .check-item.status-progress .check-status-tag { background: rgba(29,154,188,0.12); color: var(--teal-dark); }
+  .check-item.status-waiting  .check-status-tag { background: rgba(255,189,74,0.2); color: #92600A; }
+  .check-item.status-blocked  .check-status-tag { background: #FEE2E2; color: #991B1B; }
+  .check-item.status-done     .check-status-tag { background: #D1FAE5; color: #065F46; }
+
+  .check-note { font-size: 12px; color: #888; margin-top: 6px; line-height: 1.6; }
+  .check-item.status-done .check-label { color: #999; text-decoration: line-through; }
+
+  /* keep old .check-box in case referenced elsewhere */
+  .check-box { display: none; }
 
   /* ── Thread items (kept for any non-home use) ── */
   .status-chip {
@@ -977,9 +987,12 @@
       </div>
       <p style="font-size: 14px; color: var(--body-text); margin-bottom: 20px; line-height: 1.6;">Things Cathy is building or finishing on your behalf.</p>
       <div class="check-list">
-        <div class="check-item">
-          <div class="check-box"></div>
-          <div class="check-label">User guide — recording lesson videos and embedding them throughout</div>
+        <div class="check-item status-progress">
+          <div class="status-dot"></div>
+          <div class="check-content">
+            <div class="check-status-tag">In progress</div>
+            <div class="check-label">User guide — recording lesson videos and embedding them throughout</div>
+          </div>
         </div>
       </div>
     </div>
@@ -990,9 +1003,10 @@
       </div>
       <p style="font-size: 14px; color: var(--body-text); margin-bottom: 20px; line-height: 1.6;">Things that are waiting on your input before we can move forward.</p>
       <div class="check-list">
-        <div class="check-item">
-          <div class="check-box"></div>
-          <div>
+        <div class="check-item status-waiting">
+          <div class="status-dot"></div>
+          <div class="check-content">
+            <div class="check-status-tag">Waiting on you</div>
             <div class="check-label">"Energetic Triggers" content batch — waiting for your feedback on the second batch</div>
             <div class="check-note"><a href="https://airtable.com/appRvCkLb6MPlEAxc/tblY3fk8orD9AkSF1/viw12EBMTSLKzswXw?blocks=hide" target="_blank" style="color: var(--teal);">View in Airtable</a></div>
           </div>

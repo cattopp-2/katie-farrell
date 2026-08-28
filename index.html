@@ -673,37 +673,6 @@
     margin: 32px 0 14px;
   }
 
-  .lesson-callout {
-    background: transparent;
-    border-left: 3px solid var(--teal);
-    padding: 14px 18px;
-    margin: 20px 0 24px;
-    line-height: 1.65;
-    color: var(--charcoal);
-  }
-
-  .lesson-callout:not(.lesson-callout--labeled)::before {
-    content: "Key point";
-    display: block;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 6px;
-  }
-
-  .lesson-callout--labeled strong {
-    display: block;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 6px;
-  }
-
-  .lesson-callout strong { color: var(--charcoal); font-weight: 600; }
 
   /* Method cards (How to Call) */
   .method-cards { display: flex; flex-direction: column; gap: 12px; margin: 20px 0 28px; }
@@ -1183,7 +1152,7 @@
               <div class="method-example">You don't need to know which skill handles it. Say "write me a Facebook post about this" or "I need an email sequence for my new offer" and Claude will identify the right skill and run it.</div>
             </div>
           </div>
-          <div class="lesson-callout">The slash commands and run syntax are shortcuts for when you already know what you want.</div>
+          <p><em>The slash commands and run syntax are shortcuts for when you already know what you want.</em></p>
         </div>
       </div>
 
@@ -1381,7 +1350,7 @@
         <div class="lesson-body">
           <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">The one thing to do before you close Claude every time.</p>
           <p>Run this every time before you close Claude. It takes about two minutes and it's what makes the system compound over time.</p>
-          <div class="lesson-callout lesson-callout--labeled"><strong>Type at the end of every session:</strong><br><br>/wrap-up</div>
+          <p><strong>Type at the end of every session:</strong><br><em>/wrap-up</em></p>
           <h3>What it saves</h3>
           <p>The wrap-up skill writes three things:</p>
           <p><strong>memory/sessions/[date].md</strong> — today's session log. What you worked on, what decisions were made, what was produced.</p>
@@ -1572,7 +1541,7 @@
         <div class="lesson-title">Step 1 — Save your file</div>
         <div class="lesson-body">
           <p>Save your audio or video file to this folder in Dropbox:</p>
-          <div class="lesson-callout lesson-callout--labeled"><strong>Folder:</strong><br><br>brand-context/Videos and Audios to repurpose/</div>
+          <p><strong>Folder:</strong><br><em>brand-context/Videos and Audios to repurpose/</em></p>
           <p>Any format works — <code>.m4a</code>, <code>.mp3</code>, <code>.mp4</code>, <code>.mov</code>. Name it something recognisable, like <code>Energetic Triggers.m4a</code> or <code>Nervous system post.m4a</code>. You don't need to tidy it up.</p>
           <p>If you already have a written transcript or an <code>.srt</code> subtitle file, you can drop that in the same folder instead — Claude can read those directly and skip the transcription step.</p>
         </div>
@@ -1583,7 +1552,7 @@
         <div class="lesson-title">Step 2 — Transcribe</div>
         <div class="lesson-body">
           <p>Open a Claude Code session and say:</p>
-          <div class="lesson-callout lesson-callout--labeled"><strong>Type:</strong><br><br>Transcribe [filename] — it's in brand-context/Videos and Audios to repurpose/</div>
+          <p><strong>Type:</strong><br><em>Transcribe [filename] — it's in brand-context/Videos and Audios to repurpose/</em></p>
           <p>Claude will run the transcription tool and save a <code>.md</code> file in the same folder. The file will be named with the date and topic, like <code>2026-08-27-energetic-triggers.md</code>.</p>
           <p>Once it's saved, Claude will tell you it's done. You can read it back to check, but you don't need to — it goes straight into the next step.</p>
           <p>If you already dropped in a transcript or SRT file, skip this step entirely.</p>
@@ -1595,7 +1564,7 @@
         <div class="lesson-title">Step 3 — Run the skill</div>
         <div class="lesson-body">
           <p>Once the transcript file exists, say:</p>
-          <div class="lesson-callout lesson-callout--labeled"><strong>Type:</strong><br><br>Repurpose this voice note — [brief description of the topic]</div>
+          <p><strong>Type:</strong><br><em>Repurpose this voice note — [brief description of the topic]</em></p>
           <p>For example: <em>"Repurpose this voice note — it's about how people get energetically triggered by others who are spiritually open."</em></p>
           <p>The description helps Claude pick the right angles and offer connection. Keep it to one sentence.</p>
           <h3>What Claude does next</h3>
@@ -1615,7 +1584,7 @@
         <div class="lesson-title">Step 4 — Review in Airtable</div>
         <div class="lesson-body">
           <p>When the skill finishes, your content is in Airtable. Open the <strong>Katie to check</strong> view and you'll see the new posts listed.</p>
-          <div class="lesson-callout lesson-callout--labeled"><strong>Airtable:</strong><br><br>Katie's Content System → SM Content → Katie to check</div>
+          <p><strong>Airtable:</strong><br><em>Katie's Content System → SM Content → Katie to check</em></p>
           <p>Click into each record to read the post. If you're happy with it, move it to <strong>Finalised</strong>. If you want changes, drop a note in the record or come back to Claude and say what needs adjusting.</p>
           <p>You don't need to review everything at once. The drafts sit there until you're ready.</p>
         </div>
@@ -1652,7 +1621,7 @@
           <p>Change the Status to <strong>Finalised</strong>. It moves out of Katie to check and into the Finalised view.</p>
           <h3>If something needs changing</h3>
           <p>Change the Status to <strong>Katie's feedback</strong> and add a note in the record — what's off, what direction you want instead. Then come back to Claude and say:</p>
-          <div class="lesson-callout lesson-callout--labeled"><strong>Example:</strong><br><br>"The Facebook Post 1 from the Energetic Triggers batch needs reworking — the hook is too abstract. Can you try a more personal story angle instead?"</div>
+          <p><strong>Example:</strong><br><em>"The Facebook Post 1 from the Energetic Triggers batch needs reworking — the hook is too abstract. Can you try a more personal story angle instead?"</em></p>
           <p>Claude will rewrite it and save the updated version back to the same record.</p>
           <h3>What to look for when reviewing</h3>
           <ul>
@@ -1671,9 +1640,7 @@
           <p>The <strong>Date</strong> and <strong>Published</strong> fields are there if you want to track when something went out — these are optional but useful if you want to look back at what's been posted.</p>
           <h3>Scheduling</h3>
           <p>Airtable doesn't post to social platforms directly. You'll copy the content into Meta Business Suite, LinkedIn, or your scheduling tool of choice. The Airtable record is your review and tracking layer — not a publishing tool.</p>
-          <div class="lesson-callout">
-            <strong>Tip:</strong> Work through one recording's batch at a time. Review, approve, schedule — then move on to the next. It's faster than dipping in and out.
-          </div>
+          <p><em>Work through one recording's batch at a time. Review, approve, schedule — then move on to the next. It's faster than dipping in and out.</em></p>
         </div>
       </div>
 
@@ -1708,7 +1675,7 @@
             <li><strong>Sales / programme page</strong> (Her Evolution, group offer) → <code>sales-page-writer</code></li>
             <li><strong>Short page</strong> (opt-in, thank you) → write it yourself or ask Claude to draft it directly</li>
           </ul>
-          <div class="lesson-callout lesson-callout--labeled"><strong>Say:</strong><br><br>Run service-page-writer for my [offer name] page</div>
+          <p><strong>Say:</strong><br><em>Run service-page-writer for my [offer name] page</em></p>
           <p>The skill will ask you questions about the offer, the audience, and the keyword you want to target. Answer them one at a time. It will produce a full copy draft.</p>
           <h3>Before moving to Step 2</h3>
           <p>Read through the copy. Make any changes — add specifics, adjust the tone, swap out any lines that don't sound like you. Once you're happy with it, say: <em>"The copy is approved — build the HTML."</em></p>
@@ -1720,7 +1687,7 @@
         <div class="lesson-title">Step 2 — Build the HTML</div>
         <div class="lesson-body">
           <p>With the copy approved, say:</p>
-          <div class="lesson-callout lesson-callout--labeled"><strong>Say:</strong><br><br>Build the HTML for this page using web-page-builder</div>
+          <p><strong>Say:</strong><br><em>Build the HTML for this page using web-page-builder</em></p>
           <p>The skill will:</p>
           <ol>
             <li>Read your brand guidelines and study the existing pages</li>
@@ -1745,9 +1712,7 @@
             <li>Paste the HTML into the code module and save</li>
             <li>Preview the page in WordPress to check it renders correctly</li>
           </ol>
-          <div class="lesson-callout">
-            <strong>Note:</strong> Divi's own header and footer wrap the page automatically — the HTML Claude produces is just the page body content, so there's no duplication.
-          </div>
+          <p><em>Divi's own header and footer wrap the page automatically — the HTML Claude produces is just the page body content, so there's no duplication.</em></p>
           <h3>If something looks off</h3>
           <p>Come back to Claude and describe what's wrong: <em>"The hero text is too small"</em>, <em>"The CTA button isn't showing"</em>, <em>"The spacing between sections is too tight."</em> Claude will fix the HTML and you re-paste it.</p>
         </div>
@@ -1924,7 +1889,7 @@
           <p>Inside Claude Code, click any <code>.md</code> file in the sidebar. It opens in a panel on the right. You can read it there, and you can ask Claude to make changes: "Update my north star file to add X" or "Add this to my writing samples."</p>
           <p>You can also edit files directly. Click the pencil icon in the panel to switch from preview to edit mode, make your change, and save.</p>
           <p>Outside Claude Code, any text editor will open a markdown file: Notepad on Windows, TextEdit on Mac, or VS Code if you have it. It's just text.</p>
-          <div class="lesson-callout">Never open a markdown file in Microsoft Word. Word adds invisible formatting that can break how Claude reads the file.</div>
+          <p><em>Never open a markdown file in Microsoft Word. Word adds invisible formatting that can break how Claude reads the file.</em></p>
         </div>
       </div>
 
@@ -2054,7 +2019,7 @@
             <li>Deleting files or folders permanently — blocked by default</li>
             <li>Reading your credentials or <code>.env</code> files</li>
           </ul>
-          <div class="lesson-callout">Even if Claude misunderstood an instruction and tried to delete a folder, the system would stop it.</div>
+          <p><em>Even if Claude misunderstood an instruction and tried to delete a folder, the system would stop it.</em></p>
           <p>The mode selector controls how much Claude checks in with you before acting — not what it's capable of doing. The guardrails above apply regardless of which mode you're in.</p>
         </div>
       </div>
@@ -2091,7 +2056,7 @@
             <li><strong>memory/MEMORY.md</strong> — the persistent facts index</li>
             <li><strong>context/tomorrow.md</strong> — your open threads list</li>
           </ul>
-          <div class="lesson-callout">Without running wrap-up, you risk losing all the learnings and context from that session. This is the habit that makes the whole system compound over time.</div>
+          <p><em>Without running wrap-up, you risk losing all the learnings and context from that session. This is the habit that makes the whole system compound over time.</em></p>
         </div>
       </div>
 
@@ -2153,7 +2118,7 @@
           <h3>The ongoing habit</h3>
           <p>Every time Claude produces a phrase that jars — something that makes you think "I'd never say that" — tell it in the session and then say: <em>"Add that to my language rules."</em></p>
           <p>Claude opens the file, adds the phrase, confirms it's done. That phrase will never appear in your content again.</p>
-          <div class="lesson-callout">Over time, this file becomes one of the most valuable parts of your system. The more you refine it, the less editing you do.</div>
+          <p><em>Over time, this file becomes one of the most valuable parts of your system. The more you refine it, the less editing you do.</em></p>
         </div>
       </div>
 
@@ -2178,7 +2143,7 @@
           <p style="color: var(--body-text); font-style: italic; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--mid-grey);">Your brand guidelines file is the single source of truth for how everything visual looks — website pages, carousels, presentations, any design Claude builds for you.</p>
           <h3>Where it lives</h3>
           <p>Your visual brand guidelines are stored in:</p>
-          <div class="lesson-callout lesson-callout--labeled"><strong>Folder:</strong><br><br>brand-context/Visual Brand Guidelines/</div>
+          <p><strong>Folder:</strong><br><em>brand-context/Visual Brand Guidelines/</em></p>
           <p>The key file is <code>brand-guidelines.md</code>. It contains your full colour palette (with HEX values), your typography system (heading, body, subheading, accent fonts and their Google Fonts fallbacks), CSS variables ready to drop into any build, your logo variants and when to use each one, and usage rules for colour and type.</p>
           <h3>How it gets used</h3>
           <p>When you ask Claude to build a page or a visual, it reads <code>brand-guidelines.md</code> first. That means every page starts from your navy, gold, and rose palette, your Playfair Display headings, and your EB Garamond body copy — not something generic. You don't describe your brand each time; it's already loaded.</p>

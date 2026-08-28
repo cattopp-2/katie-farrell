@@ -14,7 +14,7 @@
     --white:       #ffffff;
     --teal-bg:     rgba(29,154,188,0.08);
     --nav-h:       64px;
-    --phase-h:     50px;
+    --phase-h:     0px;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -310,7 +310,60 @@
     padding: 2px 10px;
   }
 
-  /* ── Thread items ── */
+  /* ── Checkbox list ── */
+  .check-list { display: flex; flex-direction: column; gap: 10px; }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--white);
+    border: 1px solid var(--mid-grey);
+    border-radius: 6px;
+  }
+
+  .check-box {
+    flex-shrink: 0;
+    width: 18px; height: 18px;
+    border-radius: 4px;
+    border: 2px solid var(--mid-grey);
+    margin-top: 1px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .check-box.done {
+    background: var(--teal);
+    border-color: var(--teal);
+  }
+
+  .check-box.done::after {
+    content: '';
+    width: 10px; height: 6px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg) translateY(-1px);
+    display: block;
+  }
+
+  .check-box.blocked {
+    border-color: #EF4444;
+    background: #FEE2E2;
+  }
+
+  .check-box.blocked::after {
+    content: '–';
+    color: #EF4444;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .check-label { font-size: 14px; color: var(--charcoal); line-height: 1.5; flex: 1; }
+  .check-note { font-size: 12px; color: var(--body-text); margin-top: 5px; line-height: 1.5; }
+  .check-item.is-done .check-label { color: var(--body-text); text-decoration: line-through; }
+
+  /* ── Thread items (kept for any non-home use) ── */
   .status-chip {
     display: inline-flex; align-items: center;
     padding: 3px 10px;
@@ -896,29 +949,6 @@
   <a href="[FEEDBACK FORM URL]" class="nav-feedback">Leave feedback</a>
 </nav>
 
-<!-- Phase bar -->
-<div class="phasebar">
-  <div class="phasebar-inner">
-    <div class="phasebar-step done">
-      <div class="phasebar-dot"><span class="phasebar-check">✓</span><div class="phasebar-pulse"></div></div>
-      <span class="phasebar-label">1 — Onboarding</span>
-    </div>
-    <div class="phasebar-connector done"></div>
-    <div class="phasebar-step done">
-      <div class="phasebar-dot"><span class="phasebar-check">✓</span><div class="phasebar-pulse"></div></div>
-      <span class="phasebar-label">2 — Build</span>
-    </div>
-    <div class="phasebar-connector half"></div>
-    <div class="phasebar-step current">
-      <div class="phasebar-dot"><span class="phasebar-check">✓</span><div class="phasebar-pulse"></div></div>
-      <span class="phasebar-label">3 — Handover</span>
-    </div>
-    <div class="phasebar-connector"></div>
-    <div class="phasebar-step">
-      <div class="phasebar-dot"><span class="phasebar-check">✓</span><div class="phasebar-pulse"></div></div>
-      <span class="phasebar-label">4 — Bedding in</span>
-    </div>
-  </div>
 </div>
 
 <!-- Page body -->
@@ -946,24 +976,18 @@
         <h2 class="section-title">What I'm working on</h2>
       </div>
       <p style="font-size: 14px; color: var(--body-text); margin-bottom: 20px; line-height: 1.6;">Things Cathy is building or finishing on your behalf.</p>
-      <div class="open-threads">
-        <div class="thread-item open">
-          <div style="flex-shrink:0; margin-top:1px;"><span class="status-chip open">In progress</span></div>
-          <div>
-            <div class="thread-text">User guide — recording lesson videos and embedding them throughout</div>
-          </div>
+      <div class="check-list">
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-label">User guide — recording lesson videos and embedding them throughout</div>
         </div>
-        <div class="thread-item open">
-          <div style="flex-shrink:0; margin-top:1px;"><span class="status-chip open">In progress</span></div>
-          <div>
-            <div class="thread-text">MCPs — Airtable, Google Drive, and WordPress connections to be set up once you're ready to use those workflows</div>
-          </div>
+        <div class="check-item">
+          <div class="check-box"></div>
+          <div class="check-label">MCPs — Airtable, Google Drive, and WordPress connections to be set up once you're ready to use those workflows</div>
         </div>
-        <div class="thread-item blocked">
-          <div style="flex-shrink:0; margin-top:1px;"><span class="status-chip blocked">Blocked</span></div>
-          <div>
-            <div class="thread-text">Instagram carousel visual creator — ready to configure once brand assets are provided (colours, fonts, photos)</div>
-          </div>
+        <div class="check-item">
+          <div class="check-box blocked"></div>
+          <div class="check-label">Instagram carousel visual creator — waiting on brand assets (colours, fonts, photos)</div>
         </div>
       </div>
     </div>
@@ -973,19 +997,19 @@
         <h2 class="section-title">What I need from you</h2>
       </div>
       <p style="font-size: 14px; color: var(--body-text); margin-bottom: 20px; line-height: 1.6;">Things that are waiting on your input before we can move forward.</p>
-      <div class="open-threads">
-        <div class="thread-item open">
-          <div style="flex-shrink:0; margin-top:1px;"><span class="status-chip open">Action needed</span></div>
+      <div class="check-list">
+        <div class="check-item">
+          <div class="check-box"></div>
           <div>
-            <div class="thread-text">Brand assets — logo files, brand colour HEX codes, and font names so the visual creator can be configured</div>
-            <div class="thread-note">Add to: <code style="font-family: JetBrains Mono, monospace; font-size: 11px;">brand-context/Visual Brand Guidelines/</code> and let Cathy know when done</div>
+            <div class="check-label">Brand assets — logo files, brand colour HEX codes, and font names so the visual creator can be configured</div>
+            <div class="check-note">Add to: <code style="font-family: JetBrains Mono, monospace; font-size: 11px;">brand-context/Visual Brand Guidelines/</code> and let Cathy know when done</div>
           </div>
         </div>
-        <div class="thread-item open">
-          <div style="flex-shrink:0; margin-top:1px;"><span class="status-chip open">Action needed</span></div>
+        <div class="check-item">
+          <div class="check-box"></div>
           <div>
-            <div class="thread-text">"Energetic Triggers" content batch — four angles explored (A, B, D, E). Angle B wasn't right. Let Cathy know what specifically isn't working so a new direction can be chosen</div>
-            <div class="thread-note">Drafts at: <code style="font-family: JetBrains Mono, monospace; font-size: 11px;">projects/social-posts/2026-07-22_energetic-triggers-v2/</code></div>
+            <div class="check-label">"Energetic Triggers" content batch — Angle B wasn't right. Let Cathy know what specifically isn't working so a new direction can be chosen</div>
+            <div class="check-note">Drafts at: <code style="font-family: JetBrains Mono, monospace; font-size: 11px;">projects/social-posts/2026-07-22_energetic-triggers-v2/</code></div>
           </div>
         </div>
       </div>

@@ -223,12 +223,17 @@
   /* ── Welcome banner ── */
   .welcome-banner {
     background: var(--teal);
-    padding: 48px 52px;
+    padding: 48px 40px;
     margin-bottom: 52px;
     margin-left: -40px;
     margin-right: -40px;
     position: relative;
     overflow: hidden;
+  }
+
+  .welcome-inner {
+    max-width: 860px;
+    margin: 0 auto;
   }
 
   .welcome-banner::after {
@@ -922,6 +927,7 @@
   <div class="tab-panel active" id="panel-home">
 
     <div class="welcome-banner">
+      <div class="welcome-inner">
       <div class="welcome-eyebrow">Your system is live</div>
       <h1 class="welcome-headline">Welcome to your Business Brain OS, Katie.</h1>
       <p class="welcome-body">
@@ -929,6 +935,7 @@
         Your voice profile, your audience language, your offers, and your stories are all loaded in.
         <strong>Claude already knows your business</strong> every time you open a session.
       </p>
+      </div><!-- /welcome-inner -->
     </div>
 
     <div style="max-width: 720px; margin: 0 auto;">

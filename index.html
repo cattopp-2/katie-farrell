@@ -386,8 +386,11 @@
     border-color: rgba(16,185,129,0.4);
     color: #065F46;
     background: transparent;
-    cursor: default;
-    pointer-events: none;
+    cursor: pointer;
+  }
+  .check-item.status-done .mark-done-btn:hover {
+    background: rgba(16,185,129,0.15);
+    border-color: rgba(16,185,129,0.6);
   }
   .check-item.status-done { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.25); }
 
@@ -2229,10 +2232,18 @@
   function markTaskDone(btn) {
     const item = btn.closest('.check-item');
     const taskId = item.dataset.taskId;
-    item.classList.remove('status-waiting', 'status-progress');
-    item.classList.add('status-done');
-    btn.textContent = 'Done ✓';
-    try { localStorage.setItem('task-done-' + taskId, '1'); } catch(e) {}
+    const isDone = item.classList.contains('status-done');
+    if (isDone) {
+      item.classList.remove('status-done');
+      item.classList.add('status-waiting');
+      btn.textContent = 'Mark done';
+      try { localStorage.removeItem('task-done-' + taskId); } catch(e) {}
+    } else {
+      item.classList.remove('status-waiting', 'status-progress');
+      item.classList.add('status-done');
+      btn.textContent = 'Undo';
+      try { localStorage.setItem('task-done-' + taskId, '1'); } catch(e) {}
+    }
   }
 
   // Restore done state on load
@@ -2243,7 +2254,7 @@
         item.classList.remove('status-waiting', 'status-progress');
         item.classList.add('status-done');
         const btn = item.querySelector('.mark-done-btn');
-        if (btn) btn.textContent = 'Done ✓';
+        if (btn) btn.textContent = 'Undo';
       }
     });
   } catch(e) {}

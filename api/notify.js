@@ -24,7 +24,7 @@ export default async function handler(req, res) {
             <strong>Task:</strong> ${taskLabel}
           </p>
           <p style="font-family: sans-serif; font-size: 13px; color: #999; margin-top: 24px;">
-            Sent from katie-farrell.yourwebtoolkit.com
+            <a href="https://katie-farrell.yourwebtoolkit.com" style="color: #1D9ABC;">Open portal →</a>
           </p>
         `,
       }),

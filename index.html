@@ -980,7 +980,7 @@
     <button class="nav-tab" data-tab="workflows">Workflows</button>
     <button class="nav-tab" data-tab="skills">Skills Library</button>
   </div>
-  <a href="#feedback-section" class="nav-feedback" onclick="document.querySelector('[data-tab=home]').click(); setTimeout(()=>document.getElementById('feedback-section').scrollIntoView({behavior:'smooth'}),50); return false;">Leave feedback</a>
+  <a href="#" class="nav-feedback" onclick="switchToFeedback(); return false;">Leave feedback</a>
 </nav>
 
 </div>
@@ -1038,21 +1038,26 @@
     </div>
 
 
-    <div class="section" id="feedback-section">
-      <div class="section-header">
-        <h2 class="section-title">Feedback and Questions</h2>
-      </div>
-      <div class="feedback-card">
-        <div>
-          <div class="feedback-desc">If something's not working - the voice isn't right, a skill isn't working, or you're not sure how to do something - send me a message here.<br><br>A quick Loom video is usually the best way to show me what's going on, or just leave me a message.<br><br>If you want to leave me an audio note, just drop me a WhatsApp.<br><br>I'll get back to you via email or WhatsApp.</div>
-          <iframe class="airtable-embed" src="https://airtable.com/embed/app8xpzaO66oLIh8D/pagiG9MHV5is15d2x/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: none; margin-top: 16px;"></iframe>
-        </div>
-      </div>
-    </div>
-
     </div><!-- /home-inner -->
 
   </div><!-- /panel-home -->
+
+  <!-- FEEDBACK -->
+  <div class="tab-panel" id="panel-feedback">
+    <div style="max-width: 720px; margin: 0 auto;">
+      <div class="section">
+        <div class="section-header">
+          <h2 class="section-title">Feedback and Questions</h2>
+        </div>
+        <div class="feedback-card">
+          <div>
+            <div class="feedback-desc">If something's not working - the voice isn't right, a skill isn't working, or you're not sure how to do something - send me a message here.<br><br>A quick Loom video is usually the best way to show me what's going on, or just leave me a message.<br><br>If you want to leave me an audio note, just drop me a WhatsApp.<br><br>I'll get back to you via email or WhatsApp.</div>
+            <iframe class="airtable-embed" src="https://airtable.com/embed/app8xpzaO66oLIh8D/pagiG9MHV5is15d2x/form" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: none; margin-top: 16px;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /panel-feedback -->
 
 
   <!-- SKILLS -->
@@ -2227,6 +2232,15 @@
       if (panel) panel.classList.add('active');
     });
   });
+
+  // ── Feedback panel ──
+  function switchToFeedback() {
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-feedback').classList.add('active');
+    document.body.classList.remove('skills-active');
+    window.scrollTo(0, 0);
+  }
 
   // ── Mark-done task interactions ──
   function markTaskDone(btn) {

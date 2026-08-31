@@ -2254,6 +2254,7 @@
       btn.textContent = 'Mark done';
       try { localStorage.removeItem('task-done-' + taskId); } catch(e) {}
     } else {
+      if (!confirm('Mark this task as done?')) return;
       item.classList.remove('status-waiting', 'status-progress');
       item.classList.add('status-done');
       btn.textContent = 'Undo';

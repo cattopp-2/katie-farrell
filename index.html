@@ -2246,6 +2246,7 @@
   function markTaskDone(btn) {
     const item = btn.closest('.check-item');
     const taskId = item.dataset.taskId;
+    const taskLabel = item.querySelector('.check-label').textContent.trim();
     const isDone = item.classList.contains('status-done');
     if (isDone) {
       item.classList.remove('status-done');
@@ -2257,6 +2258,11 @@
       item.classList.add('status-done');
       btn.textContent = 'Undo';
       try { localStorage.setItem('task-done-' + taskId, '1'); } catch(e) {}
+      fetch('/api/notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ taskLabel, portal: 'Katie Farrell' }),
+      }).catch(() => {});
     }
   }
 
